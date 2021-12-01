@@ -1,15 +1,15 @@
-$fa-font-path: "~@fortawesome/fontawesome-pro/webfonts";
+$fa-font-path: "../lib/fontawesome-pro/webfonts";
 
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/variables';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/mixins';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/core';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/larger';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/fixed-width';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/list';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/bordered-pulled';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/animated';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/rotated-flipped';
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/stacked';
+@import '../lib/fontawesome-pro/scss/variables';
+@import '../lib/fontawesome-pro/scss/mixins';
+@import '../lib/fontawesome-pro/scss/core';
+@import '../lib/fontawesome-pro/scss/larger';
+@import '../lib/fontawesome-pro/scss/fixed-width';
+@import '../lib/fontawesome-pro/scss/list';
+@import '../lib/fontawesome-pro/scss/bordered-pulled';
+@import '../lib/fontawesome-pro/scss/animated';
+@import '../lib/fontawesome-pro/scss/rotated-flipped';
+@import '../lib/fontawesome-pro/scss/stacked';
 
 // We only add the icons we need to save space
 .#{$fa-css-prefix}-angle-down:before { content: fa-content($fa-var-angle-down); }
@@ -37,9 +37,10 @@ $fa-font-path: "~@fortawesome/fontawesome-pro/webfonts";
 .#{$fa-css-prefix}-exclamation-circle:before { content: fa-content($fa-var-exclamation-circle); }
 .#{$fa-css-prefix}-times:before { content: fa-content($fa-var-times); }
 .#{$fa-css-prefix}-bars:before { content: fa-content($fa-var-bars); }
-@import '../../node_modules/@fortawesome/fontawesome-pro/scss/screen-reader';
 
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
+@import '../lib/fontawesome-pro/scss/screen-reader';
+
+@import "../lib/fontawesome-pro/scss/light.scss";
+@import "../lib/fontawesome-pro/scss/regular.scss";
+@import "../lib/fontawesome-pro/scss/solid.scss";
+@import "../lib/fontawesome-pro/scss/brands.scss";

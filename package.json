@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "@digdir/ds-tokens": "^1.3.0",
-    "@fortawesome/fontawesome-pro": "^5.15.4",
     "jquery": "^3.6.0"
   }
 }
