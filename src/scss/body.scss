@@ -1,0 +1,81 @@
+@use '~@digdir/ds-tokens/build/tokens' as *;
+
+.body {
+
+  *:first-child {
+    margin-top: 0;
+  }
+
+  h2,h3,h4 {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    line-height: 1.3em;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  p {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 1.6em;
+  }
+
+  ul {
+    margin-bottom: 32px;
+    padding-left: 32px;
+
+    li {
+      margin-bottom: 16px;
+      font-size: 18px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .fact-box {
+    padding: 32px;
+    background-color: $color-brand-third-100;
+
+    *:first-child {
+      margin-top: 0;
+    }
+    
+    h2,h3 {
+      margin-top: 32px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}

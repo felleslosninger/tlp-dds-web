@@ -1,0 +1,45 @@
+$fa-font-path: "~@fortawesome/fontawesome-pro/webfonts";
+
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/variables';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/mixins';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/core';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/larger';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/fixed-width';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/list';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/bordered-pulled';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/animated';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/rotated-flipped';
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/stacked';
+
+// We only add the icons we need to save space
+.#{$fa-css-prefix}-angle-down:before { content: fa-content($fa-var-angle-down); }
+.#{$fa-css-prefix}-angle-left:before { content: fa-content($fa-var-angle-left); }
+.#{$fa-css-prefix}-angle-right:before { content: fa-content($fa-var-angle-right); }
+.#{$fa-css-prefix}-angle-up:before { content: fa-content($fa-var-angle-up); }
+
+.#{$fa-css-prefix}-globe:before { content: fa-content($fa-var-globe); }
+.#{$fa-css-prefix}-globe-africa:before { content: fa-content($fa-var-globe-africa); }
+.#{$fa-css-prefix}-globe-americas:before { content: fa-content($fa-var-globe-americas); }
+.#{$fa-css-prefix}-globe-asia:before { content: fa-content($fa-var-globe-asia); }
+.#{$fa-css-prefix}-globe-europe:before { content: fa-content($fa-var-globe-europe); }
+.#{$fa-css-prefix}-globe-snow:before { content: fa-content($fa-var-globe-snow); }
+.#{$fa-css-prefix}-globe-stand:before { content: fa-content($fa-var-globe-stand); }
+
+.#{$fa-css-prefix}-clipboard-list:before { content: fa-content($fa-var-clipboard-list); }
+.#{$fa-css-prefix}-phone:before { content: fa-content($fa-var-phone); }
+.#{$fa-css-prefix}-envelope:before { content: fa-content($fa-var-envelope); }
+
+.#{$fa-css-prefix}-check:before { content: fa-content($fa-var-check); }
+.#{$fa-css-prefix}-search:before { content: fa-content($fa-var-search); }
+
+.#{$fa-css-prefix}-info:before { content: fa-content($fa-var-info); }
+.#{$fa-css-prefix}-info-circle:before { content: fa-content($fa-var-info-circle); }
+.#{$fa-css-prefix}-exclamation-circle:before { content: fa-content($fa-var-exclamation-circle); }
+.#{$fa-css-prefix}-times:before { content: fa-content($fa-var-times); }
+.#{$fa-css-prefix}-bars:before { content: fa-content($fa-var-bars); }
+@import '../../node_modules/@fortawesome/fontawesome-pro/scss/screen-reader';
+
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";

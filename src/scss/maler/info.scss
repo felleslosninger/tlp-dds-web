@@ -1,0 +1,49 @@
+.info {
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  &__title {
+    font-size: 44px;
+    line-height: 1.3em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  &__ingress {
+    font-size: 24px;
+    line-height: 1.7em;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+
+  &__img {
+    max-width: 100%;
+
+    &-desc {
+      border-bottom: 1px solid #e3e3e3;
+      padding: 16px 0 20px 0;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: #464646;
+    }
+  }
+
+}
+
+.info-page-2 {
+
+  &__header {
+    height: 500px;
+    margin-bottom: -170px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__content {
+    background-color: white;
+    padding: 95px 110px 64px 110px;
+    border-radius: 4px 4px 0 0;
+  }
+
+}
