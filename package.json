@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EvanTune/storybook-websites.git"
+    "url": "git+https://github.com/felleslosninger/tlp-storybook-websites.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/EvanTune/storybook-websites/issues"
+    "url": "https://github.com/felleslosninger/tlp-storybook-websites/issues"
   },
-  "homepage": "https://github.com/EvanTune/storybook-websites#readme",
+  "homepage": "https://github.com/felleslosninger/tlp-storybook-websites#readme",
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.15.8",
