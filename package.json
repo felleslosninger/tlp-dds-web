@@ -2,7 +2,7 @@
   "name": "storybook-websites",
   "version": "1.0.0",
   "description": "",
-  "license": "BSD3",
+  "license": "BSD-3-Clause",
   "main": "index.js",
   "files": [
     "/src"
