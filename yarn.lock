@@ -1072,10 +1072,32 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@digdir/ds-core-css@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@digdir/ds-core-css/-/ds-core-css-2.0.0.tgz#4f707b92cf6ea0606ce6ed503ebda7f9ba158a25"
+  integrity sha512-29vO63SzFKzrDiMnRzUATIv5w75tnmTXhUdmCOue0dmPazxZt34FJ7jkyRILqsDN+LBR3P1uTk/rRCVZCHaDIw==
+  dependencies:
+    "@digdir/ds-tokens" "^1.8.1"
+
+"@digdir/ds-core-js@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@digdir/ds-core-js/-/ds-core-js-0.1.1.tgz#c0c309fe4371e7599c5fbfa26a1b99c5d6ac478d"
+  integrity sha512-uY42izMOHk9xvFtcurwBD8csfgqTX2VaPyk1gyNEbWxL1qaHCaHHFlqbr2dIIa3G0Gl8Trgg1KykQJDWFs+UwQ==
+
+"@digdir/ds-icons@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@digdir/ds-icons/-/ds-icons-1.0.0.tgz#ef4b76aa899b79401a3c3decfb3bd7b2c86ac64c"
+  integrity sha512-hE0Woj1OOvpMcKtgkMXyBg/7NAVAW4qaLpbJqy6xtml5BfPzSNB2sxVm/NKVBvrO2b2M/nux9WAjdnRvC/jCZA==
+
 "@digdir/ds-tokens@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@digdir/ds-tokens/-/ds-tokens-1.3.0.tgz#08cae920ad88e9483681e91da3c44402e737583a"
   integrity sha512-eve95QgY7C0dwxSTpk2oNBKzvYw4vOrjagBDjtR4CEHXf0wltayZ+JZ+200J2b1rFuWxCJXBXsWVX/izDt40Fw==
+
+"@digdir/ds-tokens@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@digdir/ds-tokens/-/ds-tokens-1.8.1.tgz#efbd0e3c1324b9916dce51be03371a39d35bf8ef"
+  integrity sha512-HVOjPlpZavglOtzTtWKWidvLJ8YDL4OEc8dfe7oYfqS1WDLZCvZjZLCGCrkfQW4B+VHDjL+L/yG/Uy5itDqspw==
 
 "@discoveryjs/json-ext@^0.5.3":
   version "0.5.5"
