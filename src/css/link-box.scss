@@ -3,6 +3,7 @@
 @use 'utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-box';
+$horizontal-padding: $spacing-base-8;
 
 .#{$classname} {
   & .dds-panel-link {
@@ -11,6 +12,13 @@ $classname: '#{utils.$prefix}-link-box';
     border: none;
     box-shadow: inset 0 0 0 $border-width-thin $color-neutral-grey-500;
 
+    // Padding
+    padding: 0 $horizontal-padding;
+    & svg {
+      right: $horizontal-padding;
+    }
+
+    // States
     &:hover {
       background-color: $color-brand-second-400;
 
@@ -18,6 +26,7 @@ $classname: '#{utils.$prefix}-link-box';
 
       & svg {
         fill: $color-neutral-grey-800;
+        right: calc($horizontal-padding - 0.5rem);
       }
     }
 
