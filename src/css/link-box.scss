@@ -1,12 +1,17 @@
-@use '@digdir/ds-core-css/build/src/panel-link.scss' as *;
+@use '@digdir/ds-core-css/build/src/panel-link.scss' as panel-link;
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use 'utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-box';
+$height: $spacing-base-18;
 $horizontal-padding: $spacing-base-8;
 
 .#{$classname} {
+  width: fit-content;
+  height: fit-content;
+
   & .dds-panel-link {
+    min-height: $height;
     background-color: $color-brand-second-200;
 
     border: none;
@@ -26,7 +31,7 @@ $horizontal-padding: $spacing-base-8;
 
       & svg {
         fill: $color-neutral-grey-800;
-        right: calc($horizontal-padding - 0.5rem);
+        right: calc($horizontal-padding - $spacing-base-1);
       }
     }
 
