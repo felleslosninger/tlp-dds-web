@@ -7,10 +7,13 @@ $classname: '#{utils.$prefix}-link-box';
 .#{$classname} {
   & .dds-panel-link {
     background-color: $color-brand-second-200;
+    border-color: $color-neutral-grey-500;
+    border-width: $border-width-thin;
 
     &:hover {
       background-color: $color-brand-second-400;
       border-color: $color-neutral-grey-800;
+      border-width: $border-width-default;
 
       & svg {
         fill: $color-neutral-grey-800;
