@@ -5,10 +5,10 @@ import commonjs from '@rollup/plugin-commonjs'
 
 export default [
   {
-    // ESM production build
+    // ESM build (not transpiled to ES5)
     input: './src/js/index.js',
     output: {
-      file: './build/index.js',
+      file: './build/index.esm.js',
       format: 'es',
     },
     treeshake: 'recommended', // Remove unused imports
@@ -23,18 +23,17 @@ export default [
     ],
   },
   {
-    // IIFE (Immediately Invoked Function Expression) production build
-    // ES5 compatible to be used as fallback <script> where backwards compatibility is needed (e.g. IE11)
+    // ES5 compatible builds
     input: './src/js/index.js',
-    output: {
-      file: './build/index.iife.js',
-      format: 'iife',
-    },
+    output: [
+      { file: './build/index.cjs.js', format: 'cjs' }, // CommonJS build
+      { file: './build/index.iife.js', format: 'iife' }, // Immediately Invoked Function Expression build (for script tag inclusion)
+    ],
     treeshake: 'recommended', // Remove unused imports
     plugins: [
       nodeResolve(), // Locate imported node modules
       commonjs(), // Enable rollup to handle cjs modules
-      babel({ exclude: 'node_modules/**', presets: ['@babel/preset-env'] }), // Transpile to ES5
+      babel({ exclude: 'node_modules/**', presets: ['@babel/preset-env'] }), // Transpile to ES5 for backwards compatibility
       terser({
         output: {
           comments: false,
