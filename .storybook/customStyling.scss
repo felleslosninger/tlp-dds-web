@@ -1,0 +1,13 @@
+@use '../node_modules/@digdir/ds-core-css/build/src/baseline/baseline.scss' as
+  base;
+/*
+  This customization file alters Storybook's native classes.
+  Before altering/adding custom styles, check if Storybook supports the required need (@storybook/theming),
+  and edit the custom theme object (`theme: customTheme,`) used in ./manager.js (for Storybook UI in general / top-bar, side-bar)
+  and ./preview.js (for Storybook docs and canvas / main content).
+  See: https://storybook.js.org/docs/react/configure/theming
+*/
+
+body {
+  @extend .dds-body;
+}

@@ -1,56 +1,87 @@
 {
-  "name": "storybook-websites",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@digdir/ds-web",
+  "private": true,
+  "author": "Digdir design system team",
   "license": "BSD-3-Clause",
-  "main": "index.js",
-  "files": [
-    "/src"
-  ],
-  "scripts": {
-    "start": "start-storybook -p 6006",
-    "start:clean": "start-storybook -p 6006 --no-manager-cache",
-    "build-bs": "sass --no-source-map --style=compressed src/scss/bootstrap-custom.scss src/scss/bootstrap-custom.css",
-    "build-fa": "sass --no-source-map --style=compressed src/scss/fontawesome.scss src/scss/fontawesome.css",
-    "build-js": "rollup -c",
-    "build:docs": "build-storybook -o ./docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/felleslosninger/tlp-storybook-websites.git"
-  },
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/felleslosninger/tlp-storybook-websites/issues"
-  },
-  "homepage": "https://github.com/felleslosninger/tlp-storybook-websites#readme",
-  "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.15.8",
-    "@digdir/ds-icons": "^1.0.0",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^21.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
-    "@storybook/addon-actions": "^6.4.0",
-    "@storybook/addon-essentials": "^6.4.0",
-    "@storybook/addon-links": "^6.4.0",
-    "@storybook/addon-storysource": "^6.4.0",
-    "@storybook/html": "^6.4.0",
-    "@storybook/preset-scss": "^1.0.3",
-    "@whitespace/storybook-addon-html": "^5.0.0",
-    "babel-loader": "^8.2.3",
-    "classnames": "^2.3.1",
-    "node": "^16.10.0",
-    "rollup": "^2.58.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.42.1",
-    "sass-loader": "10.1.1",
-    "storybook-addon-designs": "^6.2.0"
-  },
   "dependencies": {
-    "@digdir/ds-core-css": "^2.0.0",
+    "@digdir/ds-core-css": "^3.0.0",
     "@digdir/ds-core-js": "^0.1.1",
     "@digdir/ds-tokens": "^1.3.0",
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@digdir/ds-icons": "^1.0.0",
+    "@storybook/addon-a11y": "^6.4.19",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addons": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/client-api": "^6.4.19",
+    "@storybook/html": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/theming": "^6.4.19",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "babel-loader": "^8.2.2",
+    "classnames": "^2.3.1",
+    "css-loader": "^6.5.1",
+    "husky": "^7.0.0",
+    "prettier": "^2.5.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "rollup": "^2.58.0",
+    "sass": "^1.42.1",
+    "sass-loader": "12.4.0",
+    "storybook-addon-designs": "^6.2.1",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.0.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-scss": "^5.0.1",
+    "stylelint-scss": "^4.1.0",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0"
+  },
+  "resolutions": {
+    "lerna/**/json-schema": ">=0.4.0",
+    "@storybook/addon-essentials/**/immer": ">=9.0.6",
+    "@storybook/addon-essentials/**/browserslist": ">=4.16.5",
+    "**/glob-parent": ">=5.1.2",
+    "**/trim": ">=1.0.0",
+    "**/postcss": ">=8.2.13"
+  },
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "start:clean": "start-storybook -p 6006 --no-manager-cache",
+    "build:docs": "build-storybook -o ./docs",
+    "lint": "stylelint '**/*.scss'",
+    "prepare": "husky install"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "cssEnable": [
+      "scss"
+    ]
+  },
+  "stylelint": {
+    "ignoreFiles": [
+      ".build/**"
+    ],
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "extends": [
+      "stylelint-config-recommended-scss",
+      "stylelint-config-prettier"
+    ],
+    "rules": {
+      "at-rule-no-unknown": null,
+      "scss/operator-no-newline-after": null,
+      "scss/at-rule-no-unknown": true
+    }
   }
 }
