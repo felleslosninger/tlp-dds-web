@@ -1,7 +1,6 @@
 import customTheme from './customTheme.js'
 import tokens from '../node_modules/@digdir/ds-tokens/build/tokens.js'
 // Import assets available to all stories
-import '../node_modules/@digdir/ds-core-css/build/src/index.scss'
 import '../src/css/index.scss'
 import './customStyling.scss'
 
