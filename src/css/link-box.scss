@@ -1,16 +1,27 @@
-@use '@digdir/ds-core-css/build/src/panel-link.scss' as panel-link;
+@use '@digdir/ds-core-css/build/src/panel-link.scss' as core-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use 'utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-box';
-$width: 26rem;
-$height: 4.5rem;
+$min-width: 26rem;
 $horizontal-padding: $spacing-base-8;
 
 .#{$classname} {
+  // Common properties
+  & a {
+    min-width: $min-width;
+    max-width: core-utils.$component-max-width;
+
+    // Breakpoints
+    @media (max-width: $breakpoint-medium) {
+      min-width: Min(90vw, $min-width);
+    }
+  }
+
+  // Icon variant (based on core component)
   & .dds-panel-link {
-    min-height: $height;
-    min-width: $width;
+    min-height: 4.5rem;
 
     background-color: $color-brand-second-200;
 
@@ -38,9 +49,25 @@ $horizontal-padding: $spacing-base-8;
     &:active {
       background-color: $color-brand-second-600;
     }
-    // Breakpoints
-    @media (max-width: $breakpoint-medium) {
-      min-width: Min(90vw, $width);
+  }
+
+  // Center text variant
+  & &__link {
+    min-height: 4.1875rem;
+    background-color: $color-brand-third-800;
+    color: $color-text-background-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: $duration-normal all;
+
+    &:hover {
+      background-color: $color-neutral-grey-800;
+    }
+    &:active {
+      color: $color-text-background-light;
+      background-color: $color-brand-third-400;
     }
   }
 }
