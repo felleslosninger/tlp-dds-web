@@ -17,4 +17,12 @@ const Template = (args) => {
   return createLinkBox(args)
 }
 
-export const Default = Template.bind({})
+export const IconBox = Template.bind({})
+IconBox.args = {
+  icon: true,
+}
+
+export const TextBox = Template.bind({})
+TextBox.args = {
+  icon: false,
+}
