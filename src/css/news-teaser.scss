@@ -7,7 +7,7 @@
 $classname: '#{utils.$prefix}-news-teaser';
 $padding-default: $spacing-base-8;
 $padding-small: $spacing-base-5;
-$min-width: 23.0625rem;
+$min-width: utils.pxToRem(369px);
 
 .#{$classname} {
   &__link {

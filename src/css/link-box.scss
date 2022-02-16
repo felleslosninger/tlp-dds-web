@@ -4,7 +4,7 @@
 @use 'utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-box';
-$min-width: 26rem;
+$min-width: utils.pxToRem(416px);
 $horizontal-padding: $spacing-base-8;
 
 .#{$classname} {
@@ -21,7 +21,7 @@ $horizontal-padding: $spacing-base-8;
 
   // Icon variant (based on core component)
   & .dds-panel-link {
-    min-height: 4.5rem;
+    min-height: utils.pxToRem(72px);
 
     background-color: $color-brand-second-200;
 
@@ -53,7 +53,7 @@ $horizontal-padding: $spacing-base-8;
 
   // Center text variant
   & &__link {
-    min-height: 4.1875rem;
+    min-height: utils.pxToRem(67px);
     background-color: $color-brand-third-800;
     color: $color-text-background-dark;
     display: flex;
