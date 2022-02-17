@@ -15,4 +15,13 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  // Add rules to webpack config
+  webpackFinal: async (config, { configType }) => {
+    // Resolve raw import of SVG files as source code
+    config.module.rules.push({
+      test: /\.svg/,
+      type: 'asset/source',
+    })
+    return config
+  },
 }
