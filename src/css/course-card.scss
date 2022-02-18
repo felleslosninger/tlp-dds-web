@@ -1,0 +1,95 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use 'utils.scss' as utils;
+
+$classname: '#{utils.$prefix}-course-card';
+$padding-default: $spacing-base-8;
+$padding-small: $spacing-base-6;
+$min-width: utils.pxToRem(383px);
+$icon-size: $spacing-base-5;
+
+.#{$classname} {
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+
+    min-width: $min-width;
+    max-width: core-utils.$component-max-width;
+    height: 100%;
+
+    text-decoration: none;
+    background-color: $color-neutral-white;
+    color: $color-text-background-light;
+    transition: all $duration-normal;
+
+    &:hover {
+      box-shadow: inset 0 0 0 4px $color-brand-second-500;
+
+      .#{$classname}__banner {
+        background-color: $color-brand-second-500;
+      }
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 4px $color-brand-second-600;
+      background-color: $color-brand-second-200;
+
+      .#{$classname}__banner {
+        background-color: $color-brand-second-600;
+      }
+    }
+
+    // Breakpoints
+    @media (max-width: $min-width) {
+      min-width: 100vw;
+    }
+    @media (max-width: $breakpoint-small) {
+      .#{$classname}__container {
+        padding: $padding-small;
+      }
+      .#{$classname}__banner {
+        padding: $padding-small $padding-small;
+      }
+    }
+  }
+
+  // Elements
+  &__container {
+    padding: $padding-default;
+  }
+  &__banner {
+    @include core-text.text-body-400();
+    background-color: $color-brand-second-300;
+    padding: $padding-small $padding-default;
+
+    transition: all $duration-normal;
+  }
+  &__title {
+    @include core-text.text-heading-500();
+    color: $color-neutral-grey-800;
+    margin: 0 0 $padding-small 0;
+  }
+  &__list {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: $spacing-base-4;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  &__item svg {
+    width: $icon-size;
+    height: $icon-size;
+    fill: $color-neutral-grey-700;
+  }
+  &__item &__value {
+    @include core-text.text-body-300();
+    color: $color-neutral-grey-700;
+
+    margin-left: $spacing-base-2;
+  }
+}
