@@ -46,7 +46,7 @@ $max-width: core-utils.$component-max-width;
     color: $color-neutral-grey-700;
   }
 
-  &__ingress {
+  &__paragraph {
     @include card.paragraph();
     padding: $spacing-base-4 0;
   }
