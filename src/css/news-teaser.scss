@@ -5,9 +5,10 @@
 @use 'utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-news-teaser';
-$padding-default: $spacing-base-8;
-$padding-small: $spacing-base-5;
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(369px);
+$max-width: core-utils.$component-max-width;
 
 .#{$classname} {
   &__link {
@@ -16,7 +17,7 @@ $min-width: utils.pxToRem(369px);
     position: relative;
 
     min-width: $min-width;
-    max-width: core-utils.$component-max-width;
+    max-width: $max-width;
     height: 100%;
     padding: $padding-default;
 
@@ -43,7 +44,7 @@ $min-width: utils.pxToRem(369px);
       min-width: 100vw;
     }
     @media (max-width: $breakpoint-small) {
-      padding: $padding-small;
+      padding: $padding-mobile;
     }
   }
 

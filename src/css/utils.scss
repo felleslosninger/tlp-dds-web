@@ -1,7 +1,10 @@
 @use 'sass:math';
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 
 // Class prefix: digdir design system web (digdir nettsider)
 $prefix: 'ddsweb';
+$padding-default: tokens.$spacing-base-8;
+$padding-mobile: tokens.$spacing-base-6;
 
 /* 
   Convert from pixel value to rem value.
