@@ -1,4 +1,7 @@
-const createNewsTeaser = ({}) => {
+const createNewsCard = ({}) => {
+  const classPrefix = 'ddsweb-news-card'
+
+  // Element content
   const titleText = 'Tittel'
   const dateText = '16 sep. 2021'
   const teaserText = `Digitaliseringsdirektoratet har lansert første 
@@ -25,18 +28,18 @@ const createNewsTeaser = ({}) => {
     </span>
     `
   return String.raw`
-    <article class="ddsweb-news-teaser">
-      <a class="ddsweb-news-teaser__link" 
+    <article class="${classPrefix}">
+      <a class="${classPrefix}__link" 
           href="https://www.digdir.no/"
           rel="noreferrer noopener"
         > 
-        <h3 class="ddsweb-news-teaser__title">
+        <h3 class="${classPrefix}__title">
           ${titleText}
         </h3>
-        <div class="ddsweb-news-teaser__date">
+        <div class="${classPrefix}__date">
           ${dateText}
         </div>
-        <p class="ddsweb-news-teaser__ingress">
+        <p class="${classPrefix}__ingress">
           ${teaserText}
         </p>
         ${iconLink}
@@ -45,4 +48,4 @@ const createNewsTeaser = ({}) => {
     `
 }
 
-export { createNewsTeaser }
+export { createNewsCard }

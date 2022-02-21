@@ -1,8 +1,8 @@
-import { createNewsTeaser } from '../newsTeaser.js'
+import { createNewsCard } from '../newsCard.js'
 import { withDesign } from 'storybook-addon-designs'
 
 export default {
-  title: 'Komponenter/News-teaser',
+  title: 'Komponenter/News-card',
   decorators: [withDesign],
   parameters: {
     design: {
@@ -17,7 +17,7 @@ export default {
 }
 
 const Template = (args) => {
-  return createNewsTeaser(args)
+  return createNewsCard(args)
 }
 
 export const Default = Template.bind({})

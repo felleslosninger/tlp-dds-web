@@ -4,7 +4,7 @@
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use 'utils.scss' as utils;
 
-$classname: '#{utils.$prefix}-news-teaser';
+$classname: '#{utils.$prefix}-news-card';
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(369px);
