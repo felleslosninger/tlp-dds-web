@@ -1,0 +1,47 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use 'utils.scss' as utils;
+@use 'card-utils.scss' as card;
+
+$classname: '#{utils.$prefix}-report-card';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$min-width: utils.pxToRem(369px);
+$max-width: core-utils.$component-max-width;
+
+.#{$classname} {
+  &__link {
+    @include card.container-link();
+    min-width: $min-width;
+    max-width: $max-width;
+    padding: $padding-default;
+
+    &:hover {
+      background-color: $color-neutral-grey-100;
+      @include card.border-box-shadow();
+
+      & .#{core-icon-link.$classname} {
+        @include card.icon-link-hover();
+      }
+    }
+
+    &:active {
+      background-color: $color-interface-interaction-light;
+    }
+
+    // Media queries
+    @include card.media-queries($min-width, $padding-mobile);
+  }
+
+  // Elements
+  &__title {
+    @include card.title();
+  }
+
+  &__paragraph {
+    @include card.paragraph();
+    padding: $spacing-base-4 0;
+  }
+}

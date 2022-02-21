@@ -1,0 +1,45 @@
+@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use 'utils.scss' as utils;
+
+@mixin container-link($background-color: $color-neutral-white) {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+
+  text-decoration: none;
+  background-color: $background-color;
+  transition: $duration-normal all;
+}
+
+@mixin border-box-shadow($color: $color-interface-interaction) {
+  box-shadow: inset 0 0 0 4px $color;
+}
+
+@mixin media-queries($min-width, $padding-mobile) {
+  @media (max-width: $min-width) {
+    min-width: 100vw;
+  }
+  @media (max-width: $breakpoint-small) {
+    padding: $padding-mobile;
+  }
+}
+
+// Element mixins
+@mixin title {
+  @include core-text.text-heading-500();
+  color: $color-text-background-light;
+  margin: 0;
+}
+
+@mixin paragraph {
+  @include core-text.text-body-300();
+  color: $color-text-background-light;
+  margin: 0;
+}
+
+@mixin icon-link-hover {
+  border-color: $color-interface-interaction;
+  border-width: $border-width-default;
+}
