@@ -39,7 +39,7 @@ const createNewsCard = ({}) => {
         <div class="${classPrefix}__date">
           ${dateText}
         </div>
-        <p class="${classPrefix}__ingress">
+        <p class="${classPrefix}__paragraph">
           ${teaserText}
         </p>
         ${iconLink}
