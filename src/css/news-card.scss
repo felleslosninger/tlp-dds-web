@@ -3,6 +3,7 @@
 @use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use 'utils.scss' as utils;
+@use 'card-utils.scss' as card;
 
 $classname: '#{utils.$prefix}-news-card';
 $padding-default: utils.$padding-default;
@@ -12,26 +13,17 @@ $max-width: core-utils.$component-max-width;
 
 .#{$classname} {
   &__link {
-    display: block;
-    box-sizing: border-box;
-    position: relative;
-
+    @include card.container-link();
     min-width: $min-width;
     max-width: $max-width;
-    height: 100%;
     padding: $padding-default;
-
-    text-decoration: none;
-    background-color: $color-neutral-white;
-    transition: $duration-normal all;
 
     &:hover {
       background-color: $color-neutral-grey-100;
-      box-shadow: inset 0 0 0 4px $color-interface-interaction;
+      @include card.border-box-shadow();
 
-      & .dds-icon-link {
-        border-color: $color-interface-interaction;
-        border-width: $border-width-default;
+      & .#{core-icon-link.$classname} {
+        @include card.icon-link-hover();
       }
     }
 
@@ -39,21 +31,14 @@ $max-width: core-utils.$component-max-width;
       background-color: $color-interface-interaction-light;
     }
 
-    // Breakpoints
-    @media (max-width: $min-width) {
-      min-width: 100vw;
-    }
-    @media (max-width: $breakpoint-small) {
-      padding: $padding-mobile;
-    }
+    // Media queries
+    @include card.media-queries($min-width, $padding-mobile);
   }
 
   // Elements
   &__title {
-    @include core-text.text-heading-500();
-    color: $color-neutral-grey-800;
-    margin: 0;
-    padding: 0 0 $spacing-base-2 0;
+    @include card.title();
+    padding-bottom: $spacing-base-2;
   }
 
   &__date {
@@ -62,9 +47,7 @@ $max-width: core-utils.$component-max-width;
   }
 
   &__ingress {
-    @include core-text.text-body-300();
-    color: $color-neutral-grey-800;
-    margin: 0;
+    @include card.paragraph();
     padding: $spacing-base-4 0;
   }
 }
