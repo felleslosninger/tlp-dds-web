@@ -5,9 +5,10 @@
 @use 'utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-course-card';
-$padding-default: $spacing-base-8;
-$padding-small: $spacing-base-6;
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(383px);
+$max-width: core-utils.$component-max-width;
 $icon-size: $spacing-base-5;
 
 .#{$classname} {
@@ -17,7 +18,7 @@ $icon-size: $spacing-base-5;
     position: relative;
 
     min-width: $min-width;
-    max-width: core-utils.$component-max-width;
+    max-width: $max-width;
     height: 100%;
 
     text-decoration: none;
@@ -48,10 +49,10 @@ $icon-size: $spacing-base-5;
     }
     @media (max-width: $breakpoint-small) {
       .#{$classname}__container {
-        padding: $padding-small;
+        padding: $padding-mobile;
       }
       .#{$classname}__banner {
-        padding: $padding-small $padding-small;
+        padding: $padding-mobile $padding-mobile;
       }
     }
   }
@@ -63,14 +64,14 @@ $icon-size: $spacing-base-5;
   &__banner {
     @include core-text.text-body-400();
     background-color: $color-brand-second-300;
-    padding: $padding-small $padding-default;
+    padding: $padding-mobile $padding-default;
 
     transition: all $duration-normal;
   }
   &__title {
     @include core-text.text-heading-500();
     color: $color-neutral-grey-800;
-    margin: 0 0 $padding-small 0;
+    margin: 0 0 $padding-mobile 0;
   }
   &__list {
     display: grid;
