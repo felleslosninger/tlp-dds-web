@@ -22,7 +22,11 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: [],
+      order: [
+        'Introduksjon',
+        'Komponenter',
+        ['Link-box', 'Report-card', 'News-card', 'Course-card'],
+      ],
     },
   },
   actions: {
