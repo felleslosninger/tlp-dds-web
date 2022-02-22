@@ -1,12 +1,18 @@
 const createLinkBox = ({ icon = true }) => {
+  const classPrefix = 'ddsweb-link-box'
+
+  // Element content
+  const labelText = 'Panel link'
+
+  // Elements
   const textBoxChildren = String.raw`
     <a
-      class="ddsweb-link-box__link"
+      class="${classPrefix}__link"
       href="https://www.digdir.no/"
       target="_blank"
       rel="noreferrer noopener"
     >
-      Panel link
+      ${labelText}
     </a>
     `
   const iconBoxChildren = String.raw`
@@ -29,7 +35,7 @@ const createLinkBox = ({ icon = true }) => {
     `
 
   return String.raw`
-    <div class="ddsweb-link-box">
+    <div class="${classPrefix}">
       ${icon ? iconBoxChildren : textBoxChildren}
     </div>
     `
