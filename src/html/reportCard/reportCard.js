@@ -1,3 +1,5 @@
+import { createIconLinkSpan } from '../utils.js'
+
 const createReportCard = ({}) => {
   const classPrefix = 'ddsweb-report-card'
 
@@ -10,22 +12,8 @@ const createReportCard = ({}) => {
   const linkText = 'Intern lenke'
 
   // Icon link component markup from dds core components
-  const iconLink = String.raw`
-    <span
-        class="dds-icon-link dds-icon-link--icon-right"
-      >
-        ${linkText}
-      <svg
-        focusable="false"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
-      </svg>
-    </span>
-    `
+  const iconLink = createIconLinkSpan(titleText)
+
   return String.raw`
     <article class="${classPrefix}">
       <a class="${classPrefix}__link" 
