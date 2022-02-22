@@ -36,6 +36,11 @@ $banner-icon-width: utils.pxToRem(54px);
     @media (max-width: $min-width) {
       min-width: 100vw;
     }
+    @media (max-width: $breakpoint-small) {
+      .#{$classname}__container {
+        padding: $padding-mobile;
+      }
+    }
   }
 
   // Elements
