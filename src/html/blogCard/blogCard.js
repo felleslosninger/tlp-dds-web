@@ -32,9 +32,6 @@ const createBlogCard = ({}) => {
           <div class="${classPrefix}__image">
             ${imageElement}
           </div>
-          <div class="${classPrefix}__icon">
-            ${chevronRightIcon}
-          </div>
         </div>
         <div class="${classPrefix}__container">
           <h3 class="${classPrefix}__title">

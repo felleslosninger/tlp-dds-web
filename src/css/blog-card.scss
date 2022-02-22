@@ -44,31 +44,8 @@ $banner-icon-width: utils.pxToRem(54px);
   }
 
   // Elements
-  &__banner {
-    position: relative;
-    display: grid;
-    place-items: center;
-  }
-
   &__banner &__image img {
     width: 100%;
-  }
-
-  &__banner &__icon {
-    position: absolute;
-    display: grid;
-    place-items: center;
-    width: $banner-icon-container-width;
-    height: $banner-icon-container-width;
-
-    background-color: $color-neutral-white;
-    border-radius: 50%;
-
-    & svg {
-      fill: $color-neutral-grey-800;
-      width: $banner-icon-container-width;
-      height: $banner-icon-container-width;
-    }
   }
 
   &__container {
