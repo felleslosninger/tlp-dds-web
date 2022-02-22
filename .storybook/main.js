@@ -15,6 +15,7 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  staticDirs: ['../assets'],
   // Add rules to webpack config
   webpackFinal: async (config, { configType }) => {
     // Resolve raw import of SVG files as source code
