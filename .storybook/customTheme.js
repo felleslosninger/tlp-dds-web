@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming'
-import logo from './assets/logo_digdir.svg'
+import logo from '../assets/logo_digdir.svg'
 import tokens from '../node_modules/@digdir/ds-tokens/build/tokens.js'
 
 export default create({
