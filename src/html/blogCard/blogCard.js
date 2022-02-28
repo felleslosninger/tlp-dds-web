@@ -1,7 +1,11 @@
 import { createIconLinkSpan } from '../utils.js'
-import chevronRightIcon from '@digdir/ds-icons/svg/chevron_right/outline.svg'
 
-const createBlogCard = ({}) => {
+const createBlogCard = ({
+  image = {
+    src: 'static/media/assets/wallpapersden.png',
+    alt: 'Alt image description',
+  },
+}) => {
   const classPrefix = 'ddsweb-blog-card'
 
   // Element content
@@ -14,11 +18,11 @@ const createBlogCard = ({}) => {
   const linkText = 'Intern lenke'
 
   // Elements
-  const iconLink = createIconLinkSpan(titleText)
+  const iconLink = createIconLinkSpan(linkText)
   const imageElement = String.raw`
     <img 
-      src="/wallpapersden.png"
-      alt="Sunset in the woods showing a river in the foreground and mountains in the background"
+      src="${image.src}"
+      alt="${image.alt}"
     >
     `
 

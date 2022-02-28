@@ -1,5 +1,6 @@
 import { createBlogCard } from '../blogCard.js'
 import { withDesign } from 'storybook-addon-designs'
+import imageSource from '/assets/wallpapersden.png'
 
 export default {
   title: 'Komponenter/Blog-card',
@@ -16,9 +17,13 @@ export default {
   argTypes: {},
 }
 
+const image = {
+  src: imageSource,
+  alt: 'Sunset in the woods showing a river in the foreground and mountains in the background',
+}
+
 const Template = (args) => {
-  return createBlogCard(args)
+  return createBlogCard({ image, ...args })
 }
 
 export const Default = Template.bind({})
-Default.args = {}
