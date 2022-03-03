@@ -26,6 +26,9 @@ $banner-icon-width: utils.pxToRem(54px);
       & .#{core-icon-link.$classname} {
         @include card.icon-link-hover();
       }
+      & .#{$classname}__banner .#{$classname}__image img {
+        opacity: 100%;
+      }
     }
 
     &:active {
@@ -46,6 +49,9 @@ $banner-icon-width: utils.pxToRem(54px);
   // Elements
   &__banner &__image img {
     width: 100%;
+
+    opacity: 80%;
+    transition: $duration-normal all;
   }
 
   &__container {
