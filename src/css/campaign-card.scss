@@ -75,13 +75,8 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__paragraph {
     @include card.paragraph();
+    @include card.line-clamp($max-lines: 3);
     margin: $spacing-base-4 0;
-
-    // Set max number of lines
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
   }
 
   & .#{core-icon-link.$classname} {
