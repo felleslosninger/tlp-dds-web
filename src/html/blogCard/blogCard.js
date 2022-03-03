@@ -11,7 +11,7 @@ const createBlogCard = ({
   // Element content
   const titleText = 'Tittel'
   const dateText = '16 sep. 2021'
-  const teaserText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  const paragraphText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
   Donec sit amet mi a orci elementum porttitor. Etiam non lacus egestas, finibus urna non, vestibulum metus. 
   Pellentesque et justo nec mi finibus bibendum. Pellentesque eget lobortis est, in rutrum diam. 
   Donec id libero at dolor aliquet vehicula. Etiam hendrerit, sapien ut vehicula semper, 
@@ -47,7 +47,7 @@ const createBlogCard = ({
             ${dateText}
           </div>
           <p class="${classPrefix}__paragraph">
-            ${teaserText}
+            ${paragraphText}
           </p>
           ${iconLink}
         </div>
