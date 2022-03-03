@@ -6,14 +6,16 @@ const createNewsCard = ({}) => {
   // Element content
   const titleText = 'Tittel'
   const dateText = '16 sep. 2021'
-  const teaserText = `Digitaliseringsdirektoratet har lansert første 
-  versjon av Nasjonal verktøykasse for deling av data.
-  Verktøykassen skal være til hjelp for de som skal dele og bruke data, 
-  enten det er mellom offentlige virksomheter, fra offentlig...`
+  const teaserText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Donec sit amet mi a orci elementum porttitor. Etiam non lacus egestas, finibus urna non, vestibulum metus. 
+  Pellentesque et justo nec mi finibus bibendum. Pellentesque eget lobortis est, in rutrum diam. 
+  Donec id libero at dolor aliquet vehicula. Etiam hendrerit, sapien ut vehicula semper, 
+  turpis odio elementum orci, in luctus risus elit et lectus. Morbi vitae mattis urna. 
+  `
   const linkText = 'Intern lenke'
 
   // Icon link component markup from dds core components
-  const iconLink = createIconLinkSpan(titleText)
+  const iconLink = createIconLinkSpan(linkText)
 
   return String.raw`
     <article class="${classPrefix}">
