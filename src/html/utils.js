@@ -1,6 +1,5 @@
 import prettier from 'prettier/standalone.js'
 import parserHtml from 'prettier/parser-html.js'
-import arrowForwardIcon from '@digdir/ds-icons/svg/arrow_forward/outline.svg'
 
 /**
  * Sanitizes text for use in HTML (allowlisting)
@@ -31,8 +30,11 @@ export const createIconLinkSpan = (label = 'Click me') => {
 
   return String.raw`
     <span class="dds-icon-link dds-icon-link--icon-right">
-      ${label}
-      ${arrowForwardIcon}
+      ${label}<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 16 16">
+        <path
+          d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8l-8-8z"
+        ></path>
+      </svg>
     </span>
     `
 }

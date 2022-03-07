@@ -27,3 +27,8 @@ const Template = (args) => {
 }
 
 export const Default = Template.bind({})
+
+export const TwoColumns = Template.bind({})
+TwoColumns.args = {
+  variant: 'two-columns',
+}

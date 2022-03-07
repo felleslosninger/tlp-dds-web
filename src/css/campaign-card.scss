@@ -25,6 +25,9 @@ $banner-icon-width: utils.pxToRem(54px);
       & .#{core-icon-link.$classname} {
         @include card.icon-link-hover();
       }
+      & .#{$classname}__banner .#{$classname}__image img {
+        opacity: 100%;
+      }
     }
 
     &:active {
@@ -44,16 +47,25 @@ $banner-icon-width: utils.pxToRem(54px);
 
   // Elements
   &__banner &__image img {
+    display: block;
     width: 100%;
+    padding: 0;
+    margin: 0;
+
+    opacity: 80%;
+    transition: $duration-normal all;
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: $padding-default;
   }
 
   &__title {
     @include card.title();
-    padding-bottom: $spacing-base-2;
+    margin-bottom: $spacing-base-2;
   }
 
   &__date {
@@ -63,6 +75,26 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__paragraph {
     @include card.paragraph();
-    padding: $spacing-base-4 0;
+    @include card.line-clamp($max-lines: 3);
+    margin: $spacing-base-4 0;
+  }
+
+  & .#{core-icon-link.$classname} {
+    width: fit-content;
+  }
+
+  // Modifiers
+  &--two-columns {
+    @media (min-width: $breakpoint-large) {
+      & .#{$classname}__link {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      & .#{$classname}__container {
+        padding: $spacing-base-10;
+      }
+    }
   }
 }

@@ -39,7 +39,14 @@
   margin: 0;
 }
 
+@mixin line-clamp($max-lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $max-lines;
+  overflow: hidden;
+}
+
 @mixin icon-link-hover {
-  border-color: $color-interface-interaction;
-  border-width: $border-width-default;
+  text-decoration-thickness: $border-width-default;
+  text-decoration-color: $color-interface-interaction;
 }

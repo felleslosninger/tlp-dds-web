@@ -42,6 +42,7 @@ $max-width: core-utils.$component-max-width;
 
   &__paragraph {
     @include card.paragraph();
-    padding: $spacing-base-4 0;
+    @include card.line-clamp($max-lines: 3);
+    margin: $spacing-base-4 0;
   }
 }
