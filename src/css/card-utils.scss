@@ -47,6 +47,6 @@
 }
 
 @mixin icon-link-hover {
-  border-color: $color-interface-interaction;
-  border-width: $border-width-default;
+  text-decoration-thickness: $border-width-default;
+  text-decoration-color: $color-interface-interaction;
 }
