@@ -49,17 +49,17 @@ $banner-icon-width: utils.pxToRem(54px);
   &__banner &__image img {
     display: block;
     width: 100%;
-    min-height: 293px;
     padding: 0;
     margin: 0;
-    object-fit: cover;
-    overflow: hidden;
 
     opacity: 80%;
     transition: $duration-normal all;
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: $padding-default;
   }
 
@@ -93,7 +93,7 @@ $banner-icon-width: utils.pxToRem(54px);
       }
 
       & .#{$classname}__container {
-        padding: $spacing-base-14 $spacing-base-10;
+        padding: $spacing-base-10;
       }
     }
   }
