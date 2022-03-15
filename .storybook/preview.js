@@ -25,7 +25,15 @@ export const parameters = {
       order: [
         'Introduksjon',
         'Komponenter',
-        ['Link-box', 'Report-card', 'News-card', 'Course-card'],
+        [
+          'Link-box',
+          'Report-card',
+          'News-card',
+          'Course-card',
+          'Blog-card',
+          'Campaign-card',
+          'Brand-banner',
+        ],
       ],
     },
   },
