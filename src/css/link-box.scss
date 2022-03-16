@@ -8,15 +8,11 @@ $min-width: utils.pxToRem(416px);
 $horizontal-padding: $spacing-base-8;
 
 .#{$classname} {
+  display: contents;
   // Common properties
   & a {
-    min-width: $min-width;
+    min-width: Min($min-width, 100%);
     max-width: core-utils.$component-max-width;
-
-    // Breakpoints
-    @media (max-width: $breakpoint-medium) {
-      min-width: Min(90vw, $min-width);
-    }
   }
 
   // Icon variant (based on core component)
