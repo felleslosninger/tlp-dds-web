@@ -3,6 +3,7 @@
 @use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use 'utils.scss' as utils;
+@use 'card-utils.scss' as card;
 
 $classname: '#{utils.$prefix}-course-card';
 $padding-default: utils.$padding-default;
@@ -17,7 +18,7 @@ $icon-size: $spacing-base-5;
     box-sizing: border-box;
     position: relative;
 
-    min-width: $min-width;
+    min-width: Min($min-width, 100%);
     max-width: $max-width;
     height: 100%;
 
@@ -42,29 +43,18 @@ $icon-size: $spacing-base-5;
         background-color: $color-brand-second-600;
       }
     }
-
-    // Breakpoints
-    @media (max-width: $min-width) {
-      min-width: 100vw;
-    }
-    @media (max-width: $breakpoint-small) {
-      .#{$classname}__container {
-        padding: $padding-mobile;
-      }
-      .#{$classname}__banner {
-        padding: $padding-mobile $padding-mobile;
-      }
-    }
   }
 
   // Elements
   &__container {
     padding: $padding-default;
+    @include card.padding-mobile($padding-mobile);
   }
   &__banner {
     @include core-text.text-body-400();
     background-color: $color-brand-second-300;
     padding: $padding-mobile $padding-default;
+    @include card.padding-mobile($padding-mobile);
 
     transition: all $duration-normal;
   }
