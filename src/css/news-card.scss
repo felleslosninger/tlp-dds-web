@@ -14,7 +14,7 @@ $max-width: core-utils.$component-max-width;
 .#{$classname} {
   &__link {
     @include card.container-link();
-    min-width: $min-width;
+    min-width: Min($min-width, 100%);
     max-width: $max-width;
     padding: $padding-default;
 
@@ -31,8 +31,7 @@ $max-width: core-utils.$component-max-width;
       background-color: $color-interface-interaction-light;
     }
 
-    // Media queries
-    @include card.media-queries($min-width, $padding-mobile);
+    @include card.padding-mobile($padding-mobile);
   }
 
   // Elements
