@@ -17,16 +17,14 @@ $padding-mobile: utils.$padding-mobile;
   place-content: center;
   box-sizing: border-box;
 
-  width: 100vw;
+  width: 100%;
   min-height: $min-height;
   padding: $padding-default;
 
   background-color: $color-brand-first-200;
 
   // Media queries
-  @media (max-width: $breakpoint-small) {
-    padding: $padding-mobile;
-  }
+  @include card.padding-mobile($padding-mobile);
   @media (max-width: $breakpoint-large) {
     .#{$classname}__container {
       grid-auto-flow: row;
