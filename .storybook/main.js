@@ -20,9 +20,16 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     // Resolve raw import of SVG files as source code
     config.module.rules.push({
-      test: /\.svg/,
+      test: /\.svg$/,
       type: 'asset/source',
     })
+
+    // Resolve import of SVG files as path for use in image source <img> with alternative .img.svg file-extension
+    config.module.rules.push({
+      test: /\.img.svg$/,
+      type: 'asset/resource',
+    })
+
     return config
   },
 }
