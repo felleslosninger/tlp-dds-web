@@ -48,13 +48,17 @@ $icon-size: $spacing-base-5;
   // Elements
   &__container {
     padding: $padding-default;
-    @include card.padding-mobile($padding-mobile);
+    @include utils.mobile() {
+      padding: $padding-mobile;
+    }
   }
   &__banner {
     @include core-text.text-body-400();
     background-color: $color-brand-second-300;
     padding: $padding-mobile $padding-default;
-    @include card.padding-mobile($padding-mobile);
+    @include utils.mobile() {
+      padding: $padding-mobile;
+    }
 
     transition: all $duration-normal;
   }

@@ -24,7 +24,9 @@ $padding-mobile: utils.$padding-mobile;
   background-color: $color-brand-first-200;
 
   // Media queries
-  @include card.padding-mobile($padding-mobile);
+  @include utils.mobile() {
+    padding: $padding-mobile;
+  }
   @media (max-width: $breakpoint-large) {
     .#{$classname}__container {
       grid-auto-flow: row;

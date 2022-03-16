@@ -52,7 +52,9 @@ $banner-icon-width: utils.pxToRem(54px);
     flex-direction: column;
     justify-content: center;
     padding: $padding-default;
-    @include card.padding-mobile($padding-mobile);
+    @include utils.mobile() {
+      padding: $padding-mobile;
+    }
   }
 
   &__title {

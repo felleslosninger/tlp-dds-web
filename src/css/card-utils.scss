@@ -17,12 +17,6 @@
   box-shadow: inset 0 0 0 4px $color;
 }
 
-@mixin padding-mobile($padding) {
-  @media (max-width: $breakpoint-small) {
-    padding: $padding;
-  }
-}
-
 // Element mixins
 @mixin title {
   @include core-text.text-heading-500();
