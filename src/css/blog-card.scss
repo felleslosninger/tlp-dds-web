@@ -16,7 +16,7 @@ $banner-icon-width: utils.pxToRem(54px);
 .#{$classname} {
   &__link {
     @include card.container-link();
-    min-width: $min-width;
+    min-width: Min($min-width, 100%);
     max-width: $max-width;
 
     &:hover {
@@ -34,16 +34,6 @@ $banner-icon-width: utils.pxToRem(54px);
     &:active {
       background-color: $color-interface-interaction-light;
     }
-
-    // Media queries
-    @media (max-width: $min-width) {
-      min-width: 100vw;
-    }
-    @media (max-width: $breakpoint-small) {
-      .#{$classname}__container {
-        padding: $padding-mobile;
-      }
-    }
   }
 
   // Elements
@@ -57,6 +47,7 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__container {
     padding: $padding-default;
+    @include card.padding-mobile($padding-mobile);
   }
 
   &__title {
