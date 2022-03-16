@@ -11,10 +11,9 @@ const createReportCard = ({}) => {
   Donec id libero at dolor aliquet vehicula. Etiam hendrerit, sapien ut vehicula semper, 
   turpis odio elementum orci, in luctus risus elit et lectus. Morbi vitae mattis urna. 
   `
-  const linkText = 'Intern lenke'
 
   // Icon link component markup from dds core components
-  const iconLink = createIconLinkSpan(linkText)
+  const iconLink = createIconLinkSpan(titleText)
 
   return String.raw`
     <article class="${classPrefix}">
@@ -23,12 +22,11 @@ const createReportCard = ({}) => {
           rel="noreferrer noopener"
         > 
         <h3 class="${classPrefix}__title">
-          ${titleText}
+          ${iconLink}
         </h3>
         <p class="${classPrefix}__paragraph">
           ${paragraphText}
         </p>
-        ${iconLink}
       </a>
     </article>
     `

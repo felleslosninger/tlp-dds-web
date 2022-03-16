@@ -1,6 +1,7 @@
 import bookmarkIcon from '@digdir/ds-icons/svg/bookmark_border/outline.svg'
 import placeIcon from '@digdir/ds-icons/svg/place/outline.svg'
 import watchIcon from '@digdir/ds-icons/svg/watch_later/outline.svg'
+import { createIconLinkSpan } from '../utils.js'
 
 const createCourseCard = ({}) => {
   const classPrefix = 'ddsweb-course-card'
@@ -11,6 +12,9 @@ const createCourseCard = ({}) => {
   const timeText = '09:00-12:00'
   const placeText = 'Sted'
   const taxonomyText = 'Tema'
+
+  // Elements
+  const iconLink = createIconLinkSpan(titleText)
 
   return String.raw`
     <article class="${classPrefix}">
@@ -24,7 +28,7 @@ const createCourseCard = ({}) => {
         </div>
         <div class="${classPrefix}__container">
           <h3 class="${classPrefix}__title">
-            ${titleText}
+            ${iconLink}
           </h3>
 
           <div class="${classPrefix}__list">

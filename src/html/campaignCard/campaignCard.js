@@ -22,10 +22,9 @@ const createCampaignCard = ({
   Donec id libero at dolor aliquet vehicula. Etiam hendrerit, sapien ut vehicula semper, 
   turpis odio elementum orci, in luctus risus elit et lectus. Morbi vitae mattis urna. 
   `
-  const linkText = 'Intern lenke'
 
   // Elements
-  const iconLink = createIconLinkSpan(linkText)
+  const iconLink = createIconLinkSpan(titleText)
   const imageElement = String.raw`
     <img 
       src="${image.src}"
@@ -46,7 +45,7 @@ const createCampaignCard = ({
         </div>
         <div class="${classPrefix}__container">
           <h3 class="${classPrefix}__title">
-            ${titleText}
+            ${iconLink}
           </h3>
           <div class="${classPrefix}__date">
             ${dateText}
@@ -54,7 +53,6 @@ const createCampaignCard = ({
           <p class="${classPrefix}__paragraph">
             ${paragraphText}
           </p>
-          ${iconLink}
         </div>
       </a>
     </article>

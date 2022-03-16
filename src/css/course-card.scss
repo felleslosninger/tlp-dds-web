@@ -33,6 +33,10 @@ $icon-size: $spacing-base-5;
       .#{$classname}__banner {
         background-color: $color-brand-second-500;
       }
+
+      & .#{core-icon-link.$classname} {
+        @include card.icon-link-hover();
+      }
     }
 
     &:active {
