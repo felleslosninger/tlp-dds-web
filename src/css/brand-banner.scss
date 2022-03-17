@@ -23,17 +23,6 @@ $padding-mobile: utils.$padding-mobile;
 
   background-color: $color-brand-first-200;
 
-  // Media queries
-  @include utils.mobile() {
-    padding: $padding-mobile;
-  }
-  @media (max-width: $breakpoint-large) {
-    .#{$classname}__container {
-      grid-auto-flow: row;
-      max-width: utils.pxToRem(720px);
-    }
-  }
-
   // Elements
   &__container {
     display: grid;
@@ -67,6 +56,34 @@ $padding-mobile: utils.$padding-mobile;
       justify-self: center;
       width: 100%;
       max-height: $image-max-height;
+    }
+  }
+
+  // Media queries
+  @include utils.mobile() {
+    padding: $padding-mobile;
+
+    &__text-container {
+      margin-top: $padding-mobile;
+    }
+
+    &__title {
+      @include core-text.text-heading-600();
+      margin: 0 0 $padding-mobile 0;
+    }
+
+    &__paragraph {
+      @include core-text.text-body-300();
+    }
+
+    &__image {
+      padding: $padding-mobile;
+    }
+  }
+  @media (max-width: $breakpoint-large) {
+    .#{$classname}__container {
+      grid-auto-flow: row;
+      max-width: utils.pxToRem(720px);
     }
   }
 }
