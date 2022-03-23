@@ -1,4 +1,4 @@
-@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 
@@ -19,13 +19,13 @@
 
 // Element mixins
 @mixin title {
-  @include core-text.text-heading-500();
+  @include typography.text-heading-500();
   color: tokens.$color-text-background-light;
   margin: 0;
 }
 
 @mixin paragraph {
-  @include core-text.text-body-300();
+  @include typography.text-body-300();
   color: tokens.$color-text-background-light;
   margin: 0;
 }

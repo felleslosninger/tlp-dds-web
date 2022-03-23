@@ -1,6 +1,6 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
-@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 @use 'card-utils.scss' as card;
@@ -56,7 +56,7 @@ $max-width: core-utils.$component-max-width;
   }
 
   &__date {
-    @include core-text.text-body-200();
+    @include typography.text-body-200();
     color: tokens.$color-neutral-grey-700;
   }
 

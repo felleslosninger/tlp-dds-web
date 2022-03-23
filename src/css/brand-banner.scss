@@ -1,5 +1,5 @@
 @use '@digdir/ds-core-css/build/src/breadcrumbs.scss' as core-breadcrumbs;
-@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 @use 'card-utils.scss' as card;
@@ -37,12 +37,12 @@ $padding-mobile: utils.$padding-mobile;
   }
 
   &__title {
-    @include core-text.text-heading-800();
+    @include typography.text-heading-800();
     margin: 0 0 tokens.$spacing-base-10 0;
   }
 
   &__paragraph {
-    @include core-text.text-body-400();
+    @include typography.text-body-400();
     margin: 0;
   }
 
@@ -68,12 +68,12 @@ $padding-mobile: utils.$padding-mobile;
     }
 
     &__title {
-      @include core-text.text-heading-600();
+      @include typography.text-heading-600();
       margin: 0 0 $padding-mobile 0;
     }
 
     &__paragraph {
-      @include core-text.text-body-300();
+      @include typography.text-body-300();
     }
 
     &__image {

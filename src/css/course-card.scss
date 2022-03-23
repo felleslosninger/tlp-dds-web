@@ -1,6 +1,6 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
-@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 @use 'card-utils.scss' as card;
@@ -57,7 +57,7 @@ $icon-size: tokens.$spacing-base-5;
     }
   }
   &__banner {
-    @include core-text.text-body-400();
+    @include typography.text-body-400();
     background-color: tokens.$color-brand-second-300;
     padding: $padding-mobile $padding-default;
     @include utils.mobile() {
@@ -67,7 +67,7 @@ $icon-size: tokens.$spacing-base-5;
     transition: all tokens.$duration-normal;
   }
   &__title {
-    @include core-text.text-heading-500();
+    @include typography.text-heading-500();
     color: tokens.$color-neutral-grey-800;
     margin: 0 0 $padding-mobile 0;
   }
@@ -86,7 +86,7 @@ $icon-size: tokens.$spacing-base-5;
     fill: tokens.$color-neutral-grey-700;
   }
   &__item &__value {
-    @include core-text.text-body-300();
+    @include typography.text-body-300();
     color: tokens.$color-neutral-grey-700;
 
     margin-left: tokens.$spacing-base-2;
