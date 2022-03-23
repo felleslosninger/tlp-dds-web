@@ -1,8 +1,8 @@
 @use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 
-@mixin container-link($background-color: $color-neutral-white) {
+@mixin container-link($background-color: tokens.$color-neutral-white) {
   display: block;
   box-sizing: border-box;
   position: relative;
@@ -10,23 +10,23 @@
 
   text-decoration: none;
   background-color: $background-color;
-  transition: $duration-normal all;
+  transition: tokens.$duration-normal all;
 }
 
-@mixin border-box-shadow($color: $color-interface-interaction) {
+@mixin border-box-shadow($color: tokens.$color-interface-interaction) {
   box-shadow: inset 0 0 0 4px $color;
 }
 
 // Element mixins
 @mixin title {
   @include core-text.text-heading-500();
-  color: $color-text-background-light;
+  color: tokens.$color-text-background-light;
   margin: 0;
 }
 
 @mixin paragraph {
   @include core-text.text-body-300();
-  color: $color-text-background-light;
+  color: tokens.$color-text-background-light;
   margin: 0;
 }
 
@@ -38,6 +38,6 @@
 }
 
 @mixin icon-link-hover {
-  text-decoration-thickness: $border-width-default;
-  text-decoration-color: $color-neutral-grey-600;
+  text-decoration-thickness: tokens.$border-width-default;
+  text-decoration-color: tokens.$color-neutral-grey-600;
 }
