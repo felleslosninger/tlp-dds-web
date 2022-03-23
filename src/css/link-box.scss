@@ -17,7 +17,7 @@ $horizontal-padding: tokens.$spacing-base-8;
   }
 
   // Icon variant (based on core component)
-  & .dds-panel-link {
+  & .#{core-link.$classname} {
     min-height: utils.pxToRem(72px);
 
     background-color: tokens.$color-brand-second-200;
