@@ -1,7 +1,7 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 @use 'card-utils.scss' as card;
 
@@ -19,7 +19,7 @@ $max-width: core-utils.$component-max-width;
     padding: $padding-default;
 
     &:hover {
-      background-color: $color-neutral-grey-100;
+      background-color: tokens.$color-neutral-grey-100;
       @include card.border-box-shadow();
 
       & .#{core-icon-link.$classname} {
@@ -28,7 +28,7 @@ $max-width: core-utils.$component-max-width;
     }
 
     &:active {
-      background-color: $color-interface-interaction-light;
+      background-color: tokens.$color-interface-interaction-light;
     }
 
     @include utils.mobile() {
@@ -44,6 +44,6 @@ $max-width: core-utils.$component-max-width;
   &__paragraph {
     @include card.paragraph();
     @include card.line-clamp($max-lines: 3);
-    margin: $spacing-base-4 0;
+    margin: tokens.$spacing-base-4 0;
   }
 }
