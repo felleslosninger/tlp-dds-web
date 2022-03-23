@@ -62,16 +62,15 @@
     "build": "yarn clean && rollup -c",
     "clean": "rm -rf ./build/",
     "lint": "stylelint '**/*.scss'",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "prepare": "husky install"
   },
   "prettier": {
     "trailingComma": "all",
     "tabWidth": 2,
     "semi": false,
-    "singleQuote": true,
-    "cssEnable": [
-      "scss"
-    ]
+    "singleQuote": true
   },
   "stylelint": {
     "ignoreFiles": [

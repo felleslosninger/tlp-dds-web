@@ -1,5 +1,5 @@
-# Build (source files and Storybook docs) and lint
-name: Build and lint
+# Build (source files and Storybook docs), lint and check format
+name: Check format, lint and build
 on:
   pull_request:
     branches:
@@ -22,11 +22,14 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
+      - name: Check formatting ✨
+        run: yarn format:check
+
+      - name: Lint ✨
+        run: yarn lint
+
       - name: Build source files 🔧
         run: yarn build
 
       - name: Build docs 🔧
         run: yarn build:docs
-
-      - name: Lint ✨
-        run: yarn lint
