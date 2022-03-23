@@ -1,7 +1,7 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 @use 'card-utils.scss' as card;
 
@@ -10,7 +10,7 @@ $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(383px);
 $max-width: core-utils.$component-max-width;
-$icon-size: $spacing-base-5;
+$icon-size: tokens.$spacing-base-5;
 
 .#{$classname} {
   &__link {
@@ -23,15 +23,15 @@ $icon-size: $spacing-base-5;
     height: 100%;
 
     text-decoration: none;
-    background-color: $color-neutral-white;
-    color: $color-text-background-light;
-    transition: all $duration-normal;
+    background-color: tokens.$color-neutral-white;
+    color: tokens.$color-text-background-light;
+    transition: all tokens.$duration-normal;
 
     &:hover {
-      box-shadow: inset 0 0 0 4px $color-brand-second-500;
+      box-shadow: inset 0 0 0 4px tokens.$color-brand-second-500;
 
       .#{$classname}__banner {
-        background-color: $color-brand-second-500;
+        background-color: tokens.$color-brand-second-500;
       }
 
       & .#{core-icon-link.$classname} {
@@ -40,11 +40,11 @@ $icon-size: $spacing-base-5;
     }
 
     &:active {
-      box-shadow: inset 0 0 0 4px $color-brand-second-600;
-      background-color: $color-brand-second-200;
+      box-shadow: inset 0 0 0 4px tokens.$color-brand-second-600;
+      background-color: tokens.$color-brand-second-200;
 
       .#{$classname}__banner {
-        background-color: $color-brand-second-600;
+        background-color: tokens.$color-brand-second-600;
       }
     }
   }
@@ -58,23 +58,23 @@ $icon-size: $spacing-base-5;
   }
   &__banner {
     @include core-text.text-body-400();
-    background-color: $color-brand-second-300;
+    background-color: tokens.$color-brand-second-300;
     padding: $padding-mobile $padding-default;
     @include utils.mobile() {
       padding: $padding-mobile;
     }
 
-    transition: all $duration-normal;
+    transition: all tokens.$duration-normal;
   }
   &__title {
     @include core-text.text-heading-500();
-    color: $color-neutral-grey-800;
+    color: tokens.$color-neutral-grey-800;
     margin: 0 0 $padding-mobile 0;
   }
   &__list {
     display: grid;
     grid-auto-flow: row;
-    row-gap: $spacing-base-4;
+    row-gap: tokens.$spacing-base-4;
   }
   &__item {
     display: flex;
@@ -83,12 +83,12 @@ $icon-size: $spacing-base-5;
   &__item svg {
     width: $icon-size;
     height: $icon-size;
-    fill: $color-neutral-grey-700;
+    fill: tokens.$color-neutral-grey-700;
   }
   &__item &__value {
     @include core-text.text-body-300();
-    color: $color-neutral-grey-700;
+    color: tokens.$color-neutral-grey-700;
 
-    margin-left: $spacing-base-2;
+    margin-left: tokens.$spacing-base-2;
   }
 }
