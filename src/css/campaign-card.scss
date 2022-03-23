@@ -1,14 +1,14 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use 'utils.scss' as utils;
 @use 'card-utils.scss' as card;
 
 $classname: '#{utils.$prefix}-campaign-card';
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
-$padding-two-columns: $spacing-base-10;
+$padding-two-columns: tokens.$spacing-base-10;
 $min-width: utils.pxToRem(369px);
 $max-width: core-utils.$component-max-width;
 $banner-icon-container-width: utils.pxToRem(64px);
@@ -16,7 +16,9 @@ $banner-icon-width: utils.pxToRem(54px);
 
 .#{$classname} {
   &__link {
-    @include card.container-link($background-color: $color-brand-third-200);
+    @include card.container-link(
+      $background-color: tokens.$color-brand-third-200
+    );
     min-width: Min($min-width, 100%);
     max-width: $max-width;
 
@@ -32,7 +34,7 @@ $banner-icon-width: utils.pxToRem(54px);
     }
 
     &:active {
-      background-color: $color-brand-third-300;
+      background-color: tokens.$color-brand-third-300;
     }
   }
 
@@ -44,7 +46,7 @@ $banner-icon-width: utils.pxToRem(54px);
     margin: 0;
 
     opacity: 80%;
-    transition: $duration-normal all;
+    transition: tokens.$duration-normal all;
   }
 
   &__container {
@@ -59,18 +61,18 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__title {
     @include card.title();
-    margin-bottom: $spacing-base-2;
+    margin-bottom: tokens.$spacing-base-2;
   }
 
   &__date {
     @include core-text.text-body-200();
-    color: $color-neutral-grey-700;
+    color: tokens.$color-neutral-grey-700;
   }
 
   &__paragraph {
     @include card.paragraph();
     @include card.line-clamp($max-lines: 3);
-    margin: $spacing-base-4 0;
+    margin: tokens.$spacing-base-4 0;
   }
 
   & .#{core-icon-link.$classname} {
@@ -79,7 +81,7 @@ $banner-icon-width: utils.pxToRem(54px);
 
   // Modifiers
   &--two-columns {
-    @media (min-width: $breakpoint-large) {
+    @media (min-width: tokens.$breakpoint-large) {
       & .#{$classname}__link {
         max-width: 100%;
         display: grid;
