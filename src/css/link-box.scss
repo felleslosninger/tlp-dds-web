@@ -5,6 +5,7 @@
 
 $classname: '#{utils.$prefix}-link-box';
 $min-width: utils.pxToRem(416px);
+$max-width: core-utils.$component-max-width;
 $horizontal-padding: tokens.$spacing-base-8;
 
 .#{$classname} {
@@ -12,7 +13,7 @@ $horizontal-padding: tokens.$spacing-base-8;
   // Common properties
   & a {
     min-width: Min($min-width, 100%);
-    max-width: core-utils.$component-max-width;
+    max-width: $max-width;
   }
 
   // Icon variant (based on core component)
