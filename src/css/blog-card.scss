@@ -10,8 +10,6 @@ $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(369px);
 $max-width: core-utils.$component-max-width;
-$banner-icon-container-width: utils.pxToRem(64px);
-$banner-icon-width: utils.pxToRem(54px);
 
 .#{$classname} {
   &__link {
