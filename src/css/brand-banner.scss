@@ -1,8 +1,8 @@
 @use '@digdir/ds-core-css/build/src/breadcrumbs.scss' as core-breadcrumbs;
 @use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
-@use 'utils.scss' as utils;
-@use 'card-utils.scss' as card;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
 
 $classname: '#{utils.$prefix}-brand-banner';
 $min-height: utils.pxToRem(432px);
