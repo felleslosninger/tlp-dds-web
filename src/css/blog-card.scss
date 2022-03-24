@@ -1,17 +1,15 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
-@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
-@use 'utils.scss' as utils;
-@use 'card-utils.scss' as card;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
 
 $classname: '#{utils.$prefix}-blog-card';
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(369px);
 $max-width: core-utils.$component-max-width;
-$banner-icon-container-width: utils.pxToRem(64px);
-$banner-icon-width: utils.pxToRem(54px);
 
 .#{$classname} {
   &__link {
@@ -20,7 +18,7 @@ $banner-icon-width: utils.pxToRem(54px);
     max-width: $max-width;
 
     &:hover {
-      background-color: $color-neutral-grey-100;
+      background-color: tokens.$color-neutral-grey-100;
       @include card.border-box-shadow();
 
       & .#{core-icon-link.$classname} {
@@ -32,7 +30,7 @@ $banner-icon-width: utils.pxToRem(54px);
     }
 
     &:active {
-      background-color: $color-interface-interaction-light;
+      background-color: tokens.$color-interface-interaction-light;
     }
   }
 
@@ -42,7 +40,7 @@ $banner-icon-width: utils.pxToRem(54px);
     width: 100%;
 
     opacity: 80%;
-    transition: $duration-normal all;
+    transition: tokens.$duration-normal all;
   }
 
   &__container {
@@ -54,17 +52,17 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__title {
     @include card.title();
-    margin-bottom: $spacing-base-2;
+    margin-bottom: tokens.$spacing-base-2;
   }
 
   &__date {
-    @include core-text.text-body-200();
-    color: $color-neutral-grey-700;
+    @include typography.text-body-200();
+    color: tokens.$color-neutral-grey-700;
   }
 
   &__paragraph {
     @include card.paragraph();
     @include card.line-clamp($max-lines: 3);
-    margin: $spacing-base-4 0;
+    margin: tokens.$spacing-base-4 0;
   }
 }

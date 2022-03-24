@@ -1,8 +1,8 @@
 @use '@digdir/ds-core-css/build/src/breadcrumbs.scss' as core-breadcrumbs;
-@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
-@use 'utils.scss' as utils;
-@use 'card-utils.scss' as card;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
 
 $classname: '#{utils.$prefix}-brand-banner';
 $min-height: utils.pxToRem(432px);
@@ -21,7 +21,7 @@ $padding-mobile: utils.$padding-mobile;
   min-height: $min-height;
   padding: $padding-default;
 
-  background-color: $color-brand-first-200;
+  background-color: tokens.$color-brand-first-200;
 
   // Elements
   &__container {
@@ -32,17 +32,17 @@ $padding-mobile: utils.$padding-mobile;
 
   &__text-container {
     box-sizing: border-box;
-    color: $color-text-background-light;
+    color: tokens.$color-text-background-light;
     margin-top: $padding-default;
   }
 
   &__title {
-    @include core-text.text-heading-800();
-    margin: 0 0 $spacing-base-10 0;
+    @include typography.text-heading-800();
+    margin: 0 0 tokens.$spacing-base-10 0;
   }
 
   &__paragraph {
-    @include core-text.text-body-400();
+    @include typography.text-body-400();
     margin: 0;
   }
 
@@ -68,19 +68,19 @@ $padding-mobile: utils.$padding-mobile;
     }
 
     &__title {
-      @include core-text.text-heading-600();
+      @include typography.text-heading-600();
       margin: 0 0 $padding-mobile 0;
     }
 
     &__paragraph {
-      @include core-text.text-body-300();
+      @include typography.text-body-300();
     }
 
     &__image {
       padding: $padding-mobile;
     }
   }
-  @media (max-width: $breakpoint-large) {
+  @media (max-width: tokens.$breakpoint-large) {
     .#{$classname}__container {
       grid-auto-flow: row;
       max-width: utils.pxToRem(720px);
