@@ -4,10 +4,13 @@
 @use './utils/utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-list';
+$color-text: tokens.$color-text-background-light;
 $color-link-secondary: tokens.$color-interface-interaction;
 $spacing-default: tokens.$spacing-base-4;
 
 .#{$classname} {
+  color: $color-text;
+
   // Elements
   &__title {
     margin: 0;
@@ -18,7 +21,7 @@ $spacing-default: tokens.$spacing-base-4;
       text-decoration: none;
       color: $color-link-secondary;
       &:hover {
-        color: tokens.$color-text-background-light;
+        color: $color-text;
       }
     }
   }
