@@ -38,3 +38,19 @@ export const createIconLinkSpan = (label = 'Click me') => {
     </span>
     `
 }
+
+export const createIconLink = (label = 'Click me') => {
+  label = sanitizeStrict(label)
+
+  return String.raw`
+    <a
+      class="dds-icon-link dds-icon-link--icon-left dds-icon-link--shortcut"
+      href="https://www.digdir.no/"
+      rel="noreferrer noopener"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="8.59 6 7.41 12">
+        <path d="M10 6L8.59 7.41L13.17 12l-4.58 4.59L10 18l6-6l-6-6z"></path>
+      </svg>${label}
+    </a>
+    `
+}

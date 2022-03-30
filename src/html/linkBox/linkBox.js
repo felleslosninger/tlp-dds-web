@@ -4,7 +4,7 @@ const createLinkBox = ({ icon = true }) => {
   const classPrefix = 'ddsweb-link-box'
 
   // Element content
-  const labelText = 'Panel link'
+  const labelText = 'Link box'
 
   // Elements
   const textBoxChildren = String.raw`
@@ -24,7 +24,7 @@ const createLinkBox = ({ icon = true }) => {
         target="_blank"
         rel="noreferrer noopener"
       >
-        <span class="dds-panel-link__label">Panel link</span>
+        <span class="dds-panel-link__label">${labelText}</span>
         ${chevronRightIcon}
     </a>
     `

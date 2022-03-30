@@ -1,28 +1,30 @@
 @use '@digdir/ds-core-css/build/src/panel-link.scss' as core-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
-@use '@digdir/ds-tokens/build/tokens.scss' as *;
-@use 'utils.scss' as utils;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-box';
 $min-width: utils.pxToRem(416px);
-$horizontal-padding: $spacing-base-8;
+$max-width: core-utils.$component-max-width;
+$horizontal-padding: tokens.$spacing-base-8;
 
 .#{$classname} {
   display: contents;
   // Common properties
   & a {
     min-width: Min($min-width, 100%);
-    max-width: core-utils.$component-max-width;
+    max-width: $max-width;
   }
 
   // Icon variant (based on core component)
-  & .dds-panel-link {
+  & .#{core-link.$classname} {
     min-height: utils.pxToRem(72px);
 
-    background-color: $color-brand-second-200;
+    background-color: tokens.$color-brand-second-200;
 
     border: none;
-    box-shadow: inset 0 0 0 $border-width-thin $color-neutral-grey-500;
+    box-shadow: inset 0 0 0 tokens.$border-width-thin
+      tokens.$color-neutral-grey-500;
 
     // Padding
     padding: 0 $horizontal-padding;
@@ -32,38 +34,39 @@ $horizontal-padding: $spacing-base-8;
 
     // States
     &:hover {
-      background-color: $color-brand-second-400;
+      background-color: tokens.$color-brand-second-400;
 
-      box-shadow: inset 0 0 0 $border-width-default $color-neutral-grey-800;
+      box-shadow: inset 0 0 0 tokens.$border-width-default
+        tokens.$color-neutral-grey-800;
 
       & svg:nth-last-of-type(1) {
-        fill: $color-neutral-grey-800;
-        right: calc($horizontal-padding - $spacing-base-1);
+        fill: tokens.$color-neutral-grey-800;
+        right: calc($horizontal-padding - tokens.$spacing-base-1);
       }
     }
 
     &:active {
-      background-color: $color-brand-second-600;
+      background-color: tokens.$color-brand-second-600;
     }
   }
 
   // Center text variant
   & &__link {
     min-height: utils.pxToRem(67px);
-    background-color: $color-brand-third-800;
-    color: $color-text-background-dark;
+    background-color: tokens.$color-brand-third-800;
+    color: tokens.$color-text-background-dark;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: $duration-normal all;
+    transition: tokens.$duration-normal all;
 
     &:hover {
-      background-color: $color-neutral-grey-800;
+      background-color: tokens.$color-neutral-grey-800;
     }
     &:active {
-      color: $color-text-background-light;
-      background-color: $color-brand-third-400;
+      color: tokens.$color-text-background-light;
+      background-color: tokens.$color-brand-third-400;
     }
   }
 }

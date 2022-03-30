@@ -1,0 +1,43 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-link;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+
+$classname: '#{utils.$prefix}-link-list';
+$color-text: tokens.$color-text-background-light;
+$color-link-secondary: tokens.$color-interface-interaction;
+$spacing-default: tokens.$spacing-base-4;
+
+.#{$classname} {
+  color: $color-text;
+
+  // Elements
+  &__title {
+    margin: 0;
+    margin-bottom: $spacing-default;
+    @include typography.text-heading-500();
+
+    & a {
+      text-decoration: none;
+      color: $color-link-secondary;
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-default;
+  }
+
+  // Modifiers
+  &--colored-links {
+    & .#{core-link.$classname} {
+      color: $color-link-secondary;
+      & svg {
+        fill: $color-link-secondary;
+      }
+    }
+  }
+}
