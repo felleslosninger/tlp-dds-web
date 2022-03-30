@@ -5,7 +5,6 @@ import '../src/css/index.scss'
 import './customStyling.scss'
 import '@digdir/ds-core-css/build/index.css'
 import '../src/js/index'
-import '../docs-main/stories/icons.scss'
 
 export const parameters = {
   docs: {
