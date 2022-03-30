@@ -1,5 +1,6 @@
 {
   "name": "@digdir/ds-web",
+  "version": "1.0.0",
   "private": true,
   "author": "Digdir design system team",
   "license": "BSD-3-Clause",
@@ -68,7 +69,8 @@
     "lint:scss": "stylelint \"**/*.scss\" --config='./stylelint.config.js'",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version"
   },
   "prettier": {
     "trailingComma": "all",
