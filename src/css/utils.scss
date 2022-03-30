@@ -22,3 +22,29 @@ $padding-mobile: tokens.$spacing-base-6;
     @content;
   }
 }
+
+@mixin large-mobile {
+  @media (max-width: tokens.$breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: tokens.$breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: tokens.$breakpoint-x-large) {
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (max-width: tokens.$breakpoint-2x-large) {
+    @content;
+  }
+}
+

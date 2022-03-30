@@ -1,0 +1,207 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use 'utils.scss' as utils;
+
+$classname: '#{utils.$prefix}-header';
+$menuClassname: '#{utils.$prefix}-header-menu';
+$megaMenuClassName: '#{utils.$prefix}-header-mega-menu';
+$container-max-width: utils.pxToRem(1260px);
+$headerHeight: 88px;
+
+.#{$classname} {
+  position: relative;
+
+  &__bar {
+    height: $headerHeight;
+    background-color: white;
+    border-bottom: 1px solid $color-neutral-grey-300;
+    z-index: 10;
+    position: relative;
+  }
+
+  &__middle {
+    margin-right: auto;
+    margin-left: $spacing-8;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    .dds-button {
+      font-size: 18px;
+    }
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $container-max-width;
+  }
+
+  &__logo {
+    height: 30px;
+  }
+
+  &__toggle {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-right: $spacing-4;
+
+    svg,span {
+      pointer-events: none;
+    }
+
+    svg {
+      margin-right: $spacing-1;
+      height: 28px;
+      width: 28px;
+    }
+
+    span {
+      @include core-text.text-body-400;
+    }
+
+  }
+
+  &__expanded {
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 89px;
+    overflow: hidden;
+    z-index: 10;
+    height: 0;
+  }
+
+  &__expanded-content {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    padding: 48px 0;
+    transition-duration: 0.4s;
+    transition-property: opacity, visibility;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__overlay {
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+
+  .dds-dropdown__active {
+    z-index: 10;
+
+    .#{$classname} {
+      &__expanded-content {
+        visibility: visible;
+      }
+    }
+  }
+
+}
+
+.#{$megaMenuClassName} {
+
+  li {
+    list-style: none;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 32px;
+    margin-bottom: -32px;
+  }
+
+  &__list-title {
+    margin-bottom: 8px;
+    display: block;
+    color: $color-interface-interaction;
+    @include core-text.text-interface-400;
+    text-decoration: none;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  &__nested-list {
+    padding: 0;
+  }
+
+  &__nested-item {
+    margin-bottom: 8px;
+
+    a {
+      color: $color-neutral-grey-800 !important;
+    }
+    svg {
+      fill: $color-neutral-grey-800 !important;
+    }
+  }
+
+}
+
+.#{$menuClassname} {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  &__toggle, &__link {
+    text-decoration: none;
+    color: $color-neutral-grey-800;
+    @include core-text.text-body-400;
+    background-color: transparent;
+    border: none;
+    padding: 12px 0;
+    margin-left: 24px;
+    margin-right: 8px;
+    font-family: inherit;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-interface-interaction;
+      text-shadow: 0.25px 0 0 $color-interface-interaction;
+
+      // $color-interface-interaction color with filter
+      &:after {
+        //filter: invert(18%) sepia(56%) saturate(4765%) hue-rotate(206deg) brightness(93%) contrast(104%)
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    &--active {
+      a {
+        border-bottom: 2px solid $color-interface-interaction;
+      }
+    }
+  }
+
+}

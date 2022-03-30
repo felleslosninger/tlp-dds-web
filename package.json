@@ -61,7 +61,7 @@
     "build:docs": "build-storybook -o ./docs",
     "build": "yarn clean && rollup -c",
     "clean": "rm -rf ./build/",
-    "lint": "stylelint '**/*.scss'",
+    "lint": "stylelint \"**/*.scss\"",
     "prepare": "husky install"
   },
   "prettier": {
