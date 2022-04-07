@@ -123,6 +123,8 @@ $horizontal-padding: tokens.$spacing-base-8;
         background-color: tokens.$color-neutral-grey-500;
       }
     }
+    // Mobile
+
     @include utils.mobile() {
       padding: tokens.$spacing-3;
     }
@@ -160,5 +162,4 @@ $horizontal-padding: tokens.$spacing-base-8;
     height: tokens.$spacing-base-5;
     width: tokens.$spacing-base-5;
   }
-  // Mobile styling
 }

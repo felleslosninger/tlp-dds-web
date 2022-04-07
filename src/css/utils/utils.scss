@@ -41,10 +41,8 @@ $padding-mobile: tokens.$spacing-base-6;
   }
 }
 
-
 @mixin desktop {
   @media (max-width: tokens.$breakpoint-2x-large) {
     @content;
   }
 }
-
