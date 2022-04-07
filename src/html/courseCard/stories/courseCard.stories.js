@@ -13,7 +13,12 @@ export default {
       default: 'grey-200',
     },
   },
-  argTypes: {},
+  argTypes: {
+    backgroundColor: {
+      control: { type: 'radio' },
+      options: ['red', 'yellow', 'blue'],
+    },
+  },
 }
 
 const Template = (args) => {

@@ -3,7 +3,7 @@ import placeIcon from '@digdir/ds-icons/svg/place/outline.svg'
 import watchIcon from '@digdir/ds-icons/svg/watch_later/outline.svg'
 import { createIconLinkSpan } from '../utils.js'
 
-const createCourseCard = ({}) => {
+const createCourseCard = ({ backgroundColor = true }) => {
   const classPrefix = 'ddsweb-course-card'
 
   // Element content
@@ -16,8 +16,20 @@ const createCourseCard = ({}) => {
   // Elements
   const iconLink = createIconLinkSpan(titleText)
 
+  const changeColor = () => {
+    switch (backgroundColor) {
+      case 'red':
+        return '--red'
+      case 'blue':
+        return '--blue'
+
+      default:
+        return ''
+    }
+  }
+
   return String.raw`
-    <article class="${classPrefix}">
+    <article class="${classPrefix}${changeColor()}">
       <a
         class="${classPrefix}__link"
         href="https://www.digdir.no/"
