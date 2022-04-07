@@ -9,11 +9,18 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/rrBqUrSQl6jdAJpjUzV3cN/?node-id=1025%3A4412',
     },
-    backgrounds: {
-      default: 'grey-200',
+  },
+  argTypes: {
+    backgroundColor: {
+      required: true,
+      control: { type: 'radio' },
+      options: ['red', 'yellow', 'blue', 'grey'],
+    },
+    iconBackground: {
+      control: { type: 'radio' },
+      options: ['red', 'yellow', 'blue'],
     },
   },
-  argTypes: {},
 }
 
 const Template = (args) => {
@@ -21,12 +28,68 @@ const Template = (args) => {
 }
 
 export const Default = Template.bind({})
-Default.args = {}
-
-export const CardWithBgIcon = Template.bind({})
 Default.args = {
-  iconBackground: true,
+  icon: true,
+  backgroundColor: 'red',
+  iconBackground: false,
+}
+Default.parameters = {
+  controls: { exclude: ['iconBackground'] },
+}
+
+export const RedWithBgIcon = Template.bind({})
+RedWithBgIcon.args = {
+  iconBackground: 'red',
+  backgroundColor: 'red',
+}
+RedWithBgIcon.parameters = {
+  controls: { exclude: ['iconBackground', 'icon', 'backgroundColor'] },
+}
+
+export const YellowWithBgIcon = Template.bind({})
+YellowWithBgIcon.args = {
+  iconBackground: 'yellow',
+  backgroundColor: 'yellow',
+}
+YellowWithBgIcon.parameters = {
+  controls: { exclude: ['iconBackground', 'icon', 'backgroundColor'] },
+}
+
+export const BlueWithBgIcon = Template.bind({})
+BlueWithBgIcon.args = {
+  iconBackground: 'blue',
+  backgroundColor: 'blue',
+}
+BlueWithBgIcon.parameters = {
+  controls: { exclude: ['iconBackground', 'icon', 'backgroundColor'] },
+}
+export const GreyWithBgIcon = Template.bind({})
+GreyWithBgIcon.args = {
+  iconBackground: 'grey',
+  backgroundColor: 'grey',
+}
+GreyWithBgIcon.parameters = {
+  controls: { exclude: ['iconBackground', 'icon', 'backgroundColor'] },
 }
 
 export const CardWithoutIcon = Template.bind({})
-Default.args = {}
+CardWithoutIcon.args = {
+  icon: false,
+  backgroundColor: 'red',
+}
+CardWithoutIcon.parameters = {
+  controls: { exclude: ['icon', 'iconBackground'] },
+}
+
+export const WhiteWithBgIcon = Template.bind({})
+WhiteWithBgIcon.args = {
+  icon: true,
+  backgroundColor: 'white',
+  iconBackground: 'red',
+}
+
+WhiteWithBgIcon.parameters = {
+  controls: {
+    exclude: ['icon', 'iconsBackground', 'backgroundColor'],
+  },
+}

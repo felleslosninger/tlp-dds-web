@@ -1,0 +1,139 @@
+@use '@digdir/ds-core-css/build/src/panel-link.scss' as core-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+
+$classname: '#{utils.$prefix}-navigation-card';
+$min-width: utils.pxToRem(416px);
+$max-width: core-utils.$component-max-width;
+$horizontal-padding: tokens.$spacing-base-8;
+
+.#{$classname} {
+  max-width: $max-width;
+  background-color: tokens.$color-brand-first-200;
+  &__with-background--red {
+    background-color: tokens.$color-brand-first-300;
+    border-radius: tokens.$border-radius-x-large;
+    padding: tokens.$spacing-base-2;
+    display: flex;
+  }
+  &__with-background--blue {
+    background-color: tokens.$color-brand-third-400;
+    border-radius: tokens.$border-radius-x-large;
+    padding: tokens.$spacing-base-2;
+    display: flex;
+  }
+  &__with-background--yellow {
+    background-color: tokens.$color-brand-second-400;
+    border-radius: tokens.$border-radius-x-large;
+    padding: tokens.$spacing-base-2;
+    display: flex;
+  }
+  &__with-background--grey {
+    background-color: tokens.$color-neutral-grey-300;
+    border-radius: tokens.$border-radius-x-large;
+    padding: tokens.$spacing-base-2;
+    display: flex;
+  }
+  &--red {
+    background-color: tokens.$color-brand-first-200;
+    & a:active {
+      background-color: tokens.$color-brand-first-300;
+    }
+  }
+
+  &--blue {
+    background-color: tokens.$color-brand-third-200;
+    & a:active {
+      background-color: tokens.$color-brand-third-300;
+    }
+  }
+  &--yellow {
+    background-color: tokens.$color-brand-second-200;
+    & a:active {
+      background-color: tokens.$color-brand-second-300;
+    }
+  }
+  &--white {
+    background-color: tokens.$color-neutral-white;
+  }
+  &--grey {
+    background-color: tokens.$color-neutral-grey-200;
+    & a:active {
+      background-color: tokens.$color-neutral-grey-300;
+    }
+  }
+
+  &__active--red {
+    & a:active {
+      background-color: tokens.$color-brand-first-200;
+      .#{$classname}__with-background--red {
+        background-color: tokens.$color-brand-first-600;
+      }
+    }
+  }
+  &__active--blue {
+    & a:active {
+      background-color: tokens.$color-brand-third-200;
+      .#{$classname}__with-background--blue {
+        background-color: tokens.$color-brand-third-600;
+      }
+    }
+  }
+  &__active--yellow {
+    & a:active {
+      background-color: tokens.$color-brand-second-200;
+      .#{$classname}__with-background--yellow {
+        background-color: tokens.$color-brand-second-600;
+      }
+    }
+  }
+  // Common properties
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    padding: $horizontal-padding;
+    //  states
+
+    &:hover {
+      outline: 2px solid tokens.$color-neutral-grey-900;
+    }
+
+    &:active {
+      background-color: tokens.$color-brand-first-300;
+      outline: 2px solid tokens.$color-neutral-grey-900;
+      .#{$classname}__with-background--red {
+        background-color: tokens.$color-brand-first-600;
+      }
+      .#{$classname}__with-background--yellow {
+        background-color: tokens.$color-brand-second-600;
+      }
+      .#{$classname}__with-background--blue {
+        background-color: tokens.$color-brand-third-600;
+      }
+      .#{$classname}__with-background--grey {
+        background-color: tokens.$color-neutral-grey-500;
+      }
+    }
+  }
+  &__title {
+    font-size: tokens.$font-size-600;
+  }
+  &__paragraph {
+    font-size: tokens.$font-size-400;
+  }
+
+  // Icon styling
+  &__icon svg:first-of-type {
+    height: tokens.$spacing-base-11 !important;
+    width: tokens.$spacing-base-11 !important;
+  }
+  & svg:nth-last-of-type(1) {
+    height: tokens.$spacing-base-5;
+    width: tokens.$spacing-base-5;
+  }
+}
