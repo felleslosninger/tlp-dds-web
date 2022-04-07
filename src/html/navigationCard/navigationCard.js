@@ -126,12 +126,16 @@ const createNavigationCard = ({
   return String.raw`
   <div  class='${classPrefix} ${changeBackground()} ${active()} '>
 	<a class='${classPrefix}__link' href=#>
-	<span class='${classPrefix}__icon ${
-    iconBackground ? changeIconBackground() : ''
-  }'>
-	${icon ? sun : ''} 
-	</span>
-	<h1 class='${classPrefix}__title'>
+	${
+    icon
+      ? `<span class='${classPrefix}__icon ${
+          iconBackground ? changeIconBackground() : ''
+        }'>${sun}</span>`
+      : ''
+  }
+	 
+	
+	<h1 class='${classPrefix}__title ${icon ? '' : `${classPrefix}--no-icon`}'>
 		${titleText}
 	</h1>
 	<p class='${classPrefix}__paragraph'>

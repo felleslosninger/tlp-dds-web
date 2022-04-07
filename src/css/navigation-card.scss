@@ -11,6 +11,10 @@ $horizontal-padding: tokens.$spacing-base-8;
 .#{$classname} {
   max-width: $max-width;
   background-color: tokens.$color-brand-first-200;
+  &--no-icon {
+    padding-top: tokens.$spacing-3;
+  }
+
   &__with-background--red {
     background-color: tokens.$color-brand-first-300;
     border-radius: tokens.$border-radius-x-large;
@@ -119,21 +123,42 @@ $horizontal-padding: tokens.$spacing-base-8;
         background-color: tokens.$color-neutral-grey-500;
       }
     }
+    @include utils.mobile() {
+      padding: tokens.$spacing-3;
+    }
   }
+
   &__title {
     font-size: tokens.$font-size-600;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
   }
   &__paragraph {
     font-size: tokens.$font-size-400;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
   }
 
   // Icon styling
-  &__icon svg:first-of-type {
-    height: tokens.$spacing-base-11 !important;
-    width: tokens.$spacing-base-11 !important;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: tokens.$spacing-base-19;
+    height: tokens.$spacing-base-19;
+    box-sizing: border-box;
+    margin-bottom: tokens.$spacing-3;
+    & svg {
+      height: tokens.$spacing-base-11;
+      width: tokens.$spacing-base-11;
+    }
   }
-  & svg:nth-last-of-type(1) {
+
+  &__icon & svg:nth-last-of-type(1) {
     height: tokens.$spacing-base-5;
     width: tokens.$spacing-base-5;
   }
+  // Mobile styling
 }
