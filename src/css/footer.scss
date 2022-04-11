@@ -5,9 +5,47 @@
 @use './utils/utils.scss' as utils;
 @use './utils/card.scss' as card;
 
-$classname: '#{utils.$prefix}-course-card';
+$classname: '#{utils.$prefix}-footer';
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(383px);
 $max-width: core-utils.$component-max-width;
 $icon-size: tokens.$spacing-base-5;
+
+.#{$classname} {
+  background-color: tokens.$color-neutral-grey-800;
+  padding: $padding-default;
+
+  &__title {
+    @include card.title();
+    color: tokens.$color-neutral-white;
+    margin-bottom: tokens.$spacing-2;
+  }
+  &__paragraph {
+    color: tokens.$color-neutral-grey-300;
+    font-weight: tokens.$font-weight-regular;
+  }
+
+  &__list {
+    color: tokens.$color-neutral-grey-300;
+    padding: 0;
+    &--link {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+    &--item {
+      list-style: none;
+      font-weight: tokens.$font-weight-regular;
+      & svg {
+        fill: tokens.$color-neutral-grey-300;
+      }
+    }
+  }
+  @include utils.mobile() {
+    padding: $padding-mobile;
+  }
+}
