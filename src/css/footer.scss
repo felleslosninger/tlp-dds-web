@@ -1,0 +1,13 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-course-card';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$min-width: utils.pxToRem(383px);
+$max-width: core-utils.$component-max-width;
+$icon-size: tokens.$spacing-base-5;
