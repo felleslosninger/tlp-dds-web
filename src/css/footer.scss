@@ -15,7 +15,30 @@ $icon-size: tokens.$spacing-base-5;
 .#{$classname} {
   background-color: tokens.$color-neutral-grey-800;
   padding: $padding-default;
-
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  &:before {
+    content: '';
+    height: 146px;
+    width: 146px;
+    position: absolute;
+    background-color: tokens.$color-brand-second-600;
+    bottom: -20%;
+    left: -5%;
+    transform: rotate(30deg);
+  }
+  &:after {
+    content: '';
+    height: 146px;
+    width: 146px;
+    position: absolute;
+    background-color: tokens.$color-brand-first-600;
+    bottom: -20%;
+    right: -3%;
+    transform: rotate(30deg);
+    border-radius: 50%;
+  }
   &__title {
     @include card.title();
     color: tokens.$color-neutral-white;
