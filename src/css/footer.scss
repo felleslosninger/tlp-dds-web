@@ -136,9 +136,6 @@ $icon-size: tokens.$spacing-base-5;
   }
 
   @include utils.mobile() {
-    //padding: $padding-mobile;
-    //padding-top: tokens.$spacing-6;
-    //padding-bottom: tokens.$spacing-6;
     &:before {
       content: '';
       height: 146px;
