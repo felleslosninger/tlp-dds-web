@@ -1,5 +1,5 @@
-import sun from '@digdir/ds-icons/svg/wb_sunny/outline.svg'
-import arrow from '@digdir/ds-icons/svg/arrow_forward/outline.svg'
+import SunIcon from '@digdir/ds-icons/svg/outline/Sun.svg'
+import ArrowRightIcon from '@digdir/ds-icons/svg/outline/ArrowRight.svg'
 
 const createNavigationCard = ({
   icon = true,
@@ -130,7 +130,7 @@ const createNavigationCard = ({
     icon
       ? `<span class='${classPrefix}__icon ${
           iconBackground ? changeIconBackground() : ''
-        }'>${sun}</span>`
+        }'>${SunIcon}</span>`
       : ''
   }
 	 
@@ -141,7 +141,7 @@ const createNavigationCard = ({
 	<p class='${classPrefix}__paragraph'>
 		${paragraphText} 
 	</p>
-	${arrow}  
+	${ArrowRightIcon}  
 </a>
 </div>
 	

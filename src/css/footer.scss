@@ -14,10 +14,27 @@ $icon-size: tokens.$spacing-base-5;
 
 .#{$classname} {
   background-color: tokens.$color-neutral-grey-800;
-  padding: $padding-default;
+  padding-top: tokens.$spacing-10;
+  padding-bottom: tokens.$spacing-10;
   position: relative;
   overflow: hidden;
   justify-content: center;
+  &__logo--icon {
+    svg {
+      height: 28px;
+
+      margin-top: tokens.$spacing-1;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 0;
+    margin-right: tokens.$spacing-2;
+  }
+  &__left {
+    margin-bottom: tokens.$spacing-3;
+  }
   &:before {
     content: '';
     height: 146px;
@@ -39,14 +56,37 @@ $icon-size: tokens.$spacing-base-5;
     transform: rotate(30deg);
     border-radius: 50%;
   }
+
+  &__icon {
+    background-color: tokens.$color-neutral-grey-900;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    flex-wrap: nowrap;
+    svg {
+      path {
+        fill: tokens.$color-neutral-grey-300;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+  &__icon--wrapper {
+    display: flex;
+  }
+
   &__title {
-    @include card.title();
     color: tokens.$color-neutral-white;
     margin-bottom: tokens.$spacing-2;
+    @include typography.text-interface-400();
   }
   &__paragraph {
     color: tokens.$color-neutral-grey-300;
     font-weight: tokens.$font-weight-regular;
+    margin-bottom: tokens.$spacing-4;
   }
 
   &__list {
@@ -63,12 +103,95 @@ $icon-size: tokens.$spacing-base-5;
     &--item {
       list-style: none;
       font-weight: tokens.$font-weight-regular;
-      & svg {
+      padding-bottom: 12px;
+      display: flex;
+      align-items: center;
+      & svg path {
         fill: tokens.$color-neutral-grey-300;
       }
     }
   }
+  @include utils.tablet() {
+    &:before {
+      content: '';
+      height: 146px;
+      width: 146px;
+      position: absolute;
+      background-color: tokens.$color-brand-second-600;
+      bottom: -15%;
+      left: 0%;
+      transform: rotate(30deg);
+    }
+    &:after {
+      content: '';
+      height: 146px;
+      width: 146px;
+      position: absolute;
+      background-color: tokens.$color-brand-first-600;
+      bottom: -12%;
+      right: -12%;
+      transform: rotate(30deg);
+      border-radius: 50%;
+    }
+  }
+
   @include utils.mobile() {
-    padding: $padding-mobile;
+    //padding: $padding-mobile;
+    //padding-top: tokens.$spacing-6;
+    //padding-bottom: tokens.$spacing-6;
+    &:before {
+      content: '';
+      height: 146px;
+      width: 146px;
+      position: absolute;
+      background-color: tokens.$color-brand-second-600;
+      top: -15%;
+      left: 60%;
+      transform: rotate(30deg);
+    }
+    &:after {
+      content: '';
+      height: 126px;
+      width: 126px;
+      position: absolute;
+      background-color: tokens.$color-brand-first-600;
+      bottom: -10%;
+      left: -12%;
+      transform: rotate(30deg);
+      border-radius: 50%;
+    }
+    &__left {
+      margin-bottom: tokens.$spacing-4;
+    }
+    &__middle {
+      margin-bottom: tokens.$spacing-4;
+    }
+    &__right {
+      margin-bottom: tokens.$spacing-4;
+    }
+  }
+
+  @include utils.large-mobile() {
+    &:before {
+      content: '';
+      height: 146px;
+      width: 146px;
+      position: absolute;
+      background-color: tokens.$color-brand-second-600;
+      top: -15%;
+      left: 65%;
+      transform: rotate(30deg);
+    }
+    &:after {
+      content: '';
+      height: 126px;
+      width: 126px;
+      position: absolute;
+      background-color: tokens.$color-brand-first-600;
+      bottom: -10%;
+      left: -12%;
+      transform: rotate(30deg);
+      border-radius: 50%;
+    }
   }
 }

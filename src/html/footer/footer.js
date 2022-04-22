@@ -1,6 +1,8 @@
-import chevronRightIcon from '@digdir/ds-icons/svg/chevron_right/outline.svg'
-import facebook from '@digdir/ds-icons/svg/facebook/outline.svg'
-//import TwitterIcon from '@digdir/ds-icons/svg/outline/Twitter.svg'
+import ChevronRightIcon from '@digdir/ds-icons/svg/outline/ChevronRight.svg'
+import FacebookIcon from '@digdir/ds-icons/svg/outline/Facebook.svg'
+import TwitterIcon from '@digdir/ds-icons/svg/outline/Twitter.svg'
+import DigdirIcon from '../../../assets/logo_digdir_negative.svg'
+
 const footer = () => {
   const classPrefix = 'ddsweb-footer'
 
@@ -12,29 +14,44 @@ const footer = () => {
   // Elements
 
   return String.raw`
-    <footer class="container">
+    <footer>
+    <div class='container' >
     <div class='${classPrefix} row'>
-    <div class='${classPrefix}__left col-xl-3  col-md-5 col-xs-3'>
-    <h1 class='${classPrefix}__title'><span>Logo</span> Digdir </h1>
-    <p class='${classPrefix}__paragraph'>${descriptionText}</p> <span>${facebook}</span><span>twitter icon</span></div>
+   
+    <div class='${classPrefix}__left col-xl-3  col-md-5 col-xs-10'>
+    <span class='${classPrefix}__logo--icon'>${DigdirIcon}</span>
+    
+    <p class='${classPrefix}__paragraph'>${descriptionText}</p>
+    <div class='${classPrefix}__icon--wrapper'>
+    <a class='${classPrefix}__link ${classPrefix}__link--facebook' href="#">
+    <span class='${classPrefix}__icon'>${FacebookIcon}</span>
+    </a>
+    <a class='${classPrefix}__link ${classPrefix}__link--twitter' href="#">
+    <span class='${classPrefix}__icon'> ${TwitterIcon}</span>
+    </a>
+    </div>
+    </div>
+    
     <div class='${classPrefix}__middle col-xl-3  col-md-5 col-xs-3'>
     <h1 class='${classPrefix}__title'>${titleText}</h1>
     <ul class='${classPrefix}__list'>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Arkitekturprinsipper</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Deling av data</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Informasjonsforvaltning</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Design</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Interne applikasjoner</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Arkitekturprinsipper</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Deling av data</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Informasjonsforvaltning</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Design</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Interne applikasjoner</li></a>
     </ul>
     </div>
-    <div class='${classPrefix}__right col-xl-3  col-md-5 col-xs-3'><h1 class='${classPrefix}__title'>${titleText}</h1>
+    
+    <div class='${classPrefix}__right col-xl-3  col-md-10 col-xs-3'><h1 class='${classPrefix}__title'>${titleText}</h1>
     <ul class='${classPrefix}__list'>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Arkitekturprinsipper</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Deling av data</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Informasjonsforvaltning</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Design</li></a>
-    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${chevronRightIcon}Interne applikasjoner</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Arkitekturprinsipper</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Deling av data</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Informasjonsforvaltning</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Design</li></a>
+    <a class='${classPrefix}__list--link' href=# ><li class='${classPrefix}__list--item'>${ChevronRightIcon}Interne applikasjoner</li></a>
     </ul>
+    </div>
     </div>
     </div>
     </footer>

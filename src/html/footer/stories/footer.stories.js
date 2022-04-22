@@ -5,6 +5,7 @@ export default {
   title: 'Komponenter/Footer',
   decorators: [withDesign],
   parameters: {
+    layout: 'fullscreen',
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/rrBqUrSQl6jdAJpjUzV3cN/?node-id=1025%3A4412',
