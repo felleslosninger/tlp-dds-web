@@ -1,0 +1,109 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-teaser-card';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$padding-two-columns: tokens.$spacing-base-10;
+$min-width: utils.pxToRem(369px);
+$max-width: core-utils.$component-max-width;
+$banner-icon-container-width: utils.pxToRem(64px);
+$banner-icon-width: utils.pxToRem(54px);
+
+.#{$classname} {
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+
+    text-decoration: none;
+    background-color: tokens.$color-brand-third-200;
+    transition: tokens.$duration-normal all;
+
+    overflow: hidden;
+    border-radius: tokens.$border-radius-small;
+    box-shadow: inset 0 0 0 1px tokens.$color-neutral-grey-300;
+    min-width: Min($min-width, 100%);
+    max-width: $max-width;
+
+    & .#{$classname}__banner .#{$classname}__image img {
+      opacity: 100%;
+    }
+    &:hover {
+      box-shadow: inset 0 0 0 2px tokens.$color-neutral-grey-800;
+      .#{$classname}__title {
+        border-bottom: 1px solid tokens.$color-neutral-grey-800;
+        border-width: 80%;
+      }
+    }
+
+    &:active {
+      background-color: tokens.$color-brand-third-300;
+    }
+  }
+
+  // Elements
+  &__banner &__image img {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 80%;
+  }
+  &--white {
+    background-color: tokens.$color-neutral-white;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $padding-default;
+    @include utils.mobile() {
+      padding: $padding-mobile;
+    }
+  }
+
+  &__title {
+    @include card.title();
+    margin-bottom: tokens.$spacing-base-2;
+    transition: tokens.$duration-normal all;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__date {
+    @include typography.text-body-200();
+    color: tokens.$color-neutral-grey-700;
+  }
+
+  &__paragraph {
+    @include card.paragraph();
+    @include card.line-clamp($max-lines: 3);
+    margin: tokens.$spacing-base-4 0;
+  }
+
+  & .#{core-icon-link.$classname} {
+    width: fit-content;
+  }
+
+  // Modifiers
+  &--two-columns {
+    @media (min-width: tokens.$breakpoint-large) {
+      & .#{$classname}__link {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      & .#{$classname}__container {
+        padding: $padding-two-columns;
+      }
+    }
+  }
+}
