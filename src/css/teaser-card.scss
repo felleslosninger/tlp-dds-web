@@ -16,29 +16,20 @@ $banner-icon-width: utils.pxToRem(54px);
 
 .#{$classname} {
   &__link {
-    display: block;
-    box-sizing: border-box;
-    position: relative;
-    height: 100%;
-
-    text-decoration: none;
-    background-color: tokens.$color-brand-third-200;
-    transition: tokens.$duration-normal all;
-
-    overflow: hidden;
-    border-radius: tokens.$border-radius-small;
-    box-shadow: inset 0 0 0 1px tokens.$color-neutral-grey-300;
+    @include card.container-link(
+      $background-color: tokens.$color-brand-third-200
+    );
     min-width: Min($min-width, 100%);
     max-width: $max-width;
 
-    & .#{$classname}__banner .#{$classname}__image img {
-      opacity: 100%;
-    }
     &:hover {
-      box-shadow: inset 0 0 0 2px tokens.$color-neutral-grey-800;
-      .#{$classname}__title {
-        border-bottom: 1px solid tokens.$color-neutral-grey-800;
-        border-width: 80%;
+      @include card.border-box-shadow();
+
+      & .#{core-icon-link.$classname} {
+        @include card.icon-link-hover();
+      }
+      & .#{$classname}__banner .#{$classname}__image img {
+        opacity: 100%;
       }
     }
 
@@ -53,11 +44,11 @@ $banner-icon-width: utils.pxToRem(54px);
     width: 100%;
     padding: 0;
     margin: 0;
+
     opacity: 80%;
+    transition: tokens.$duration-normal all;
   }
-  &--white {
-    background-color: tokens.$color-neutral-white;
-  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -71,10 +62,6 @@ $banner-icon-width: utils.pxToRem(54px);
   &__title {
     @include card.title();
     margin-bottom: tokens.$spacing-base-2;
-    transition: tokens.$duration-normal all;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   &__date {

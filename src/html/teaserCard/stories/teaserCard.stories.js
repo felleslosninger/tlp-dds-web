@@ -40,6 +40,7 @@ export const Default = Template.bind({})
 Default.args = {
   backgroundColor: 'white',
   variant: 'one-columns',
+  picture: true,
 }
 
 export const TwoColumns = Template.bind({})

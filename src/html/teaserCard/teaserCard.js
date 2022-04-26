@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import ArrowRightIcon from '@digdir/ds-icons/svg/outline/ArrowRight.svg'
+import { createIconLinkSpan } from '../utils.js'
 
 const createTeaserCard = ({
   backgroundColor = 'white',
@@ -8,6 +8,7 @@ const createTeaserCard = ({
     alt: 'Alt image description',
   },
   variant = 'default',
+  picture = true,
 }) => {
   const classPrefix = 'ddsweb-teaser-card'
   const baseClasses = classnames([`${classPrefix}`], {
@@ -27,7 +28,7 @@ const createTeaserCard = ({
       alt="${image.alt}"
     >
     `
-
+  const iconLink = createIconLinkSpan(titleText)
   const changeBackground = () => {
     switch (backgroundColor) {
       case 'white':
@@ -39,6 +40,14 @@ const createTeaserCard = ({
     }
   }
 
+  const pic = () => {
+    if (picture) {
+      return imageElement
+    } else {
+      return ''
+    }
+  }
+
   return String.raw`
   <article class="${baseClasses}">
   <a class="${classPrefix}__link ${changeBackground()}" 
@@ -47,12 +56,12 @@ const createTeaserCard = ({
     > 
     <div class="${classPrefix}__banner">
       <div class="${classPrefix}__image">
-        ${imageElement}
+        ${pic()}
       </div>
     </div>
     <div class="${classPrefix}__container">
       <h3 class="${classPrefix}__title">
-       ${titleText} <span class="${classPrefix}__icon">${ArrowRightIcon}</span>
+      ${iconLink}
       </h3>
       <div class="${classPrefix}__date">
         ${dateText}

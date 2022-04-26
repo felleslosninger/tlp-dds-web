@@ -30,7 +30,7 @@ export const createIconLinkSpan = (label = 'Click me') => {
 
   return String.raw`
     <span class="dds-icon-link dds-icon-link--icon-right dds-icon-link--shortcut dds-icon-link--inline">
-      ${label}<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 16 16">
+      ${label} <svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 16 16">
         <path
           d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8l-8-8z"
         ></path>

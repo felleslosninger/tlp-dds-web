@@ -9,7 +9,7 @@ const createBlogCard = ({
   const classPrefix = 'ddsweb-blog-card'
 
   // Element content
-  const titleText = 'Tittel'
+  const titleText = 'Tittel '
   const dateText = '16 sep. 2021'
   const paragraphText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
   Donec sit amet mi a orci elementum porttitor. Etiam non lacus egestas, finibus urna non, vestibulum metus. 
