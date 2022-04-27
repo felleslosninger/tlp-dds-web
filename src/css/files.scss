@@ -1,0 +1,168 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-files';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$padding-two-columns: tokens.$spacing-base-10;
+$min-width: utils.pxToRem(369px);
+$max-width: core-utils.$component-max-width;
+$banner-icon-container-width: utils.pxToRem(64px);
+$banner-icon-width: utils.pxToRem(54px);
+
+.#{$classname} {
+  background-color: tokens.$color-neutral-white;
+  min-width: $min-width;
+  max-width: $max-width;
+  display: flex;
+  min-height: tokens.$spacing-10;
+  height: 100%;
+  border-radius: tokens.$border-radius-x-small;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px tokens.$color-neutral-grey-600;
+  overflow: hidden;
+  transition: tokens.$duration-normal all;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+    background-color: tokens.$color-brand-third-200;
+    .#{$classname}__icon--left {
+      background-color: tokens.$color-brand-third-500;
+    }
+  }
+  &:active {
+    box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+    background-color: tokens.$color-brand-third-300;
+    .#{$classname}__icon--left {
+      background-color: tokens.$color-brand-third-600;
+    }
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+    background-color: tokens.$color-brand-third-300;
+    .#{$classname}__icon--left {
+      background-color: tokens.$color-brand-third-600;
+    }
+  }
+  &--yellow {
+    .#{$classname}__icon--left {
+      background-color: tokens.$color-brand-second-300;
+      transition: tokens.$duration-normal all;
+      display: flex;
+      justify-content: center;
+    }
+    &:hover {
+      box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-second-200;
+      .#{$classname}__icon--left {
+        background-color: tokens.$color-brand-second-500;
+      }
+    }
+    &:active {
+      box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-second-300;
+      .#{$classname}__icon--left {
+        background-color: tokens.$color-brand-second-600;
+      }
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-second-300;
+      .#{$classname}__icon--left {
+        background-color: tokens.$color-brand-second-600;
+      }
+    }
+  }
+  &--red {
+    .#{$classname}__icon--left {
+      background-color: tokens.$color-brand-first-300;
+      transition: tokens.$duration-normal all;
+      display: flex;
+      justify-content: center;
+    }
+    &:hover {
+      box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-first-200;
+      .#{$classname}__icon--left {
+        background-color: tokens.$color-brand-first-500;
+      }
+    }
+    &:active {
+      box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-first-300;
+      .#{$classname}__icon--left {
+        background-color: tokens.$color-brand-first-600;
+      }
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-first-300;
+      .#{$classname}__icon--left {
+        background-color: tokens.$color-brand-first-600;
+      }
+    }
+  }
+  &__icon {
+    &--left {
+      background-color: tokens.$color-brand-third-300;
+      transition: tokens.$duration-normal all;
+      display: flex;
+      justify-content: center;
+    }
+    &--right {
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    padding-left: tokens.$spacing-3;
+    margin-top: tokens.$spacing-2;
+    margin-bottom: tokens.$spacing-2;
+  }
+  &__title {
+    @include typography.text-interface-400();
+    text-decoration: none;
+    margin: 0;
+    color: tokens.$color-neutral-grey-800;
+    margin-bottom: 4px;
+  }
+  &__paragraph {
+    @include typography.text-body-200();
+    color: tokens.$color-neutral-grey-700;
+    margin: 0;
+  }
+  &__icon--image {
+    width: tokens.$spacing-10;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg {
+      height: 26px;
+      width: 26px;
+    }
+  }
+
+  &__icon--download {
+    background-color: inherit;
+    width: tokens.$spacing-10;
+    height: tokens.$spacing-10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+
+    & svg {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}
