@@ -12,104 +12,30 @@ $min-width: utils.pxToRem(383px);
 $max-width: core-utils.$component-max-width;
 $icon-size: tokens.$spacing-base-5;
 
-.#{$classname} {
+footer {
   background-color: tokens.$color-neutral-grey-800;
-  padding-top: tokens.$spacing-10;
-  padding-bottom: tokens.$spacing-10;
   position: relative;
   overflow: hidden;
-  justify-content: center;
-  &__logo--icon {
-    svg {
-      height: 28px;
-
-      margin-top: tokens.$spacing-1;
-    }
-  }
-  &__link {
-    text-decoration: none;
-    color: inherit;
-    margin-left: 0;
-    margin-right: tokens.$spacing-2;
-  }
-  &__left {
-    margin-bottom: tokens.$spacing-3;
-  }
   &:before {
     content: '';
-    height: 146px;
-    width: 146px;
+    height: 252px;
+    width: 252px;
     position: absolute;
     background-color: tokens.$color-brand-second-600;
-    bottom: -20%;
-    left: -5%;
+    bottom: -15%;
+    left: -10%;
     transform: rotate(30deg);
   }
   &:after {
     content: '';
-    height: 146px;
-    width: 146px;
+    height: 332px;
+    width: 332px;
     position: absolute;
     background-color: tokens.$color-brand-first-600;
-    bottom: -20%;
-    right: -3%;
+    bottom: -39%;
+    right: -8%;
     transform: rotate(30deg);
     border-radius: 50%;
-  }
-
-  &__icon {
-    background-color: tokens.$color-neutral-grey-900;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    align-items: center;
-    flex-wrap: nowrap;
-    svg {
-      path {
-        fill: tokens.$color-neutral-grey-300;
-        height: 40px;
-        width: 40px;
-      }
-    }
-  }
-  &__icon--wrapper {
-    display: flex;
-  }
-
-  &__title {
-    color: tokens.$color-neutral-white;
-    margin-bottom: tokens.$spacing-2;
-    @include typography.text-interface-400();
-  }
-  &__paragraph {
-    color: tokens.$color-neutral-grey-300;
-    font-weight: tokens.$font-weight-regular;
-    margin-bottom: tokens.$spacing-4;
-  }
-
-  &__list {
-    color: tokens.$color-neutral-grey-300;
-    padding: 0;
-    &--link {
-      text-decoration: none;
-      color: inherit;
-      &:hover {
-        text-decoration: underline;
-        color: inherit;
-      }
-    }
-    &--item {
-      list-style: none;
-      font-weight: tokens.$font-weight-regular;
-      padding-bottom: 12px;
-      display: flex;
-      align-items: center;
-      & svg path {
-        fill: tokens.$color-neutral-grey-300;
-      }
-    }
   }
   @include utils.tablet() {
     &:before {
@@ -134,7 +60,32 @@ $icon-size: tokens.$spacing-base-5;
       border-radius: 50%;
     }
   }
-
+  @include utils.large-mobile() {
+    .#{$classname} {
+      padding: $padding-mobile;
+    }
+    &:before {
+      content: '';
+      height: 146px;
+      width: 146px;
+      position: absolute;
+      background-color: tokens.$color-brand-second-600;
+      top: -15%;
+      left: 65%;
+      transform: rotate(30deg);
+    }
+    &:after {
+      content: '';
+      height: 126px;
+      width: 126px;
+      position: absolute;
+      background-color: tokens.$color-brand-first-600;
+      bottom: -10%;
+      left: -12%;
+      transform: rotate(30deg);
+      border-radius: 50%;
+    }
+  }
   @include utils.mobile() {
     &:before {
       content: '';
@@ -167,28 +118,82 @@ $icon-size: tokens.$spacing-base-5;
       margin-bottom: tokens.$spacing-4;
     }
   }
+}
 
-  @include utils.large-mobile() {
-    &:before {
-      content: '';
-      height: 146px;
-      width: 146px;
-      position: absolute;
-      background-color: tokens.$color-brand-second-600;
-      top: -15%;
-      left: 65%;
-      transform: rotate(30deg);
+.#{$classname} {
+  padding-top: tokens.$spacing-10;
+  padding-bottom: tokens.$spacing-10;
+  position: relative;
+  justify-content: center;
+  &__logo--icon {
+    svg {
+      height: 28px;
+
+      margin-top: tokens.$spacing-2;
     }
-    &:after {
-      content: '';
-      height: 126px;
-      width: 126px;
-      position: absolute;
-      background-color: tokens.$color-brand-first-600;
-      bottom: -10%;
-      left: -12%;
-      transform: rotate(30deg);
-      border-radius: 50%;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 0;
+    margin-right: tokens.$spacing-2;
+  }
+  &__left {
+    margin-bottom: tokens.$spacing-3;
+  }
+
+  &__icon {
+    background-color: tokens.$color-neutral-grey-900;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    flex-wrap: nowrap;
+    svg {
+      path {
+        fill: tokens.$color-neutral-grey-300;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+  &__icon--wrapper {
+    display: flex;
+  }
+
+  &__title {
+    color: tokens.$color-neutral-white;
+    margin-bottom: tokens.$spacing-2;
+    @include typography.text-interface-400();
+  }
+  &__paragraph {
+    color: tokens.$color-neutral-grey-300;
+    margin-bottom: tokens.$spacing-4;
+    @include typography.text-body-300();
+  }
+
+  &__list {
+    color: tokens.$color-neutral-grey-300;
+    padding: 0;
+    &--link {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+    &--item {
+      list-style: none;
+      font-weight: tokens.$font-weight-regular;
+      padding-bottom: 12px;
+      display: flex;
+      align-items: center;
+      & svg path {
+        fill: tokens.$color-neutral-grey-300;
+      }
     }
   }
 }
