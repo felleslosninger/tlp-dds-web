@@ -24,7 +24,7 @@ const createFiles = ({ backgroundColor = 'blue' }) => {
     }
   }
 
-  const desktopHtml = `
+  return String.raw`
   <a class='${classPrefix} ${changeBackground()}' href="#">
 <div class='${classPrefix}__icon--left'>
 <span class='${classPrefix}__icon--image'>${ImageIcon}</span>
@@ -36,22 +36,7 @@ const createFiles = ({ backgroundColor = 'blue' }) => {
 <div class='${classPrefix}__icon--right'>
 <span class='${classPrefix}__icon--download'>${DownloadIcon}</span>
 </div>
-</a>`
-
-  const mobileHtml = `
-<a class='${classPrefix}' href="#">
-<span class='${classPrefix}__icon--image'>${ImageIcon}</span>
-<span class='${classPrefix}__icon--download'>${DownloadIcon}</span>
-<div class='${classPrefix}__content'>
-<h1 class='${classPrefix}__title'>${titleText}</h1>
-<p class='${classPrefix}__paragraph'>${paragraphText}</p>
-
-</div>
 </a>
-`
-
-  return String.raw`
-     ${desktopHtml}
     `
 }
 
