@@ -127,9 +127,7 @@ footer {
   justify-content: center;
   &__logo--icon {
     svg {
-      height: 28px;
-
-      margin-top: tokens.$spacing-2;
+      margin-top: tokens.$spacing-base-3;
     }
   }
   &__link {
