@@ -1,6 +1,6 @@
-import bookmarkIcon from '@digdir/ds-icons/svg/bookmark_border/outline.svg'
-import placeIcon from '@digdir/ds-icons/svg/place/outline.svg'
-import watchIcon from '@digdir/ds-icons/svg/watch_later/outline.svg'
+import BookmarkIcon from '@digdir/ds-icons/svg/outline/Bookmark.svg'
+import MapPinIcon from '@digdir/ds-icons/svg/outline/MapPin.svg'
+import WatchIcon from '@digdir/ds-icons/svg/outline/Watch.svg'
 import { createIconLinkSpan } from '../utils.js'
 
 const createCourseCard = ({ backgroundColor = true }) => {
@@ -45,21 +45,21 @@ const createCourseCard = ({ backgroundColor = true }) => {
 
           <div class="${classPrefix}__list">
             <div class="${classPrefix}__item">
-              ${watchIcon}
+              ${WatchIcon}
               <span class="${classPrefix}__value">
                 ${timeText}
               </span>
             </div>
   
             <div class="${classPrefix}__item">
-              ${placeIcon}
+              ${MapPinIcon}
               <span class="${classPrefix}__value">
                 ${placeText}
               </span>
             </div>
   
             <div class="${classPrefix}__item">
-              ${bookmarkIcon}
+              ${BookmarkIcon}
               <span class="${classPrefix}__value">
                 ${taxonomyText}
               </span>

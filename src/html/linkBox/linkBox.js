@@ -1,4 +1,4 @@
-import chevronRightIcon from '@digdir/ds-icons/svg/chevron_right/outline.svg'
+import ChevronRightIcon from '@digdir/ds-icons/svg/outline/ChevronRight.svg'
 
 const createLinkBox = ({ icon = true }) => {
   const classPrefix = 'ddsweb-link-box'
@@ -25,7 +25,7 @@ const createLinkBox = ({ icon = true }) => {
         rel="noreferrer noopener"
       >
         <span class="dds-panel-link__label">${labelText}</span>
-        ${chevronRightIcon}
+        ${ChevronRightIcon}
     </a>
     `
 

@@ -1,10 +1,11 @@
-import { createReportCard } from '../reportCard.js'
+import { footer } from '../footer.js'
 import { withDesign } from 'storybook-addon-designs'
 
 export default {
-  title: 'Komponenter/Report-card',
+  title: 'Komponenter/Footer',
   decorators: [withDesign],
   parameters: {
+    layout: 'fullscreen',
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/rrBqUrSQl6jdAJpjUzV3cN/?node-id=1025%3A4412',
@@ -17,7 +18,7 @@ export default {
 }
 
 const Template = (args) => {
-  return createReportCard(args)
+  return footer(args)
 }
 
 export const Default = Template.bind({})
