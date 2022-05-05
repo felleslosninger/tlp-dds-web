@@ -125,11 +125,7 @@ footer {
   padding-bottom: tokens.$spacing-10;
   position: relative;
   justify-content: center;
-  &__logo--icon {
-    svg {
-      margin-top: tokens.$spacing-base-3;
-    }
-  }
+
   &__link {
     text-decoration: none;
     color: inherit;
@@ -137,7 +133,10 @@ footer {
     margin-right: tokens.$spacing-2;
   }
   &__left {
-    margin-bottom: tokens.$spacing-3;
+    svg {
+      height: 28px;
+      width: auto;
+    }
   }
 
   &__icon {
@@ -145,15 +144,15 @@ footer {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    height: 40px;
-    width: 40px;
+    height: 48px;
+    width: 48px;
     align-items: center;
     flex-wrap: nowrap;
     svg {
+      height: 22px;
+      width: 22px;
       path {
         fill: tokens.$color-neutral-grey-300;
-        height: 40px;
-        width: 40px;
       }
     }
   }
@@ -162,19 +161,21 @@ footer {
   }
 
   &__title {
+    margin-top: 0;
     color: tokens.$color-neutral-white;
     margin-bottom: tokens.$spacing-2;
     @include typography.text-interface-400();
   }
   &__paragraph {
     color: tokens.$color-neutral-grey-300;
-    margin-bottom: tokens.$spacing-4;
+    margin-bottom: tokens.$spacing-3;
     @include typography.text-body-300();
   }
 
   &__list {
     color: tokens.$color-neutral-grey-300;
     padding: 0;
+    margin-bottom: 0;
     &--link {
       text-decoration: none;
       color: inherit;

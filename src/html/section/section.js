@@ -1,14 +1,16 @@
-const createSection = ({ underlinecolor = 'grey', backgroundColor = true }) => {
+const createSection = ({
+  title = 'Tittel på seksjon',
+  desc = 'What for follow turned taken fate trade, multi the point not having a would it succeed the were there the a there, greatest hall commitment but the right but not poetic at a for behavioural.' +
+    '\n',
+  content = false,
+  lineColor = 'grey',
+  backgroundColor = true,
+}) => {
   const classPrefix = 'ddsweb-section'
-
-  // Element content
-  const titleText = 'Tittel på seksjon'
-  const paragraphText =
-    'The is in was in which, over our the so sides academic was software done well for just the prepared children the manipulate language'
 
   // Functions
   const changeUnderlineColor = () => {
-    switch (underlinecolor) {
+    switch (lineColor) {
       case 'blue':
         return classPrefix + '__line--blue'
       case 'yellow':
@@ -33,27 +35,31 @@ const createSection = ({ underlinecolor = 'grey', backgroundColor = true }) => {
 
   // Elements
 
+  //language=HTML
   return String.raw`
-    <section class="${classPrefix} ${background()}">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 mx-auto">
-                    <div class="${classPrefix}__header">
-                        <h1 class="${classPrefix}__title">${titleText}</h1>
-                        <div class="${classPrefix}__line ${changeUnderlineColor()} "></div>
+        <section class="${classPrefix} ${background()}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 mx-auto">
+                        <div class="${classPrefix}__header">
+                            <h1 class="${classPrefix}__title">${title}</h1>
+                            <div class="${classPrefix}__line ${changeUnderlineColor()} "></div>
+                            <p class="${classPrefix}__paragraph">${desc}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-12 mx-auto">
-                    <div class="${classPrefix}__content">
-                        <p class="${classPrefix}__paragraph">${paragraphText}</p>
-                        <div class="${classPrefix}__rectangle"></div>
+                    <div class="col-xl-12 mx-auto">
+                        <div class="${classPrefix}__content">
+                            ${
+                              content
+                                ? content
+                                : `<div class="${classPrefix}__rectangle"></div>`
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-    </section>
-        `
+        </section>
+    `
 }
 
 export { createSection }

@@ -1096,10 +1096,10 @@
   resolved "https://registry.yarnpkg.com/@digdir/ds-core-js/-/ds-core-js-0.2.0.tgz#283c503113b6df97b3304a5651d5a75f36e3e01c"
   integrity sha512-YNKjzbRxZfPTuESOTQH32mW4kalWxNFd56nkf2ITCYKK3nNPPsbVeT1QliopwU7VvsCW/O/Mi21rKJGRKxCXbw==
 
-"@digdir/ds-icons@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@digdir/ds-icons/-/ds-icons-1.2.2.tgz#1b76727b5fb748ae671b12432e7b1be43a17f132"
-  integrity sha512-NOGz1HrlZjF0yefytRZaLk9u+1pfkYsJ2NQtvOAkMb81OaTaDvWvai7phMBj1ALWWLAzAfYXzmSaLBU3KWQFyg==
+"@digdir/ds-icons@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@digdir/ds-icons/-/ds-icons-1.4.0.tgz#f574c2b500bb907999df4a94d8813badca91b66d"
+  integrity sha512-LTEave3uOAfAQJ8PAWlVJGUALZsV/I8YE4dmN7s0iCjtHw7JaWDRWeqw9cLFGzltspv76pz0DBzOANdK/9+coA==
 
 "@digdir/ds-tokens@^1.3.0", "@digdir/ds-tokens@^1.8.4":
   version "1.8.4"

@@ -12,22 +12,13 @@ $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 
 .#{$classname} {
-  display: grid;
-  grid-auto-flow: row;
-  place-content: center;
   box-sizing: border-box;
-
   width: 100%;
   min-height: $min-height;
-  padding: $padding-default;
+  background-color: tokens.$color-brand-third-300;
 
-  background-color: tokens.$color-brand-first-200;
-
-  // Elements
-  &__container {
-    display: grid;
-    grid-auto-flow: column;
-    max-width: $container-max-width;
+  &__breadcrumbs {
+    padding-top: tokens.$spacing-4;
   }
 
   &__text-container {
@@ -38,7 +29,7 @@ $padding-mobile: utils.$padding-mobile;
 
   &__title {
     @include typography.text-heading-800();
-    margin: 0 0 tokens.$spacing-base-10 0;
+    margin: 0 0 tokens.$spacing-3 0;
   }
 
   &__paragraph {

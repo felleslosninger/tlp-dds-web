@@ -13,4 +13,8 @@
 @use 'report-card.scss' as *;
 @use 'section.scss' as *;
 @use 'teaser-card.scss' as *;
-@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap-custom';
+
+.test-header {
+  height: 88px;
+}

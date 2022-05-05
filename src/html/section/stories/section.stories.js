@@ -2,7 +2,7 @@ import { createSection } from '../section.js'
 import { withDesign } from 'storybook-addon-designs'
 
 export default {
-  title: 'Komponenter/Banner',
+  title: 'Komponenter/Section',
   decorators: [withDesign],
   parameters: {
     design: {
