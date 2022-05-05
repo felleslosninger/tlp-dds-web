@@ -1,0 +1,66 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-section';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$min-width: utils.pxToRem(383px);
+$max-width: core-utils.$component-max-width;
+$icon-size: tokens.$spacing-base-5;
+
+.#{$classname} {
+  padding: $padding-default;
+  &--background {
+    background-color: tokens.$color-neutral-white;
+  }
+
+  &__title {
+    text-align: center;
+    @include typography.text-heading-800();
+    font-size: 32px;
+  }
+  &__paragraph {
+    text-align: center;
+    margin-bottom: tokens.$spacing-6;
+    @include typography.text-ingress-500();
+  }
+  &__rectangle {
+    height: 75px;
+    width: 100%;
+    background-color: tokens.$color-neutral-grey-300;
+    margin-bottom: tokens.$spacing-3;
+  }
+  &__line {
+    width: 40px;
+    height: 4px;
+    margin: 0 auto;
+    border-radius: 100px;
+  }
+  &__line--grey {
+    background-color: tokens.$color-neutral-grey-600;
+  }
+  &__line--blue {
+    background-color: tokens.$color-brand-third-600;
+  }
+  &__line--yellow {
+    background-color: tokens.$color-brand-second-600;
+  }
+  &__line--red {
+    background-color: tokens.$color-brand-first-600;
+  }
+
+  // Mobile
+
+  @include utils.mobile() {
+    padding: $padding-mobile;
+
+    &__title {
+      padding-top: $padding-mobile;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { createBanner } from '../banner.js'
+import { createSection } from '../section.js'
 import { withDesign } from 'storybook-addon-designs'
 
 export default {
@@ -14,15 +14,18 @@ export default {
     },
   },
   argTypes: {
-    circleColor: {
+    underlinecolor: {
       control: { type: 'radio' },
-      options: ['red', 'yellow', 'blue'],
+      options: ['red', 'yellow', 'blue', 'grey'],
     },
   },
 }
 
 const Template = (args) => {
-  return createBanner(args)
+  return createSection(args)
 }
 
 export const Default = Template.bind({})
+Default.args = {
+  backgroundColor: true,
+}
