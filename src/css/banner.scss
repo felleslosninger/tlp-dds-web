@@ -1,0 +1,59 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-banner';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$min-width: utils.pxToRem(369px);
+$max-width: core-utils.$component-max-width;
+
+.#{$classname} {
+  position: relative;
+  overflow: hidden;
+  background-color: tokens.$color-neutral-white;
+  &__content {
+    display: flex;
+    justify-content: center;
+    padding: tokens.$spacing-8;
+    align-items: center;
+    &:before {
+      content: '';
+      height: 400px;
+      width: 400px;
+      position: absolute;
+      background-color: tokens.$color-brand-first-600;
+      top: 50%;
+      left: 0%;
+      border-radius: 50%;
+    }
+    &:after {
+      content: '';
+      height: 350px;
+      width: 350px;
+      position: absolute;
+      background-color: tokens.$color-neutral-grey-800;
+      bottom: 50%;
+      right: 5%;
+      transform: rotate(20deg);
+    }
+  }
+  &--red {
+    &:before {
+      background-color: tokens.$color-brand-first-600;
+    }
+  }
+  &--blue {
+    &:before {
+      background-color: tokens.$color-brand-third-600;
+    }
+  }
+  &--yellow {
+    &:before {
+      background-color: tokens.$color-brand-second-600;
+    }
+  }
+}
