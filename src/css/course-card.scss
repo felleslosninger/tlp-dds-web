@@ -92,7 +92,6 @@ $icon-size: tokens.$spacing-base-5;
       min-width: Min(#{$min-width}, 100%);
       flex-direction: column;
     }
-
   }
 
   // Elements
@@ -151,7 +150,6 @@ $icon-size: tokens.$spacing-base-5;
       padding-right: 4px;
       margin: 0;
     }
-
   }
 
   &__year {
@@ -174,7 +172,6 @@ $icon-size: tokens.$spacing-base-5;
     @include utils.mobile() {
       font-size: 20px;
     }
-
   }
   &__list {
     display: flex;
