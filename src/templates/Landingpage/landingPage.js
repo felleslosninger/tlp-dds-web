@@ -216,13 +216,13 @@ const courses = () => {
   //language=HTML
   return String.raw`
         <div class="row justify-content-center gy-4">
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 ${createCourseCard({})}
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 ${createCourseCard({})}
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 ${createCourseCard({})}
             </div>
         </div>
