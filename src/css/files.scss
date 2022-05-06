@@ -182,6 +182,9 @@ $banner-icon-width: utils.pxToRem(54px);
     }
     &__content {
       order: 2;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      padding-right: tokens.$spacing-2;
     }
     &--blue {
       .#{$classname}__icon--right {
