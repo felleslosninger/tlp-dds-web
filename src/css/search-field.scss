@@ -69,6 +69,7 @@ body .ddsweb-search-field__input:focus-visible {
     &__input {
       width: 100%;
       max-width: 328px;
+      padding-left: 50px;
       &::placeholder {
         @include typography.text-body-300();
       }
@@ -77,6 +78,9 @@ body .ddsweb-search-field__input:focus-visible {
       width: 100%;
       max-width: 72px;
       @include typography.text-interface-300();
+    }
+    &__icon {
+      padding-left: 17px;
     }
   }
 }
