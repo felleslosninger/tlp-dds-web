@@ -1,0 +1,99 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-section';
+$padding-default: tokens.$spacing-9;
+$padding-mobile: utils.$padding-mobile;
+$min-width: utils.pxToRem(383px);
+$max-width: core-utils.$component-max-width;
+$icon-size: tokens.$spacing-base-5;
+
+.#{$classname} {
+  padding: $padding-default 0;
+  background-color: white;
+  position: relative;
+
+  &--grey {
+    background-color: tokens.$color-neutral-grey-100;
+  }
+
+  &__title {
+    text-align: center;
+    @include typography.text-heading-800();
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
+  }
+
+  &__paragraph {
+    text-align: center;
+    margin-top: tokens.$spacing-3;
+    margin-bottom: 0;
+    @include typography.text-ingress-500();
+  }
+
+  &__element {
+    position: absolute;
+    z-index: 1;
+    width: 400px;
+    left: -150px;
+    top: 150px;
+  }
+
+  &__rectangle {
+    height: 75px;
+    width: 100%;
+    background-color: tokens.$color-neutral-grey-300;
+    margin-bottom: tokens.$spacing-3;
+  }
+
+  &__content {
+    margin-top: tokens.$spacing-6;
+    position: relative;
+    z-index: 5;
+  }
+
+  &__footer {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__line {
+    width: 40px;
+    height: 4px;
+    margin: 0 auto;
+    border-radius: 100px;
+  }
+
+  &__line--grey {
+    background-color: tokens.$color-neutral-grey-500;
+  }
+
+  &__line--blue {
+    background-color: tokens.$color-brand-third-600;
+  }
+
+  &__line--yellow {
+    background-color: tokens.$color-brand-second-600;
+  }
+
+  &__line--red {
+    background-color: tokens.$color-brand-first-600;
+  }
+
+  // Mobile
+  @include utils.mobile() {
+    padding: $padding-mobile;
+
+    &__title {
+      padding-top: $padding-mobile;
+      margin-top: 0;
+    }
+  }
+}

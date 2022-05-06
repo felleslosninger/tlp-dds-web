@@ -18,8 +18,7 @@ const createTeaserCard = ({
   // Element content
   const titleText = 'Unik sommerjobb for studenter innen digitalisering'
   const dateText = '16 sep. 2021'
-  const paragraphText = `Digitaliseringsdirektoratet har lansert første versjon av Nasjonal verktøykasse for deling av data. Verktøykassen skal være til hjelp for de som skal dele og bruke data, enten det er mellom offentlige virksomheter, fra offentlig...
-  `
+  const paragraphText = `Digitaliseringsdirektoratet har lansert første versjon av Nasjonal verktøykasse for deling av data. Verktøykassen skal være til hjelp for de som skal dele og bruke data, enten det er mellom offentlige virksomheter, fra offentlig...`
   // Elements
   const iconLink = createIconLinkSpan(titleText)
   const imageElement = String.raw`

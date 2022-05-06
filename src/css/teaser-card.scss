@@ -23,12 +23,14 @@ $banner-icon-width: utils.pxToRem(54px);
     @include card.container-link(
       $background-color: tokens.$color-brand-third-200
     );
-    min-width: Min($min-width, 100%);
+    min-width: Min(#{$min-width}, 100%);
     max-width: $max-width;
     border-radius: tokens.$border-radius-small;
     overflow: hidden;
+    border: 1px solid tokens.$color-neutral-grey-300;
+
     &:hover {
-      box-shadow: inset 0 0 0 2px tokens.$color-neutral-grey-900;
+      box-shadow: inset 0 0 0 1px tokens.$color-neutral-grey-800;
 
       & .#{core-icon-link.$classname} {
         text-decoration: underline;
@@ -38,6 +40,7 @@ $banner-icon-width: utils.pxToRem(54px);
     &:active {
       background-color: tokens.$color-brand-third-300;
     }
+
     & .dds-icon-link > svg {
       width: tokens.$spacing-2;
       height: tokens.$spacing-2;
@@ -54,15 +57,19 @@ $banner-icon-width: utils.pxToRem(54px);
       }
     }
   }
+
   &--white {
     background-color: tokens.$color-neutral-white;
   }
+
   &--blue {
     background-color: tokens.$color-brand-third-200;
   }
+
   &__banner {
     flex: 0 0 40%;
   }
+
   // Elements
   &__banner &__image img {
     display: block;

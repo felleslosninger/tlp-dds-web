@@ -2,17 +2,29 @@
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
 @use './utils/utils.scss' as utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 
 $classname: '#{utils.$prefix}-navigation-card';
 $min-width: utils.pxToRem(416px);
 $max-width: core-utils.$component-max-width;
-$horizontal-padding: tokens.$spacing-base-8;
+$horizontal-padding: tokens.$spacing-base-10;
 
 .#{$classname} {
   max-width: $max-width;
   background-color: tokens.$color-brand-first-200;
+  border-radius: tokens.$border-radius-small;
+
   &--no-icon {
     padding-top: tokens.$spacing-3;
+  }
+
+  &__with-background--blue,
+  &__with-background--red,
+  &__with-background--yellow {
+    &.#{$classname}__icon svg {
+      height: tokens.$spacing-base-10;
+      width: tokens.$spacing-base-10;
+    }
   }
 
   &__with-background--red {
@@ -22,7 +34,7 @@ $horizontal-padding: tokens.$spacing-base-8;
     display: flex;
   }
   &__with-background--blue {
-    background-color: tokens.$color-brand-third-400;
+    background-color: tokens.$color-brand-third-300;
     border-radius: tokens.$border-radius-x-large;
     padding: tokens.$spacing-base-2;
     display: flex;
@@ -101,15 +113,20 @@ $horizontal-padding: tokens.$spacing-base-8;
     flex-direction: column;
     align-items: center;
     padding: $horizontal-padding;
-    //  states
+    text-align: center;
+    border: 1px solid tokens.$color-neutral-grey-300;
+    border-radius: tokens.$border-radius-small;
+    transition: 0.2s all;
 
     &:hover {
-      outline: 2px solid tokens.$color-neutral-grey-900;
+      border-color: tokens.$color-neutral-grey-800;
+      box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
     }
 
     &:active {
       background-color: tokens.$color-brand-first-300;
-      outline: 2px solid tokens.$color-neutral-grey-900;
+      border-color: tokens.$color-neutral-grey-800;
+      box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
       .#{$classname}__with-background--red {
         background-color: tokens.$color-brand-first-600;
       }
@@ -131,9 +148,9 @@ $horizontal-padding: tokens.$spacing-base-8;
   }
 
   &__title {
-    font-size: tokens.$font-size-600;
+    @include typography.text-heading-600;
     margin-top: 0;
-    margin-bottom: tokens.$spacing-3;
+    margin-bottom: tokens.$spacing-2;
   }
   &__paragraph {
     font-size: tokens.$font-size-400;

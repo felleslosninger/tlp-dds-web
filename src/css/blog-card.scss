@@ -14,7 +14,7 @@ $max-width: core-utils.$component-max-width;
 .#{$classname} {
   &__link {
     @include card.container-link();
-    min-width: Min($min-width, 100%);
+    min-width: Min(#{$min-width}, 100%);
     max-width: $max-width;
 
     &:hover {
