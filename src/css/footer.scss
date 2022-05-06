@@ -176,9 +176,12 @@ footer {
     color: tokens.$color-neutral-grey-300;
     padding: 0;
     margin-bottom: 0;
+    margin-left: -6px;
+
     &--link {
       text-decoration: none;
       color: inherit;
+
       &:hover {
         text-decoration: underline;
         color: inherit;
@@ -187,11 +190,16 @@ footer {
     &--item {
       list-style: none;
       font-weight: tokens.$font-weight-regular;
-      padding-bottom: 12px;
+      padding-bottom: tokens.$spacing-2;
       display: flex;
       align-items: center;
-      & svg path {
-        fill: tokens.$color-neutral-grey-300;
+
+      & svg {
+        height: 22px;
+        width: 22px;
+        path {
+          fill: tokens.$color-neutral-grey-300;
+        }
       }
     }
   }

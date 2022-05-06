@@ -38,7 +38,7 @@ const createBrandBanner = ({
 
   //language=HTML
   return String.raw`
-        <div class="${classPrefix}">
+        <section class="${classPrefix}">
             <div class="container">
                 <div class="${classPrefix}__breadcrumbs">
                     ${breadcrumbsComponent}
@@ -63,7 +63,7 @@ const createBrandBanner = ({
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     `
 }
 

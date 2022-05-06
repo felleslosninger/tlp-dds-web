@@ -1,12 +1,17 @@
 const createSection = ({
   title = 'Tittel på seksjon',
-  desc = 'What for follow turned taken fate trade, multi the point not having a would it succeed the were there the a there, greatest hall commitment but the right but not poetic at a for behavioural.' +
-    '\n',
+  desc,
   content = false,
+  footer = false,
   lineColor = 'grey',
-  backgroundColor = true,
+  backgroundColor,
 }) => {
   const classPrefix = 'ddsweb-section'
+  const theDesc =
+    desc || desc === undefined
+      ? 'What for follow turned taken fate trade, multi the point not having a would it succeed the were there the a there, greatest hall commitment but the right but not poetic at a for behavioural.'
+      : ''
+  const theFooter = footer || false
 
   // Functions
   const changeUnderlineColor = () => {
@@ -26,8 +31,8 @@ const createSection = ({
   }
 
   const background = () => {
-    if (backgroundColor === true) {
-      return classPrefix + '--background'
+    if (backgroundColor === 'grey') {
+      return classPrefix + '--grey'
     } else {
       return ''
     }
@@ -37,14 +42,18 @@ const createSection = ({
 
   //language=HTML
   return String.raw`
-        <section class="${classPrefix} ${background()}">
+        <section class="${classPrefix} ${background()}" data-dds-color="${lineColor}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-7 mx-auto">
                         <div class="${classPrefix}__header">
                             <h1 class="${classPrefix}__title">${title}</h1>
                             <div class="${classPrefix}__line ${changeUnderlineColor()} "></div>
-                            <p class="${classPrefix}__paragraph">${desc}</p>
+                            ${
+                              theDesc
+                                ? `<p class="${classPrefix}__paragraph">${theDesc}</p>`
+                                : ''
+                            }
                         </div>
                     </div>
                     <div class="col-xl-12 mx-auto">
@@ -55,6 +64,11 @@ const createSection = ({
                                 : `<div class="${classPrefix}__rectangle"></div>`
                             }
                         </div>
+                        ${
+                          theFooter
+                            ? `<div class="${classPrefix}__footer">${theFooter}</div>`
+                            : ''
+                        }
                     </div>
                 </div>
             </div>

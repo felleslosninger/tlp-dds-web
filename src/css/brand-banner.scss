@@ -28,7 +28,7 @@ $padding-mobile: utils.$padding-mobile;
   }
 
   &__title {
-    @include typography.text-heading-800();
+    @include typography.text-heading-900();
     margin: 0 0 tokens.$spacing-3 0;
   }
 
