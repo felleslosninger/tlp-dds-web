@@ -4,6 +4,7 @@ import { createSection } from '../../html/section/section'
 import { createNavigationCard } from '../../html/navigationCard/navigationCard'
 import createImageSection from '../../html/imageSection/imageSection'
 import { createTeaserCard } from '../../html/teaserCard/teaserCard'
+import {createCourseCard} from "../../html/courseCard/courseCard";
 
 import GitlabIcon from '@digdir/ds-icons/svg/outline/Gitlab.svg'
 import BriefCaseIcon from '@digdir/ds-icons/svg/outline/Briefcase.svg'
@@ -61,6 +62,15 @@ const LandingPageComponent = () => {
               desc: '',
               footer:
                 '<button class="dds-button dds-button--secondary dds-button--large">Les alle nyheter</button>',
+            })}
+            ${createSection({
+                lineColor: 'yellow',
+                title: 'Arrangement',
+                content: courses(),
+                desc: '',
+                backgroundColor: 'grey',
+                footer:
+                        '<button class="dds-button dds-button--secondary dds-button--large">Les alle arrangement</button>',
             })}
         </div>
 
@@ -197,6 +207,29 @@ const news = () => {
                 ${createTeaserCard({
                   image: { src: 'img/placeholder-16-9-five.jpg' },
                 })}
+            </div>
+        </div>
+    `
+}
+
+const courses = () => {
+    //language=HTML
+    return String.raw`
+        <div class="row justify-content-center gy-4">
+            <div class="col-lg-10">
+                ${createCourseCard({
+        
+    })}
+            </div>
+            <div class="col-lg-10">
+                ${createCourseCard({
+
+    })}
+            </div>
+            <div class="col-lg-10">
+                ${createCourseCard({
+       
+    })}
             </div>
         </div>
     `

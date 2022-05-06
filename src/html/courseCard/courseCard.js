@@ -1,6 +1,6 @@
 import BookmarkIcon from '@digdir/ds-icons/svg/outline/Bookmark.svg'
 import MapPinIcon from '@digdir/ds-icons/svg/outline/MapPin.svg'
-import WatchIcon from '@digdir/ds-icons/svg/outline/Watch.svg'
+import WatchIcon from '@digdir/ds-icons/svg/outline/Clock.svg'
 import { createIconLinkSpan } from '../utils.js'
 
 const createCourseCard = ({ backgroundColor = true }) => {
@@ -36,7 +36,9 @@ const createCourseCard = ({ backgroundColor = true }) => {
         rel="noreferrer noopener"
       >
         <div class="${classPrefix}__banner">
-          ${bannerText}
+          <span class="${classPrefix}__day">16</span>
+          <span class="${classPrefix}__month">september</span>
+          <span class="${classPrefix}__year">2022</span>
         </div>
         <div class="${classPrefix}__container">
           <h3 class="${classPrefix}__title">
