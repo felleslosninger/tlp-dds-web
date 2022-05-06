@@ -10,6 +10,6 @@ export default create({
   // Colors
   base: 'light',
   colorSecondary: tokens.color.brand.third['800'],
-  appBg: tokens.color.brand.third['100'],
+  appBg: tokens.color.neutral.grey['100'],
   textColor: tokens.color.text.background.light,
 })

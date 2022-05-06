@@ -1,0 +1,33 @@
+@use '@digdir/ds-core-css/build/src/panel-link.scss' as core-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+
+$classname: '#{utils.$prefix}-image-section';
+
+.#{$classname} {
+  background-color: tokens.$color-neutral-grey-100;
+  padding: tokens.$spacing-10 0;
+
+  &--white {
+    background-color: white;
+  }
+
+  &__img {
+    height: 260px;
+    max-width: 100%;
+  }
+
+  &__title {
+    @include typography.text-heading-800;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
+  }
+
+  &__desc {
+    @include typography.text-ingress-500;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
+  }
+}

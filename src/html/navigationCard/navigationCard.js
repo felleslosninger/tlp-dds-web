@@ -2,16 +2,22 @@ import SunIcon from '@digdir/ds-icons/svg/outline/Sun.svg'
 import ArrowRightIcon from '@digdir/ds-icons/svg/outline/ArrowRight.svg'
 
 const createNavigationCard = ({
-  icon = true,
+  showIcon = true,
   iconBackground = false,
   backgroundColor = true,
+  title,
+  desc,
+  icon = false,
 }) => {
   const classPrefix = 'ddsweb-navigation-card'
-  // Elements
 
-  const titleText = 'For deg som skal bruke data fra andre på nettsider'
+  // Elements
+  const titleText =
+    'For deg som skal bruke data fra andre på nettsider' || title
   const paragraphText =
-    'Se hva slags data som er tilgjengelig, og hvordan du kan bruke dem riktig'
+    'Se hva slags data som er tilgjengelig, og hvordan du kan bruke dem riktig' ||
+    desc
+  const theIcon = icon || SunIcon
 
   // Switch statement that adds a modifier based on the value of backgroundColor
 
@@ -50,12 +56,12 @@ const createNavigationCard = ({
   // Function that adds a class __with-background if the user has iconBackground to true
 
   const changeIconBackground = () => {
-    if (icon === false) {
+    if (showIcon === false) {
       return
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'red' &&
       iconBackground === 'red'
     ) {
@@ -63,7 +69,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'blue' &&
       iconBackground === 'blue'
     ) {
@@ -71,7 +77,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'yellow' &&
       iconBackground === 'yellow'
     ) {
@@ -79,7 +85,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'white' &&
       iconBackground === true
     ) {
@@ -87,7 +93,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'white' &&
       iconBackground === 'red'
     ) {
@@ -95,7 +101,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'white' &&
       iconBackground === 'blue'
     ) {
@@ -103,7 +109,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'white' &&
       iconBackground === 'yellow'
     ) {
@@ -111,7 +117,7 @@ const createNavigationCard = ({
     }
 
     if (
-      icon === true &&
+      showIcon === true &&
       backgroundColor === 'grey' &&
       iconBackground === 'grey'
     ) {
@@ -121,31 +127,32 @@ const createNavigationCard = ({
     }
   }
 
-  // Element content
-
+  //language=HTML
   return String.raw`
-  <div  class='${classPrefix} ${changeBackground()} ${active()} '>
-	<a class='${classPrefix}__link' href=#>
-	${
-    icon
-      ? `<span class='${classPrefix}__icon ${
-          iconBackground ? changeIconBackground() : ''
-        }'>${SunIcon}</span>`
-      : ''
-  }
-	 
-	
-	<h1 class='${classPrefix}__title ${icon ? '' : `${classPrefix}--no-icon`}'>
-		${titleText}
-	</h1>
-	<p class='${classPrefix}__paragraph'>
-		${paragraphText} 
-	</p>
-	${ArrowRightIcon}  
-</a>
-</div>
-	
-		`
+        <div class='${classPrefix} ${changeBackground()} ${active()} '>
+            <a class='${classPrefix}__link' href=#>
+                ${
+                  showIcon
+                    ? `<span class='${classPrefix}__icon ${
+                        iconBackground ? changeIconBackground() : ''
+                      }'>${theIcon}</span>`
+                    : ''
+                }
+
+
+                <h1 class='${classPrefix}__title ${
+    showIcon ? '' : `${classPrefix}--no-icon`
+  }'>
+                    ${titleText}
+                </h1>
+                <p class='${classPrefix}__paragraph'>
+                    ${paragraphText}
+                </p>
+                ${ArrowRightIcon}
+            </a>
+        </div>
+
+    `
 }
 
 export { createNavigationCard }
