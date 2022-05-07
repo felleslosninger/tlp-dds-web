@@ -33,24 +33,28 @@ $horizontal-padding: tokens.$spacing-base-10;
     padding: tokens.$spacing-base-2;
     display: flex;
   }
+
   &__with-background--blue {
     background-color: tokens.$color-brand-third-300;
     border-radius: tokens.$border-radius-x-large;
     padding: tokens.$spacing-base-2;
     display: flex;
   }
+
   &__with-background--yellow {
     background-color: tokens.$color-brand-second-400;
     border-radius: tokens.$border-radius-x-large;
     padding: tokens.$spacing-base-2;
     display: flex;
   }
+
   &__with-background--grey {
     background-color: tokens.$color-neutral-grey-300;
     border-radius: tokens.$border-radius-x-large;
     padding: tokens.$spacing-base-2;
     display: flex;
   }
+
   &--red {
     background-color: tokens.$color-brand-first-200;
     & a:active {
@@ -64,15 +68,18 @@ $horizontal-padding: tokens.$spacing-base-10;
       background-color: tokens.$color-brand-third-300;
     }
   }
+
   &--yellow {
     background-color: tokens.$color-brand-second-200;
     & a:active {
       background-color: tokens.$color-brand-second-300;
     }
   }
+
   &--white {
     background-color: tokens.$color-neutral-white;
   }
+
   &--grey {
     background-color: tokens.$color-neutral-grey-200;
     & a:active {
@@ -88,6 +95,7 @@ $horizontal-padding: tokens.$spacing-base-10;
       }
     }
   }
+
   &__active--blue {
     & a:active {
       background-color: tokens.$color-brand-third-200;
@@ -96,6 +104,7 @@ $horizontal-padding: tokens.$spacing-base-10;
       }
     }
   }
+
   &__active--yellow {
     & a:active {
       background-color: tokens.$color-brand-second-200;
@@ -104,6 +113,7 @@ $horizontal-padding: tokens.$spacing-base-10;
       }
     }
   }
+
   // Common properties
   &__link {
     color: inherit;
@@ -121,12 +131,19 @@ $horizontal-padding: tokens.$spacing-base-10;
     &:hover {
       border-color: tokens.$color-neutral-grey-800;
       box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
+
+      .#{$classname} {
+        &__arrow {
+          transform: translateX(8px);
+        }
+      }
     }
 
     &:active {
       background-color: tokens.$color-brand-first-300;
       border-color: tokens.$color-neutral-grey-800;
       box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
+
       .#{$classname}__with-background--red {
         background-color: tokens.$color-brand-first-600;
       }
@@ -140,8 +157,8 @@ $horizontal-padding: tokens.$spacing-base-10;
         background-color: tokens.$color-neutral-grey-500;
       }
     }
-    // Mobile
 
+    // Mobile
     @include utils.mobile() {
       padding: tokens.$spacing-3;
     }
@@ -152,14 +169,14 @@ $horizontal-padding: tokens.$spacing-base-10;
     margin-top: 0;
     margin-bottom: tokens.$spacing-2;
   }
-  &__paragraph {
-    font-size: tokens.$font-size-400;
+
+  &__desc {
     margin-top: 0;
     margin-bottom: tokens.$spacing-3;
+    @include typography.text-body-400;
   }
 
   // Icon styling
-
   &__icon {
     display: flex;
     align-items: center;
@@ -169,6 +186,7 @@ $horizontal-padding: tokens.$spacing-base-10;
     height: tokens.$spacing-base-19;
     box-sizing: border-box;
     margin-bottom: tokens.$spacing-3;
+
     & svg {
       height: tokens.$spacing-base-11;
       width: tokens.$spacing-base-11;
@@ -178,5 +196,9 @@ $horizontal-padding: tokens.$spacing-base-10;
   &__icon & svg:nth-last-of-type(1) {
     height: tokens.$spacing-base-5;
     width: tokens.$spacing-base-5;
+  }
+
+  &__arrow {
+    transition: 0.2s all;
   }
 }

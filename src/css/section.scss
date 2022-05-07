@@ -16,6 +16,7 @@ $icon-size: tokens.$spacing-base-5;
   padding: $padding-default 0;
   background-color: white;
   position: relative;
+  overflow: hidden;
 
   &--grey {
     background-color: tokens.$color-neutral-grey-100;
@@ -34,14 +35,6 @@ $icon-size: tokens.$spacing-base-5;
     margin-top: tokens.$spacing-3;
     margin-bottom: 0;
     @include typography.text-ingress-500();
-  }
-
-  &__element {
-    position: absolute;
-    z-index: 1;
-    width: 400px;
-    left: -150px;
-    top: 150px;
   }
 
   &__rectangle {

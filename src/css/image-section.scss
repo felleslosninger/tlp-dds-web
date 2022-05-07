@@ -9,6 +9,8 @@ $classname: '#{utils.$prefix}-image-section';
 .#{$classname} {
   background-color: tokens.$color-neutral-grey-100;
   padding: tokens.$spacing-10 0;
+  position: relative;
+  overflow: hidden;
 
   &--white {
     background-color: white;

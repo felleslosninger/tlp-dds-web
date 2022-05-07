@@ -132,7 +132,7 @@ $icon-size: tokens.$spacing-base-5;
   }
 
   &__day {
-    font-size: tokens.$font-size-900;
+    font-size: tokens.$font-size-800;
     font-weight: 500;
 
     @include utils.mobile() {

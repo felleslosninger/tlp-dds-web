@@ -15,7 +15,7 @@ const LandingPageComponent = () => {
         <header class="test-header"></header>
         ${createBrandBanner('d')}
 
-        <div class="" data-dds-selectors=".ddsweb-section">
+        <div class="" data-dds-selectors=".ddsweb-section,.ddsweb-image-section,#tomato">
             ${createSection({
               title: 'Slik sikrer du deg',
               content: primaryNav(),
@@ -70,7 +70,7 @@ const LandingPageComponent = () => {
               desc: '',
               backgroundColor: 'grey',
               footer:
-                '<button class="dds-button dds-button--secondary dds-button--large">Les alle arrangement</button>',
+                '<button class="dds-button dds-button--secondary dds-button--large">Les alle arrangementer</button>',
             })}
         </div>
 

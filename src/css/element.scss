@@ -1,0 +1,67 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-element';
+
+.#{$classname} {
+  position: absolute;
+  z-index: 1;
+  width: 400px;
+  left: -160px;
+  top: 150px;
+
+  &--right {
+    left: auto;
+    right: -160px;
+  }
+
+  &--small {
+    &.#{$classname}--right {
+      top: 100px;
+      &.#{$classname}--bottom {
+        bottom: 100px;
+        top: auto;
+      }
+    }
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: 150px;
+  }
+
+  &--6,
+  &--7 {
+    width: 300px;
+    left: -100px;
+
+    &.#{$classname}--small {
+      width: 200px;
+
+      &.#{$classname}--top {
+        top: 65px;
+      }
+
+      &.#{$classname}--bottom {
+        bottom: 65px;
+      }
+    }
+  }
+
+  &--6 {
+    &.#{$classname}--right {
+      right: -100px;
+      left: auto;
+    }
+  }
+  &--7 {
+    &.#{$classname}--right {
+      right: -100px;
+      left: auto;
+    }
+  }
+}

@@ -139,16 +139,17 @@ const createNavigationCard = ({
                     : ''
                 }
 
-
                 <h1 class='${classPrefix}__title ${
     showIcon ? '' : `${classPrefix}--no-icon`
   }'>
                     ${titleText}
                 </h1>
-                <p class='${classPrefix}__paragraph'>
+                <p class='${classPrefix}__desc'>
                     ${paragraphText}
                 </p>
-                ${ArrowRightIcon}
+                <span class="${classPrefix}__arrow">
+                          ${ArrowRightIcon}
+                </span>
             </a>
         </div>
 
