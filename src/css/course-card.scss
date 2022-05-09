@@ -9,7 +9,7 @@ $classname: '#{utils.$prefix}-course-card';
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(383px);
-$max-width: core-utils.$component-max-width;
+$max-width: 1000px;
 $icon-size: tokens.$spacing-base-5;
 
 .#{$classname} {
@@ -20,14 +20,12 @@ $icon-size: tokens.$spacing-base-5;
       }
       &:hover {
         background-color: tokens.$color-brand-first-100;
-        box-shadow: inset 0 0 0 4px tokens.$color-brand-first-500;
         .#{$classname}__banner {
           background-color: tokens.$color-brand-first-500;
         }
       }
       &:active {
         background-color: tokens.$color-brand-first-200;
-        box-shadow: inset 0 0 0 4px tokens.$color-brand-first-600;
         .#{$classname}__banner {
           background-color: tokens.$color-brand-first-600;
         }
@@ -41,14 +39,12 @@ $icon-size: tokens.$spacing-base-5;
       }
       &:hover {
         background-color: tokens.$color-brand-third-100;
-        box-shadow: inset 0 0 0 4px tokens.$color-brand-third-500;
         .#{$classname}__banner {
           background-color: tokens.$color-brand-third-500;
         }
       }
       &:active {
         background-color: tokens.$color-brand-third-200;
-        box-shadow: inset 0 0 0 4px tokens.$color-brand-third-600;
         .#{$classname}__banner {
           background-color: tokens.$color-brand-third-600;
         }
@@ -56,11 +52,11 @@ $icon-size: tokens.$spacing-base-5;
     }
   }
   &__link {
-    display: block;
+    display: flex;
     box-sizing: border-box;
     position: relative;
 
-    min-width: Min($min-width, 100%);
+    min-width: 900px;
     max-width: $max-width;
     height: 100%;
 
@@ -68,9 +64,12 @@ $icon-size: tokens.$spacing-base-5;
     background-color: tokens.$color-neutral-white;
     color: tokens.$color-text-background-light;
     transition: all tokens.$duration-normal;
+    border-radius: tokens.$border-radius-small;
+    border: 1px solid tokens.$color-neutral-grey-300;
 
     &:hover {
-      box-shadow: inset 0 0 0 4px tokens.$color-brand-second-500;
+      box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
+      border-color: tokens.$color-neutral-grey-800;
 
       .#{$classname}__banner {
         background-color: tokens.$color-brand-second-500;
@@ -82,18 +81,26 @@ $icon-size: tokens.$spacing-base-5;
     }
 
     &:active {
-      box-shadow: inset 0 0 0 4px tokens.$color-brand-second-600;
       background-color: tokens.$color-brand-second-200;
 
       .#{$classname}__banner {
         background-color: tokens.$color-brand-second-600;
       }
     }
+
+    @include utils.mobile() {
+      min-width: Min(#{$min-width}, 100%);
+      flex-direction: column;
+    }
   }
 
   // Elements
   &__container {
     padding: $padding-default;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
     @include utils.mobile() {
       padding: $padding-mobile;
     }
@@ -101,26 +108,87 @@ $icon-size: tokens.$spacing-base-5;
   &__banner {
     @include typography.text-body-400();
     background-color: tokens.$color-brand-second-300;
-    padding: $padding-mobile $padding-default;
+    padding: tokens.$spacing-2;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    min-height: 150px;
+    border-radius: tokens.$border-radius-small 0 0 tokens.$border-radius-small;
+
     @include utils.mobile() {
-      padding: $padding-mobile;
+      padding: tokens.$spacing-3;
+      border-radius: tokens.$border-radius-small tokens.$border-radius-small 0 0;
+      width: 100%;
+      flex-direction: row;
+      min-height: auto;
+      justify-content: start;
     }
 
     transition: all tokens.$duration-normal;
   }
+
+  &__day {
+    font-size: tokens.$font-size-800;
+    font-weight: 500;
+
+    @include utils.mobile() {
+      font-size: tokens.$font-size-500;
+    }
+  }
+
+  &__month {
+    font-size: tokens.$font-size-500;
+    margin-top: -5px;
+    margin-bottom: 2px;
+
+    @include utils.mobile() {
+      padding-left: 4px;
+      padding-right: 4px;
+      margin: 0;
+    }
+  }
+
+  &__year {
+    font-size: tokens.$font-size-400;
+  }
+
   &__title {
-    @include typography.text-heading-500();
+    @include typography.text-heading-600();
     color: tokens.$color-neutral-grey-800;
-    margin: 0 0 $padding-mobile 0;
+    margin: 0 0 16px 0;
+
+    .dds-icon-link {
+      display: inline;
+
+      svg {
+        margin-bottom: -1px;
+      }
+    }
+
+    @include utils.mobile() {
+      font-size: 20px;
+    }
   }
   &__list {
-    display: grid;
-    grid-auto-flow: row;
+    display: flex;
     row-gap: tokens.$spacing-base-4;
+
+    @include utils.mobile() {
+      flex-direction: column;
+    }
   }
   &__item {
     display: flex;
     align-items: center;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
   &__item svg {
     width: $icon-size;
