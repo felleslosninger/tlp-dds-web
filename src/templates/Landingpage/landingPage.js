@@ -84,7 +84,7 @@ const LandingPageComponent = () => {
 const primaryNav = () => {
   //language=HTML
   return String.raw`
-        <div class="row">
+        <div class="row gy-4">
             <div class="col-lg-4">
                 ${createNavigationCard({
                   title: 'test',
@@ -115,7 +115,7 @@ const primaryNav = () => {
 const secondaryNav = () => {
   //language=HTML
   return String.raw`
-        <div class="row">
+        <div class="row gy-4">
             <div class="col-lg-4">
                 ${createNavigationCard({
                   title: 'test',
@@ -146,7 +146,7 @@ const secondaryNav = () => {
 const blog = () => {
   //language=HTML
   return String.raw`
-        <div class="row">
+        <div class="row gy-4">
             <div class="col-lg-4">
                 ${createTeaserCard({
                   image: { src: 'img/placeholder-16-9-two.jpg' },
@@ -195,7 +195,7 @@ const reports = () => {
 const news = () => {
   //language=HTML
   return String.raw`
-        <div class="row">
+        <div class="row gy-4">
             <div class="col-lg-4">
                 ${createTeaserCard({
                   image: { src: 'img/placeholder-16-9-one.jpg' },
