@@ -4,6 +4,7 @@ import jQuery from 'jquery'
 import { dropdown } from './_dropdown'
 import { headerDrawers } from './_header-drawers'
 import { elements } from './elements'
+import { elementsInit } from './elements-init'
 
 // Set jQuery globally
 window.$ = window.jQuery = jQuery
@@ -12,3 +13,4 @@ window.$ = window.jQuery = jQuery
 dropdown()
 headerDrawers()
 elements()
+elementsInit()

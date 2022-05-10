@@ -5,6 +5,7 @@ const createSection = ({
   footer = false,
   lineColor = 'grey',
   backgroundColor,
+  name,
 }) => {
   const classPrefix = 'ddsweb-section'
   const theDesc =
@@ -12,6 +13,7 @@ const createSection = ({
       ? 'What for follow turned taken fate trade, multi the point not having a would it succeed the were there the a there, greatest hall commitment but the right but not poetic at a for behavioural.'
       : ''
   const theFooter = footer || false
+  const theName = name || ''
 
   // Functions
   const changeUnderlineColor = () => {
@@ -42,7 +44,7 @@ const createSection = ({
 
   //language=HTML
   return String.raw`
-        <section class="${classPrefix} ${background()}" data-dds-color="${lineColor}">
+        <section class="${classPrefix} ${background()} ${theName}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-7 mx-auto">
