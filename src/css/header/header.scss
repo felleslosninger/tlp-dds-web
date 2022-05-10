@@ -1,0 +1,51 @@
+@use 'blocks/menu.scss' as *;
+
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use '../utils/utils.scss' as utils;
+@use '../utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-header';
+$menu-classname: '#{utils.$prefix}-menu';
+$logo-height: utils.pxToRem(28px);
+$top-bar-height: utils.pxToRem(88px);
+
+.#{$classname} {
+  &__top-bar {
+    height: $top-bar-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid tokens.$color-neutral-grey-300;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    &-middle {
+      margin-right: auto;
+    }
+    &-left {
+      margin-right: 80px;
+    }
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+  }
+  &__search-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    @include typography.text-body-400();
+    cursor: pointer;
+  }
+  &__logo {
+    height: $logo-height;
+    width: auto;
+  }
+}

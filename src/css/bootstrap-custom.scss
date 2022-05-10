@@ -12,11 +12,7 @@ $include-column-box-sizing: true !default;
 
 $grid-gutter-width: 2rem;
 
-@import 'bootstrap/scss/mixins/lists';
-@import 'bootstrap/scss/mixins/breakpoints';
-@import 'bootstrap/scss/mixins/container';
-@import 'bootstrap/scss/mixins/grid';
-@import 'bootstrap/scss/mixins/utilities';
+@import 'bootstrap/scss/mixins';
 
 @import 'bootstrap/scss/vendor/rfs';
 
@@ -26,6 +22,8 @@ $grid-gutter-width: 2rem;
 @import 'bootstrap/scss/grid';
 
 @import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/transitions';
 // Only use the utilities we need
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-get-multiple(

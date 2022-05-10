@@ -37,6 +37,9 @@ footer {
     transform: rotate(30deg);
     border-radius: 50%;
   }
+  .container {
+    width: auto;
+  }
   @include utils.tablet() {
     &:before {
       content: '';
