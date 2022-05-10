@@ -29,7 +29,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {
-  icon: true,
+  showIcon: true,
   backgroundColor: 'red',
   iconBackground: false,
 }
@@ -74,11 +74,11 @@ GreyWithBgIcon.parameters = {
 
 export const CardWithoutIcon = Template.bind({})
 CardWithoutIcon.args = {
-  icon: false,
+  showIcon: false,
   backgroundColor: 'red',
 }
 CardWithoutIcon.parameters = {
-  controls: { exclude: ['icon', 'iconBackground'] },
+  controls: { exclude: ['showIcon', 'iconBackground'] },
 }
 
 export const WhiteWithBgIcon = Template.bind({})
