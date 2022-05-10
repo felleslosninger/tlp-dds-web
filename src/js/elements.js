@@ -1,16 +1,21 @@
 export function elements() {
-  $(document).ready(function () {
-    setTimeout(function () {
-      const elementsContainer = $('[data-dds-selectors]')
+  ;(function (window, document, undefined) {
+    window.ddsElements = function ({
+      parentContainerID,
+      selectors,
+      tenColSelectors,
+      colorRedSelectors,
+      colorYellowSelectors,
+      colorBlueSelectors,
+    }) {
+      const parentContainer = $('#' + parentContainerID)
 
-      if (!elementsContainer.length) {
+      if (!parentContainer.length) {
         return
       }
 
-      const selectorString = elementsContainer.data('dds-selectors')
-      const children = elementsContainer.children()
+      const children = parentContainer.children()
       const childrenCount = children.length
-
       let mainArray = []
       let previousElement = {
         verticalPos: 'top',
@@ -22,15 +27,15 @@ export function elements() {
       children.each(function (index, element) {
         mainArray.push({
           element: element,
-          color: $(element).data('dds-color'),
-          canPlace: isSelectorPresent(selectorString, element),
+          color: getColor(element),
+          canPlace: isSelectorPresent(selectors, element),
           placed: false,
           direction: 'left',
           height: $(element).innerHeight(),
+          column: getColumns(element),
         })
       })
 
-      // Main loop
       for (let i = 0; i < mainArray.length; i++) {
         let item = mainArray[i]
         let prevItem = i > 0 ? mainArray[i - 1] : null
@@ -49,7 +54,7 @@ export function elements() {
           ) {
             color = item.color
           } else {
-            color = getColor(previousElement.color)
+            color = getNextColor(previousElement.color)
             previousElement.color = color
           }
 
@@ -78,12 +83,13 @@ export function elements() {
           // insert image
           if (i === 0 || (prevItem !== null && !prevItem.placed)) {
             $(item.element).prepend(
-              insertImage({
+              insertElement({
                 color,
                 type: number,
                 horPos,
                 verPos,
                 size,
+                column: item.column,
               }),
             )
             previousElement.horizontalPos = horPos
@@ -91,8 +97,48 @@ export function elements() {
           }
         }
       }
-    }, 100)
-  })
+
+      function getColumns(element) {
+        const tenColArray = tenColSelectors.split(',')
+        const elementClassList = element.classList
+        let column = 12
+
+        elementClassList.forEach(function (item, index) {
+          if (arrayContains('.' + item, tenColArray)) {
+            column = 10
+          }
+        })
+        return column
+      }
+
+      function arrayContains(string, arr) {
+        return arr.indexOf(string) > -1
+      }
+
+      function getColor(element) {
+        const redClassList = colorRedSelectors.split(',')
+        const blueClassList = colorBlueSelectors.split(',')
+        const yellowClassList = colorYellowSelectors.split(',')
+
+        const elementClassList = element.classList
+        let color = null
+
+        elementClassList.forEach(function (item, index) {
+          if (arrayContains('.' + item, redClassList)) {
+            color = 'red'
+          }
+          if (arrayContains('.' + item, blueClassList)) {
+            color = 'blue'
+          }
+          if (arrayContains('.' + item, yellowClassList)) {
+            color = 'yellow'
+          }
+        })
+
+        return color
+      }
+    }
+  })(window, document)
 
   const isSelectorPresent = (selectorString, element) => {
     const selectorStringArray = selectorString.split(',')
@@ -115,7 +161,7 @@ export function elements() {
     return found
   }
 
-  const getColor = (color) => {
+  const getNextColor = (color) => {
     if (color === 'blue') {
       return 'red'
     } else if (color === 'red') {
@@ -153,13 +199,7 @@ export function elements() {
     }
   }
 
-  const insertImage = ({ color, type, horPos, verPos, size }) => {
-    //language=HTML
-    return String.raw`
-            <img
-                    class="ddsweb-element ddsweb-element--${horPos} ddsweb-element--${verPos} ddsweb-element--${type} ddsweb-element--${size}"
-                    src="digdir-elements/${color}-${type}.svg" role="presentation"
-                    alt="">
-        `
+  const insertElement = ({ color, type, horPos, verPos, size, column }) => {
+    return String.raw`<div class="ddsweb-element ddsweb-element--${color} ddsweb-element--${horPos} ddsweb-element--${verPos} ddsweb-element--${type} ddsweb-element--${size} ddsweb-element--${column}"></div>`
   }
 }
