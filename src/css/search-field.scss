@@ -1,0 +1,102 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use './utils/utils.scss' as utils;
+@use './utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-search-field';
+$padding-default: utils.$padding-default;
+$padding-mobile: utils.$padding-mobile;
+$min-width: utils.pxToRem(369px);
+$max-width: core-utils.$component-max-width;
+
+body .ddsweb-search-field__input:focus-visible {
+  outline: none;
+}
+
+.#{$classname} {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 64px;
+
+  &__button {
+    @include typography.text-interface-400();
+    background-color: tokens.$color-neutral-grey-800;
+    color: tokens.$color-neutral-white;
+    border-top: 1px solid tokens.$color-neutral-grey-600;
+    border-right: 1px solid tokens.$color-neutral-grey-600;
+    border-bottom: 1px solid tokens.$color-neutral-grey-600;
+    border-left: 0;
+    border-top-right-radius: tokens.$border-radius-x-large;
+    border-bottom-right-radius: tokens.$border-radius-x-large;
+    height: 100%;
+    width: 104px;
+    padding: 0;
+    box-sizing: content-box;
+    cursor: pointer;
+    transition: all 0.2s;
+    transition-property: background-color, border-color, color;
+    &:hover {
+      background-color: tokens.$color-interface-interaction-light;
+      color: tokens.$color-neutral-grey-800;
+      border: 2px solid tokens.$color-neutral-grey-800;
+      border-left-width: 1px;
+      cursor: pointer;
+    }
+  }
+  &__icon {
+    position: absolute;
+    height: tokens.$spacing-8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 26px;
+  }
+  &__input {
+    width: 100%;
+    max-width: 650px;
+    padding-left: tokens.$spacing-8;
+    height: tokens.$spacing-8;
+    border: 1px solid tokens.$color-neutral-grey-600;
+    border-radius: tokens.$border-radius-x-large;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: all 0.2s;
+    transition-property: border, box-shadow;
+    @include typography.text-body-400();
+    &:focus {
+      border-color: tokens.$color-interface-interaction;
+      box-shadow: inset 0 0 0 1px tokens.$color-interface-interaction;
+    }
+    &::placeholder {
+      @include typography.text-body-400();
+    }
+  }
+  // Mobile
+
+  @include utils.mobile() {
+    &__input {
+      width: 100%;
+      height: tokens.$spacing-6;
+      max-width: 328px;
+      padding-left: 50px;
+      &::placeholder {
+        @include typography.text-body-300();
+      }
+    }
+    &__button {
+      width: 100%;
+      height: tokens.$spacing-6;
+      max-width: 72px;
+      @include typography.text-interface-300();
+    }
+    &__icon {
+      padding-left: 17px;
+    }
+  }
+}
