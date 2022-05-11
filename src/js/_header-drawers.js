@@ -38,6 +38,7 @@ export function headerDrawers() {
       dropdown.animate(
         {
           height: dropdownHeight,
+
         },
         animationSpeed,
       )

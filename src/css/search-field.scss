@@ -42,6 +42,7 @@ body .ddsweb-search-field__input:focus-visible {
       background-color: tokens.$color-interface-interaction-light;
       color: tokens.$color-neutral-grey-800;
       border: 2px solid tokens.$color-neutral-grey-800;
+      border-left-width: 1px;
       cursor: pointer;
     }
   }

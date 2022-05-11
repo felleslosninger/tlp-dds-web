@@ -11,6 +11,7 @@ $classname: '#{utils.$prefix}-header';
 $menu-classname: '#{utils.$prefix}-menu';
 $logo-height: utils.pxToRem(28px);
 $top-bar-height: utils.pxToRem(88px);
+$container-max-width: utils.pxToRem(1260px);
 
 .#{$classname} {
   &__top-bar {
@@ -31,6 +32,9 @@ $top-bar-height: utils.pxToRem(88px);
     &-left {
       margin-right: 80px;
     }
+    &-right {
+      display: flex;
+    }
   }
   &__search {
     display: flex;
@@ -44,8 +48,49 @@ $top-bar-height: utils.pxToRem(88px);
     @include typography.text-body-400();
     cursor: pointer;
   }
+  &__menu-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    @include typography.text-body-400();
+    cursor: pointer;
+    z-index: 1;
+  }
+  &__menu-icon {
+    display: flex;
+    padding-right: 6px;
+  }
   &__logo {
     height: $logo-height;
     width: auto;
+  }
+
+  &__expanded {
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 89px;
+    overflow: hidden;
+    z-index: 10;
+    height: 0;
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  &__expanded-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px 0;
+    transition-duration: 0.4s;
+    transition-property: opacity, visibility;
+    opacity: 0;
+    visibility: visible;
+  }
+  &__title {
+    margin-bottom: tokens.$spacing-3;
+    @include typography.text-heading-600();
   }
 }
