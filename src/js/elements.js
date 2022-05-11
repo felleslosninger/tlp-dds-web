@@ -10,6 +10,7 @@ export function elements() {
     }) {
       const parentContainer = $('#' + parentContainerID)
 
+      // Stop running script if parent selector does not exist
       if (!parentContainer.length) {
         return
       }
@@ -36,11 +37,12 @@ export function elements() {
         })
       })
 
+      // Main loop
       for (let i = 0; i < mainArray.length; i++) {
         let item = mainArray[i]
         let prevItem = i > 0 ? mainArray[i - 1] : null
         let color = 'red'
-        let number = 1
+        let variant = 1
         let horPos = 'left'
         let verPos = 'top'
         let size = 'large'
@@ -77,15 +79,15 @@ export function elements() {
             size = 'small'
           }
 
-          // set number
-          number = getNumber(i + childrenCount, horPos)
+          // set variant
+          variant = getVariantNumber(i + childrenCount, horPos, item.column)
 
           // insert image
           if (i === 0 || (prevItem !== null && !prevItem.placed)) {
             $(item.element).prepend(
               insertElement({
                 color,
-                type: number,
+                variant,
                 horPos,
                 verPos,
                 size,
@@ -98,6 +100,7 @@ export function elements() {
         }
       }
 
+      // Returns the column based on item config
       function getColumns(element) {
         const tenColArray = tenColSelectors.split(',')
         const elementClassList = element.classList
@@ -111,10 +114,12 @@ export function elements() {
         return column
       }
 
+      // Check if an array contains string
       function arrayContains(string, arr) {
         return arr.indexOf(string) > -1
       }
 
+      // Returns color string based on configuration
       function getColor(element) {
         const redClassList = colorRedSelectors.split(',')
         const blueClassList = colorBlueSelectors.split(',')
@@ -140,6 +145,7 @@ export function elements() {
     }
   })(window, document)
 
+  // Checks if selectorString has a class inside element
   const isSelectorPresent = (selectorString, element) => {
     const selectorStringArray = selectorString.split(',')
     const elementStringArray = $(element)[0].classList
@@ -161,6 +167,7 @@ export function elements() {
     return found
   }
 
+  // Get the next color from previous color
   const getNextColor = (color) => {
     if (color === 'blue') {
       return 'red'
@@ -171,6 +178,7 @@ export function elements() {
     }
   }
 
+  // Get horizontal string direction based on a number
   const getHorizontalPos = (number) => {
     if (number % 2 === 0) {
       return 'left'
@@ -179,6 +187,7 @@ export function elements() {
     }
   }
 
+  // Get vertical string direction based on a number
   const getVerticalPos = (number) => {
     if (number % 2 === 0) {
       return 'top'
@@ -187,19 +196,67 @@ export function elements() {
     }
   }
 
-  const getNumber = (number, horPos) => {
-    if (number % 4 === 0) {
-      return horPos === 'left' ? 7 : 7
-    } else if (number % 3 === 0) {
-      return horPos === 'left' ? 6 : 6
-    } else if (number % 2 === 0) {
-      return horPos === 'left' ? 4 : 3
+  // Get the variant to be used based on config
+  const getVariantNumber = (number, horPos, column) => {
+    if (column === 12) {
+      if (number % 4 === 0) {
+        return horPos === 'left' ? 6 : 6
+      } else {
+        return horPos === 'left' ? 5 : 5
+      }
     } else {
-      return horPos === 'left' ? 1 : 2
+      if (number % 2 === 0) {
+        return horPos === 'left' ? 4 : 2
+      } else {
+        return horPos === 'left' ? 4 : 2
+      }
     }
   }
 
-  const insertElement = ({ color, type, horPos, verPos, size, column }) => {
-    return String.raw`<div class="ddsweb-element ddsweb-element--${color} ddsweb-element--${horPos} ddsweb-element--${verPos} ddsweb-element--${type} ddsweb-element--${size} ddsweb-element--${column}"></div>`
+  // Returns SVG based on variant
+  const getSvgByVariant = (variant) => {
+    if (variant === 1 || variant === 2) {
+      //language=HTML
+      return String.raw`
+                <svg viewBox="0 0 618 376" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="183.08" cy="188.079" rx="183.08" ry="183.079"/>
+                    <path d="M528.039 0L617.429 283.756L333.676 373.142L244.286 89.3859L528.039 0Z"/>
+                </svg>
+            `
+    } else if (variant === 3 || variant === 4) {
+      //language=HTML
+      return String.raw`
+                <svg viewBox="0 0 597 364" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="419.063" cy="186.03" rx="177.063" ry="177.03"/>
+                    <path d="M272.508 0L354.156 272.498L81.6473 354.119L-0.00112268 81.6215L272.508 0Z"/>
+                </svg>
+            `
+    } else if (variant === 5) {
+      //language=HTML
+      return String.raw`
+                <svg viewBox="0 0 376 618" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="188.079" cy="434.92" rx="183.08" ry="183.079" transform="rotate(-90 188.079 434.92)"/>
+                    <path d="M0 89.9609L283.756 0.57064L373.142 284.324L89.3859 373.714L0 89.9609Z"/>
+                </svg>
+            `
+    } else if (variant === 6) {
+      //language=HTML
+      return String.raw`
+                <svg viewBox="0 0 376 617" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="183.079" cy="183.92" rx="183.08" ry="183.079" transform="rotate(-90 183.079 183.92)"/>
+                    <path d="M283.75 617L0.000679314 527.589L89.414 243.844L373.163 333.256L283.75 617Z"/>
+                </svg>
+            `
+    }
+  }
+
+  // Insert Profile element into DOM
+  const insertElement = ({ color, variant, horPos, verPos, size, column }) => {
+    //language=HTML
+    return String.raw`
+            <div class="ddsweb-element ddsweb-element--${color} ddsweb-element--${horPos} ddsweb-element--${verPos} ddsweb-element--${variant} ddsweb-element--${size} ddsweb-element--${column}-col">
+                ${getSvgByVariant(variant)}
+            </div>
+        `
   }
 }

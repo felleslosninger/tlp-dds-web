@@ -8,7 +8,7 @@
 $classname: '#{utils.$prefix}-element';
 
 .#{$classname} {
-  height: 250px;
+  height: 270px;
   position: relative;
   display: inline-block;
 
@@ -16,13 +16,26 @@ $classname: '#{utils.$prefix}-element';
     height: 100%;
   }
 
+  &--left {
+    position: absolute;
+    left: -100px;
+    right: auto;
+  }
+
   &--right {
+    position: absolute;
     left: auto;
-    right: -160px;
+    right: -100px;
+  }
+
+  &--5,
+  &--6 {
+    height: 450px;
   }
 
   &--1,
-  &--3 {
+  &--3,
+  &--5 {
     ellipse {
       fill: tokens.$color-neutral-grey-800;
     }
@@ -44,7 +57,8 @@ $classname: '#{utils.$prefix}-element';
   }
 
   &--2,
-  &--4 {
+  &--4,
+  &--6 {
     ellipse {
       fill: tokens.$color-brand-first-600;
     }
@@ -66,11 +80,13 @@ $classname: '#{utils.$prefix}-element';
   }
 
   &--small {
+    height: 280px;
     &.#{$classname}--right {
       top: 100px;
       &.#{$classname}--bottom {
         bottom: 100px;
         top: auto;
+        right: -50px;
       }
     }
   }
@@ -78,36 +94,5 @@ $classname: '#{utils.$prefix}-element';
   &--bottom {
     top: auto;
     bottom: 150px;
-  }
-
-  &--65,
-  &--75 {
-    width: 300px;
-    left: -100px;
-
-    &.#{$classname}--small {
-      width: 200px;
-
-      &.#{$classname}--top {
-        top: 65px;
-      }
-
-      &.#{$classname}--bottom {
-        bottom: 65px;
-      }
-    }
-  }
-
-  &--65 {
-    &.#{$classname}--right {
-      right: -100px;
-      left: auto;
-    }
-  }
-  &--75 {
-    &.#{$classname}--right {
-      right: -100px;
-      left: auto;
-    }
   }
 }

@@ -20,7 +20,7 @@ export default {
       control: { type: 'radio' },
     },
     variant: {
-      options: [1, 2, 3, 4],
+      options: [1, 2, 3, 4, 5, 6],
       control: { type: 'radio' },
     },
   },
