@@ -1,0 +1,69 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use './utils/utils.scss' as utils;
+
+.dds-dropdown {
+  position: relative;
+
+  &--open {
+    button {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+
+    &:after {
+      margin-left: 8px;
+      transition-duration: 0.3s;
+      transition-property: transform;
+      display: block;
+      height: 24px;
+      width: 24px;
+      content: url('data:image/svg+xml; utf8, <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version="1.1"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg>');
+      content: url('data:image/svg+xml; utf8, <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version="1.1"><path d="M5.46967 8.46967C5.76256 8.17678 6.23744 8.17678 6.53033 8.46967L12 13.9393L17.4697 8.46967C17.7626 8.17678 18.2374 8.17678 18.5303 8.46967C18.8232 8.76256 18.8232 9.23744 18.5303 9.53033L12.5303 15.5303C12.2374 15.8232 11.7626 15.8232 11.4697 15.5303L5.46967 9.53033C5.17678 9.23744 5.17678 8.76256 5.46967 8.46967Z"/></svg>');
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    a {
+      padding: 12px 24px;
+      display: block;
+      @include core-text.text-body-300;
+      text-decoration: none;
+    }
+    &:first-child a {
+      padding-top: 24px;
+    }
+    &:last-child a {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+    transition-duration: 0.3s;
+    transition-property: opacity, visibility;
+    background-color: white;
+    border: 1px solid $color-neutral-grey-300;
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
