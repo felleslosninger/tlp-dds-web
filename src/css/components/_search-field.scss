@@ -2,8 +2,8 @@
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
-@use './utils/utils.scss' as utils;
-@use './utils/card.scss' as card;
+@use '../utils/utils.scss' as utils;
+@use '../utils/card.scss' as card;
 
 $classname: '#{utils.$prefix}-search-field';
 $padding-default: utils.$padding-default;

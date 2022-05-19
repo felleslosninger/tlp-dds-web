@@ -1,6 +1,6 @@
 import searchIcon from '@digdir/ds-icons/svg/outline/Search.svg'
 
-const createSearchField = ({ }) => {
+const createSearchField = ({}) => {
   const classPrefix = 'ddsweb-search-field'
 
   // Element content

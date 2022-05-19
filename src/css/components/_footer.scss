@@ -2,7 +2,7 @@
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
-@use './utils/utils.scss' as utils;
+@use '../utils/utils.scss' as utils;
 @use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 
 $classname: '#{utils.$prefix}-footer';

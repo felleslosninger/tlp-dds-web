@@ -7,7 +7,6 @@ import '@digdir/ds-core-css/build/index.css'
 import '../src/js/index'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-
 export const parameters = {
   docs: {
     theme: customTheme,

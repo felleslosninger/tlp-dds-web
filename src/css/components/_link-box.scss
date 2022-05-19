@@ -1,7 +1,7 @@
 @use '@digdir/ds-core-css/build/src/panel-link.scss' as core-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
-@use './utils/utils.scss' as utils;
+@use '../utils/utils.scss' as utils;
 
 $classname: '#{utils.$prefix}-link-box';
 $min-width: utils.pxToRem(416px);
