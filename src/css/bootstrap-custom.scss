@@ -11,12 +11,16 @@ $include-column-box-sizing: true !default;
 @import 'bootstrap/scss/variables';
 
 $grid-gutter-width: 2rem;
+$gutters: (
+  0: 0,
+  1: $spacer,
+  2: $spacer * 1.5,
+  3: $spacer * 2,
+  4: $spacer * 2.5,
+  5: $spacer * 3,
+);
 
-@import 'bootstrap/scss/mixins/lists';
-@import 'bootstrap/scss/mixins/breakpoints';
-@import 'bootstrap/scss/mixins/container';
-@import 'bootstrap/scss/mixins/grid';
-@import 'bootstrap/scss/mixins/utilities';
+@import 'bootstrap/scss/mixins';
 
 @import 'bootstrap/scss/vendor/rfs';
 
@@ -67,3 +71,12 @@ $utilities: map-get-multiple(
 );
 
 @import 'bootstrap/scss/utilities/api';
+
+@import 'bootstrap/scss/reboot';
+
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/carousel';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/transitions';

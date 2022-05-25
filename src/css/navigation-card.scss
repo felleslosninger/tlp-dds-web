@@ -69,6 +69,16 @@ $horizontal-padding: tokens.$spacing-base-10;
     border: 1px solid tokens.$color-neutral-grey-300;
     border-radius: tokens.$border-radius-small;
     transition: 0.2s all;
+    position: relative;
+    padding-bottom: 72px;
+
+    &:after {
+      font-family: 'Material Symbols Rounded', sans-serif;
+      content: '\e5c8';
+      font-size: 30px;
+      position: absolute;
+      bottom: 32px;
+    }
 
     &-blue,
     &-red,
@@ -182,12 +192,16 @@ $horizontal-padding: tokens.$spacing-base-10;
     }
   }
 
+  &__img-container {
+    img {
+      height: 64px;
+      width: auto;
+      margin-bottom: 32px;
+    }
+  }
+
   &__icon & svg:nth-last-of-type(1) {
     height: tokens.$spacing-base-5;
     width: tokens.$spacing-base-5;
-  }
-
-  &__arrow {
-    transition: 0.2s all;
   }
 }

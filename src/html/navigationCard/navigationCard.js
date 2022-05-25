@@ -1,5 +1,4 @@
 import SunIcon from '@digdir/ds-icons/svg/outline/Sun.svg'
-import ArrowRightIcon from '@digdir/ds-icons/svg/outline/ArrowRight.svg'
 
 const createNavigationCard = ({
   showIcon = true,
@@ -39,9 +38,6 @@ const createNavigationCard = ({
                 <p class='${classPrefix}__desc'>
                     ${paragraphText}
                 </p>
-                <span class="${classPrefix}__arrow">
-                          ${ArrowRightIcon}
-                </span>
             </a>
         </div>
 
