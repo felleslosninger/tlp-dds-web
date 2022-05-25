@@ -1,0 +1,33 @@
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use '../../utils/utils.scss' as utils;
+@use '../../utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-header';
+$menu-classname: '#{utils.$prefix}-menu';
+$logo-height: utils.pxToRem(28px);
+$top-bar-height: utils.pxToRem(88px);
+
+.#{$menu-classname} {
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+    color: tokens.$color-neutral-grey-800;
+    margin-left: tokens.$spacing-3;
+    @include typography.text-body-400();
+  }
+  .dropdown-item {
+    margin: 0;
+    padding: 0;
+    padding-bottom: tokens.$spacing-1;
+    padding-top: tokens.$spacing-1;
+    padding-left: tokens.$spacing-2;
+    width: auto;
+  }
+}

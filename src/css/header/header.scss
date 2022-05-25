@@ -1,0 +1,244 @@
+@use 'blocks/menu.scss' as *;
+@use 'blocks/dropdown.scss' as *;
+
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use '../utils/utils.scss' as utils;
+@use '../utils/card.scss' as card;
+
+$classname: '#{utils.$prefix}-header';
+$menu-classname: '#{utils.$prefix}-menu';
+$megaMenuClassName: '#{utils.$prefix}-header-mega-menu';
+$logo-height: utils.pxToRem(28px);
+$top-bar-height: utils.pxToRem(88px);
+$container-max-width: utils.pxToRem(1260px);
+
+.#{$classname} {
+  &__top-bar {
+    height: $top-bar-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid tokens.$color-neutral-grey-300;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    &-middle {
+      margin-right: auto;
+    }
+    &-left {
+      margin-right: 80px;
+    }
+    &-right {
+      display: flex;
+    }
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    &[aria-expanded='true'] {
+      button {
+        color: tokens.$color-interface-interaction;
+      }
+    }
+  }
+  &__search-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-right: 42px;
+    cursor: pointer;
+    &-text {
+      pointer-events: none;
+      margin-left: 11px;
+      @include typography.text-body-400();
+    }
+    &:hover {
+      color: tokens.$color-interface-interaction;
+      .ddsweb-header__search-icon {
+        svg path {
+          fill: tokens.$color-interface-interaction;
+        }
+      }
+    }
+  }
+  &__button-active {
+    color: tokens.$color-interface-interaction;
+    .ddsweb-header__search-icon {
+      svg path {
+        fill: tokens.$color-interface-interaction;
+      }
+    }
+    .ddsweb-header__menu-icon {
+      svg path {
+        fill: tokens.$color-interface-interaction;
+      }
+    }
+  }
+  &__expanded {
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 89px;
+    overflow: hidden;
+    z-index: 2;
+    height: 0;
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s;
+  }
+
+  &__search-icon {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    transition: 0.4s all;
+    pointer-events: none;
+    &--active {
+      transform: rotate(90deg);
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
+  &__menu-button {
+    display: flex;
+    background: none;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s all;
+
+    &-text {
+      pointer-events: none;
+      margin-left: 11px;
+      @include typography.text-body-400();
+    }
+    &:hover {
+      color: tokens.$color-interface-interaction;
+      .ddsweb-header__menu-icon {
+        svg path {
+          fill: tokens.$color-interface-interaction;
+        }
+      }
+    }
+  }
+
+  &__menu-icon {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    transition: 0.4s all;
+    pointer-events: none;
+    &--active {
+      transform: rotate(90deg);
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
+  &__logo {
+    height: $logo-height;
+    width: auto;
+  }
+
+  &__expanded-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px 0;
+    transition-duration: 0.4s;
+    transition-property: opacity, visibility;
+    opacity: 0;
+    visibility: visible;
+    position: relative;
+    z-index: 4;
+  }
+  &__expanded-content .ddsweb-search-field {
+    max-width: 650px;
+    width: 100%;
+    &__button {
+      width: 130px;
+    }
+  }
+  &__title {
+    margin-bottom: tokens.$spacing-3;
+    @include typography.text-heading-600();
+  }
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+}
+
+.#{$megaMenuClassName} {
+  li {
+    list-style: none;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 32px;
+    margin-bottom: -32px;
+  }
+
+  &__list-title {
+    margin-bottom: 8px;
+    display: block;
+    color: tokens.$color-interface-interaction;
+    @include typography.text-interface-400;
+    text-decoration: none;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  &__nested-list {
+    padding: 0;
+  }
+
+  &__nested-item {
+    margin-bottom: 8px;
+
+    a {
+      color: tokens.$color-neutral-grey-800;
+    }
+    svg {
+      fill: tokens.$color-neutral-grey-800;
+    }
+  }
+  .dds-icon-link {
+    color: tokens.$color-neutral-grey-800 !important;
+    svg {
+      fill: tokens.$color-neutral-grey-800 !important;
+    }
+  }
+}

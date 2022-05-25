@@ -8,24 +8,14 @@ const createLinkBox = ({ icon = true }) => {
 
   // Elements
   const textBoxChildren = String.raw`
-    <a
-      class="${classPrefix}__link"
-      href="https://www.digdir.no/"
-      target="_blank"
-      rel="noreferrer noopener"
-    >
+    <a class="${classPrefix}__link" href="https://www.digdir.no/" target="_blank" rel="noreferrer noopener">
       ${labelText}
     </a>
     `
   const iconBoxChildren = String.raw`
-    <a
-        class="dds-panel-link dds-panel-link--large"
-        href="https://www.digdir.no/"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <span class="dds-panel-link__label">${labelText}</span>
-        ${ChevronRightIcon}
+    <a class="dds-panel-link dds-panel-link--large" href="https://www.digdir.no/" target="_blank" rel="noreferrer noopener">
+      <span class="dds-panel-link__label">${labelText}</span>
+      ${ChevronRightIcon}
     </a>
     `
 

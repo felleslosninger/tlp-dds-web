@@ -1,16 +1,14 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
-@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
-@use './utils/utils.scss' as utils;
-@use './utils/card.scss' as card;
+@use '../utils/utils.scss' as utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 
 $classname: '#{utils.$prefix}-footer';
-$padding-default: utils.$padding-default;
-$padding-mobile: utils.$padding-mobile;
-$min-width: utils.pxToRem(383px);
-$max-width: core-utils.$component-max-width;
-$icon-size: tokens.$spacing-base-5;
+$container-max-width: utils.pxToRem(1260px);
+$footerPadding: $spacing-8;
+$footerPaddingMobile: $spacing-6;
 
 .#{$classname} {
   background-color: tokens.$color-neutral-grey-800;
@@ -92,76 +90,31 @@ $icon-size: tokens.$spacing-base-5;
       &:last-child {
         margin: 0;
       }
-      & svg {
-        height: 22px;
-        width: 22px;
+    }
+  }
+
+  &-socials {
+    display: flex;
+    margin-top: 16px;
+
+    &__icon {
+      background-color: $color-neutral-grey-900;
+      fill: $color-neutral-grey-300;
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+
+      svg {
+        height: 24px;
+
         path {
           fill: tokens.$color-neutral-grey-300;
         }
       }
-    }
-  }
-
-  &:before {
-    content: '';
-    height: 252px;
-    width: 252px;
-    position: absolute;
-    background-color: tokens.$color-brand-second-600;
-    bottom: -15%;
-    left: -10%;
-    transform: rotate(30deg);
-  }
-  &:after {
-    content: '';
-    height: 332px;
-    width: 332px;
-    position: absolute;
-    background-color: tokens.$color-brand-first-600;
-    bottom: -39%;
-    right: -8%;
-    transform: rotate(30deg);
-    border-radius: 50%;
-  }
-  @include utils.tablet() {
-    &:before {
-      height: 146px;
-      width: 146px;
-      bottom: -15%;
-      left: 0%;
-    }
-    &:after {
-      height: 146px;
-      width: 146px;
-      bottom: -12%;
-      right: -12%;
-    }
-  }
-  @include utils.large-mobile() {
-    .#{$classname} {
-      padding: $padding-mobile;
-    }
-    &:before {
-      height: 146px;
-      width: 146px;
-      top: -15%;
-      left: 65%;
-    }
-    &:after {
-      height: 126px;
-      width: 126px;
-      bottom: -10%;
-      left: -12%;
-    }
-  }
-  @include utils.mobile() {
-    &:before {
-      top: -15%;
-      left: 60%;
-    }
-    &:after {
-      bottom: -10%;
-      left: -12%;
     }
   }
 }

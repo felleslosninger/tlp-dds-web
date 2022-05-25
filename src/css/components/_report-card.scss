@@ -1,11 +1,10 @@
 @use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
-@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
-@use './utils/utils.scss' as utils;
-@use './utils/card.scss' as card;
+@use '../utils/utils.scss' as utils;
+@use '../utils/card.scss' as card;
 
-$classname: '#{utils.$prefix}-blog-card';
+$classname: '#{utils.$prefix}-report-card';
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $min-width: utils.pxToRem(369px);
@@ -14,8 +13,9 @@ $max-width: core-utils.$component-max-width;
 .#{$classname} {
   &__link {
     @include card.container-link();
-    min-width: Min(#{$min-width}, 100%);
+    min-width: Min($min-width, 100%);
     max-width: $max-width;
+    padding: $padding-default;
 
     &:hover {
       background-color: tokens.$color-neutral-grey-100;
@@ -24,40 +24,20 @@ $max-width: core-utils.$component-max-width;
       & .#{core-icon-link.$classname} {
         @include card.icon-link-hover();
       }
-      & .#{$classname}__banner .#{$classname}__image img {
-        opacity: 100%;
-      }
     }
 
     &:active {
       background-color: tokens.$color-interface-interaction-light;
     }
-  }
 
-  // Elements
-  &__banner &__image img {
-    display: block;
-    width: 100%;
-
-    opacity: 80%;
-    transition: tokens.$duration-normal all;
-  }
-
-  &__container {
-    padding: $padding-default;
     @include utils.mobile() {
       padding: $padding-mobile;
     }
   }
 
+  // Elements
   &__title {
     @include card.title();
-    margin-bottom: tokens.$spacing-base-2;
-  }
-
-  &__date {
-    @include typography.text-body-200();
-    color: tokens.$color-neutral-grey-700;
   }
 
   &__paragraph {

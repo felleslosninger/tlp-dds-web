@@ -1,11 +1,10 @@
 export function dropdown() {
   $(document).ready(function () {
     const dropdownToggles = $('[data-dds-toggle]')
-
     dropdownToggles.click(function (e) {
       const targetButton = $(e.target)
       const dropdown = targetButton.parent()
-
+      console.log(targetButton)
       if (dropdown.hasClass('dds-dropdown--open')) {
         closeDropdown(targetButton, dropdown)
       } else {
@@ -13,7 +12,7 @@ export function dropdown() {
       }
     })
 
-    $(document).click(function (e) {
+    $(document).on(function (e) {
       const target = $(e.target)
       if (!target.parents().hasClass('dds-dropdown')) {
         closeDropdowns()

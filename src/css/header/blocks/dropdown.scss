@@ -1,0 +1,47 @@
+@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
+@use '@digdir/ds-core-css/build/src/typography.scss' as core-text;
+@use '@digdir/ds-core-css/build/src/typography.scss' as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use '@digdir/ds-tokens/build/tokens.scss' as *;
+@use '../../utils/utils.scss' as utils;
+@use '../../utils/card.scss' as card;
+
+$dropdownClassname: '#{utils.$prefix}-dropdown';
+$iconClassname: 'dds-icon-link';
+
+.#{$dropdownClassname} {
+  &__list {
+    padding: 0;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    @include typography.text-body-400();
+    color: tokens.$color-neutral-grey-800;
+    cursor: pointer;
+    &:after {
+      font-family: Material Symbols Outlined, sans-serif;
+      content: '\e5cf';
+      border: none;
+      transition: 0.2s all;
+      font-weight: 400;
+      vertical-align: unset;
+      font-size: tokens.$font-size-500;
+    }
+  }
+  &__toggle.show:after {
+    transform: rotate(180deg);
+  }
+}
+.#{$iconClassname} {
+  svg {
+    height: 11px !important;
+    path {
+      fill: tokens.$color-neutral-grey-800 !important;
+    }
+  }
+}

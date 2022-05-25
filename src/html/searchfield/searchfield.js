@@ -13,10 +13,10 @@ const createSearchField = ({}) => {
 
   return String.raw`
   <div class="${classPrefix}">
-  <span aria-hidden="true" class="${classPrefix}__icon"> ${searchIcon}</span>
-  <input class="${classPrefix}__input" type="text" placeholder="${placeHolderText}"  />
-  <button type="button" class="${classPrefix}__button">${buttonText}</button>
-
+    <span aria-hidden="true" class="${classPrefix}__icon"> ${searchIcon}</span>
+    <input class="${classPrefix}__input" type="text" placeholder="${placeHolderText}" />
+    <button type="button" class="${classPrefix}__button">${buttonText}</button>
+  
   </div>
       
           `
