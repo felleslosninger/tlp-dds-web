@@ -115,7 +115,6 @@ export function headerDrawers() {
       }
     }
 
-
     $(document).on('click', function (e) {
       let target = $(e.target)
       let megaMenuIcon = $('.ddsweb-header__menu-icon')
