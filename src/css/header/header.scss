@@ -62,63 +62,28 @@ $container-max-width: utils.pxToRem(1260px);
       margin-left: 11px;
       @include typography.text-body-400();
     }
-  }
-
-  &__search-icon {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-content: center;
-    transition: 0.4s all;
-    svg {
-      pointer-events: none;
-    }
-    &-active {
-      transform: rotate(90deg);
-      svg path {
-        fill: tokens.$color-interface-interaction;
-      }
-    }
-  }
-  &__menu-button {
-    display: flex;
-    background: none;
-    border: none;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.4s all;
-    &-active {
-      align-items: center;
+    &:hover {
       color: tokens.$color-interface-interaction;
-    }
-    &-text {
-      pointer-events: none;
-      margin-left: 11px;
-      @include typography.text-body-400();
+      .ddsweb-header__search-icon {
+        svg path {
+          fill: tokens.$color-interface-interaction;
+        }
+      }
     }
   }
-
-  &__menu-icon {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-content: center;
-    transition: 0.4s all;
-    svg {
-      pointer-events: none;
+  &__button-active {
+    color: tokens.$color-interface-interaction;
+    .ddsweb-header__search-icon {
+      svg path {
+        fill: tokens.$color-interface-interaction;
+      }
     }
-    &-active {
-      transform: rotate(90deg);
+    .ddsweb-header__menu-icon {
       svg path {
         fill: tokens.$color-interface-interaction;
       }
     }
   }
-  &__logo {
-    height: $logo-height;
-    width: auto;
-  }
-
   &__expanded {
     background-color: white;
     width: 100%;
@@ -129,6 +94,63 @@ $container-max-width: utils.pxToRem(1260px);
     z-index: 2;
     height: 0;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s;
+  }
+
+  &__search-icon {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    transition: 0.4s all;
+    pointer-events: none;
+    &--active {
+      transform: rotate(90deg);
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
+  &__menu-button {
+    display: flex;
+    background: none;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s all;
+
+    &-text {
+      pointer-events: none;
+      margin-left: 11px;
+      @include typography.text-body-400();
+    }
+    &:hover {
+      color: tokens.$color-interface-interaction;
+      .ddsweb-header__menu-icon {
+        svg path {
+          fill: tokens.$color-interface-interaction;
+        }
+      }
+    }
+  }
+
+  &__menu-icon {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    transition: 0.4s all;
+    pointer-events: none;
+    &--active {
+      transform: rotate(90deg);
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
+  &__logo {
+    height: $logo-height;
+    width: auto;
   }
 
   &__expanded-content {
@@ -143,6 +165,13 @@ $container-max-width: utils.pxToRem(1260px);
     visibility: visible;
     position: relative;
     z-index: 4;
+  }
+  &__expanded-content .ddsweb-search-field {
+    max-width: 650px;
+    width: 100%;
+    &__button {
+      width: 130px;
+    }
   }
   &__title {
     margin-bottom: tokens.$spacing-3;

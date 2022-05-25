@@ -22,4 +22,12 @@ $top-bar-height: utils.pxToRem(88px);
     margin-left: tokens.$spacing-3;
     @include typography.text-body-400();
   }
+  .dropdown-item {
+    margin: 0;
+    padding: 0;
+    padding-bottom: tokens.$spacing-1;
+    padding-top: tokens.$spacing-1;
+    padding-left: tokens.$spacing-2;
+    width: auto;
+  }
 }

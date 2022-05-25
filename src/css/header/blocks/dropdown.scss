@@ -8,13 +8,40 @@
 @use '../../utils/card.scss' as card;
 
 $dropdownClassname: '#{utils.$prefix}-dropdown';
+$iconClassname: 'dds-icon-link';
 
 .#{$dropdownClassname} {
-  &__theme {
+  &__list {
+    padding: 0;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
     background: none;
     border: none;
     @include typography.text-body-400();
     color: tokens.$color-neutral-grey-800;
     cursor: pointer;
+    &:after {
+      font-family: Material Symbols Outlined, sans-serif;
+      content: '\e5cf';
+      border: none;
+      transition: 0.2s all;
+      font-weight: 400;
+      vertical-align: unset;
+      font-size: tokens.$font-size-500;
+    }
+  }
+  &__toggle.show:after {
+    transform: rotate(180deg);
+  }
+}
+.#{$iconClassname} {
+  svg {
+    height: 11px !important;
+    path {
+      fill: tokens.$color-neutral-grey-800 !important;
+    }
   }
 }

@@ -4,7 +4,7 @@
 @use '@digdir/ds-tokens/build/tokens.scss' as *;
 @use '../utils/utils.scss' as utils;
 
-.dds-dropdown {
+.dds-dropdown__list {
   position: relative;
 
   &--open {

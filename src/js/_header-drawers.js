@@ -1,96 +1,139 @@
+import searchIcon from '@digdir/ds-icons/svg/outline/Search.svg'
+import menuIcon from '@digdir/ds-icons/svg/outline/Menu.svg'
+import closeIcon from '@digdir/ds-icons/svg/outline/Close.svg'
+
 export function headerDrawers() {
-  $(document).ready(function () {
+  jQuery(function () {
     const toggleBtns = $('button[data-toggle]')
     const animationSpeed = 400
     const overlay = $('.ddsweb-header__overlay')
-    const menuIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6.5 35.25V33H41.5V35.25ZM6.5 25.15V22.85H41.5V25.15ZM6.5 15V12.75H41.5V15Z"/></svg>`
-    const searchIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M39.55 41.1 26.55 28.15Q25.05 29.45 23.075 30.175Q21.1 30.9 18.95 30.9Q13.85 30.9 10.325 27.375Q6.8 23.85 6.8 18.8Q6.8 13.8 10.325 10.275Q13.85 6.75 18.9 6.75Q23.95 6.75 27.475 10.275Q31 13.8 31 18.8Q31 20.9 30.275 22.9Q29.55 24.9 28.2 26.5L41.2 39.45ZM18.95 28.65Q23 28.65 25.85 25.775Q28.7 22.9 28.7 18.8Q28.7 14.7 25.85 11.85Q23 9 18.95 9Q14.8 9 11.95 11.85Q9.1 14.7 9.1 18.8Q9.1 22.9 11.95 25.775Q14.8 28.65 18.95 28.65Z"/></svg>`
+    const menuButton = $('.ddsweb-header__menu-button')
+    const searchButton = $('.ddsweb-header__search-button')
 
-    toggleBtns.click(function (e) {
+    toggleBtns.on('click', function (e) {
       let target = $(e.target)
       let dropdownSelector = target.data('toggle')
       let dropdown = $(dropdownSelector)
-      closeOtherDropdowns(dropdown)
+      let searchBtnIcon = $('.ddsweb-header__search-icon')
+      let megaMenuIcon = $('.ddsweb-header__menu-icon')
+      target.addClass('ddsweb-header__button-active')
       if (dropdown.hasClass('dds-dropdown__active')) {
         closeDropdown(dropdown, true)
+        searchBtnIcon.html(searchIcon)
+        megaMenuIcon.html(menuIcon)
+        searchBtnIcon.removeClass('ddsweb-header__search-icon--active')
+        megaMenuIcon.removeClass('ddsweb-header__menu-icon--active')
       } else {
-        openDropdown(dropdown)
+        openDropdown(dropdown, e)
       }
     })
 
-    function closeOtherDropdowns(dropdown) {
-      let activeExpanded = $('.dds-dropdown__active')
-
-      activeExpanded.each(function (index, item) {
-        if (dropdown.attr('id') !== $(item).attr('id')) {
-          closeDropdown($(item), false)
-        }
-      })
-    }
-
     function openDropdown(dropdown) {
-      let dropdownContent = dropdown.children().first()
-      let dropdownHeight = dropdownContent.outerHeight()
-
-      dropdown.prev().attr('aria-expanded', true)
       dropdown.addClass('dds-dropdown__active')
-      overlay.fadeIn(animationSpeed)
-      dropdown.animate(
-        {
-          height: dropdownHeight,
-        },
-        animationSpeed,
-      )
-      dropdownContent.animate(
-        {
-          opacity: 1,
-        },
-        animationSpeed / 3,
-      )
+      $(dropdown).attr('aria-expanded', 'true')
+      let dropDownContent = $('.ddsweb-header__expanded-content')
+      let menuContent = $('#menu')
+      let searchContent = $('#search')
+      let megaMenuIcon = $('.ddsweb-header__menu-icon')
+      let searchBtnIcon = $('.ddsweb-header__search-icon')
+      if (dropdown.attr('id') === 'search') {
+        searchBtnIcon.addClass('ddsweb-header__search-icon--active')
+        searchBtnIcon.html(closeIcon)
+        megaMenuIcon.html(menuIcon)
+        megaMenuIcon.removeClass('ddsweb-header__menu-icon--active')
+        dropdown.animate({
+          height: '300px',
+          opacity: '1',
+        })
+        dropDownContent.animate({ opacity: '1' })
+        dropdown.find('.ddsweb-search-field__input').focus()
+        menuContent.removeClass('dds-dropdown__active')
+        menuContent.attr('aria-expanded', 'false')
+        menuContent.animate({ opacity: '0', height: '0px' })
+        menuButton.removeClass('ddsweb-header__button-active')
+      } else if (dropdown.attr('id') === 'menu') {
+        searchBtnIcon.html(searchIcon)
+        megaMenuIcon.html(closeIcon)
+        megaMenuIcon.addClass('ddsweb-header__menu-icon--active')
+        searchBtnIcon.removeClass('ddsweb-header__search-icon--active')
+        searchButton.removeClass('ddsweb-header__button-active')
+        dropdown.animate({
+          height: '700px',
+          opacity: '1',
+        })
+        dropDownContent.animate({ opacity: '1' })
+        searchContent.removeClass('dds-dropdown__active')
+        searchContent.attr('aria-expanded', 'false')
+        searchContent.animate({ opacity: '0', height: '0px' })
+      }
+
+      if (dropdown.hasClass('dds-dropdown__active')) {
+        overlay
+          .css({ display: 'block' })
+          .show()
+          .animate({ opacity: '1' }, animationSpeed)
+      } else {
+        overlay
+          .css({ opacity: '0', display: 'block' })
+          .animate({ opacity: '0' }, animationSpeed)
+      }
     }
 
-    function closeDropdown(dropdown, anim) {
-      let dropdownContent = dropdown.children().first()
-      dropdown.prev().attr('aria-expanded', false)
+    function closeDropdown(dropdown) {
       dropdown.removeClass('dds-dropdown__active')
+      $(dropdown).attr('aria-expanded', 'false')
+      let dropDownContent = $('.ddsweb-header__expanded-content')
+      let menuContent = $('#menu')
+      let searchContent = $('#search')
 
-      if (anim) {
-        overlay.fadeOut(animationSpeed)
+      if (dropdown.attr('id') === 'search') {
+        dropdown.animate({
+          height: '0px',
+          opacity: '0',
+        })
+        dropDownContent.animate({ opacity: '0' })
+
+        menuContent.animate({ opacity: '0', height: '0px' })
+        menuContent.attr('aria-expanded', 'false')
+        searchButton.removeClass('ddsweb-header__button-active')
+      } else if (dropdown.attr('id') === 'menu') {
+        searchContent.animate({ opacity: '0', height: '0px' })
+        searchContent.attr('aria-expanded', 'false')
+        dropdown.animate({
+          height: '0px',
+          opacity: '0',
+        })
+        menuButton.removeClass('ddsweb-header__button-active')
       }
-      dropdown.animate(
-        {
-          height: 0,
-        },
-        animationSpeed,
-      )
-      dropdownContent.animate(
-        {
-          opacity: 0,
-        },
-        animationSpeed / 3,
-      )
+      if (dropdown.hasClass('dds-dropdown__active')) {
+        overlay
+          .css({ opacity: '0', display: 'block' })
+          .show()
+          .animate({ opacity: '1' }, animationSpeed)
+      } else {
+        overlay.animate({ opacity: '0' }, animationSpeed)
+      }
     }
 
-    $(document).click(function (e) {
+    $(document).on('click', function (e) {
       let target = $(e.target)
-      let activeExpanded = $('.dds-dropdown__active')
-      const icon = $('.ddsweb-header__menu-icon')
-      const iconSearch = $('.ddsweb-header__search-icon')
-      const btnText = $('.ddsweb-header__menu-button-text')
-      const button = $('.ddsweb-header__menu-button')
-      if (!target.hasClass('ddsweb-header__overlay')) {
-        return
-      }
+      let megaMenuIcon = $('.ddsweb-header__menu-icon')
+      let searchBtnIcon = $('.ddsweb-header__search-icon')
+      let dropdown = $('.ddsweb-header__expanded')
+      const overlay = $('.ddsweb-header__overlay')
 
-      activeExpanded.each(function (index, item) {
-        closeDropdown($(item), true)
-        icon.removeClass('ddsweb-header__menu-icon-active')
-        icon.html(menuIcon)
-        iconSearch.removeClass('ddsweb-header__search-icon-active')
-        iconSearch.html(searchIcon)
-        btnText.html('Meny')
-        button.removeClass('ddsweb-header__menu-button-active')
-      })
+      if (target.hasClass('ddsweb-header__overlay')) {
+        dropdown.removeClass('dds-dropdown__active')
+        dropdown.animate({ opacity: '0', height: '0px' })
+        dropdown.attr('aria-expanded', 'false')
+        overlay.animate({ opacity: '0', display: 'none' })
+        searchBtnIcon.html(searchIcon)
+        megaMenuIcon.html(menuIcon)
+        searchBtnIcon.removeClass('ddsweb-header__search-icon--active')
+        megaMenuIcon.removeClass('ddsweb-header__menu-icon--active')
+        menuButton.removeClass('ddsweb-header__button-active')
+        searchButton.removeClass('ddsweb-header__button-active')
+      }
     })
   })
 }
