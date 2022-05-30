@@ -1,3 +1,4 @@
+@use 'bootstrap-custom';
 @use 'typogrophy' as *;
 @use 'banner.scss' as *;
 @use 'blog-card.scss' as *;
@@ -7,6 +8,7 @@
 @use 'course-card.scss' as *;
 @use 'files.scss' as *;
 @use 'footer.scss' as *;
+@use 'icons.scss' as *;
 @use 'link-box.scss' as *;
 @use 'link-list.scss' as *;
 @use 'navigation-card.scss' as *;
@@ -17,7 +19,6 @@
 @use 'teaser-card.scss' as *;
 @use 'image-section' as *;
 @use 'element' as *;
-@import 'bootstrap-custom';
 
 .test-header {
   height: 88px;
