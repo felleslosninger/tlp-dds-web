@@ -40,13 +40,13 @@ const footer = () => {
     return String.raw`
   <ul class='${classPrefix}__list'>
     ${array.reduce(
-     (updated, latest) =>
-     updated.concat(
-     ` <li class="${classPrefix}__list-item"><a class="${classPrefix}__list-link" href='${latest.url}'>${latest.name}</a>
+      (updated, latest) =>
+        updated.concat(
+          ` <li class="${classPrefix}__list-item"><a class="${classPrefix}__list-link" href='${latest.url}'>${latest.name}</a>
     </li>`,
-     ),
-     '',
-     )}
+        ),
+      '',
+    )}
   </ul>
    
    `
