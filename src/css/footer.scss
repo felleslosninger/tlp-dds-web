@@ -1,4 +1,5 @@
-@use '@digdir/ds-core-css/build/src/icon-link.scss' as core-icon-link;
+@use '../../node_modules/@digdir/ds-core-css/build/src/icon-link.scss' as
+  core-icon-link;
 @use '@digdir/ds-core-css/build/src/baseline/utils.scss' as core-utils;
 @use '@digdir/ds-core-css/build/src/typography.scss' as typography;
 @use '@digdir/ds-tokens/build/tokens.scss' as tokens;
@@ -19,7 +20,9 @@ $icon-size: tokens.$spacing-base-5;
   padding-top: tokens.$spacing-10;
   padding-bottom: tokens.$spacing-10;
   justify-content: center;
-
+  &__logo--icon {
+    margin-bottom: tokens.$spacing-2;
+  }
   &__link {
     text-decoration: none;
     color: inherit;
@@ -78,11 +81,21 @@ $icon-size: tokens.$spacing-base-5;
     &-link {
       text-decoration: none;
       color: inherit;
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      border-bottom: 1px solid transparent;
+
       &:hover {
-        text-decoration: underline;
         color: inherit;
+        border-bottom-color: white;
+        &:before {
+          text-decoration: none;
+        }
+      }
+      &:before {
+        font-family: Material Symbols Outlined, sans-serif;
+        content: '\e5cc';
+        font-size: tokens.$font-size-500;
       }
     }
     &-item {

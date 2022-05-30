@@ -1,6 +1,3 @@
-import BookmarkIcon from '@digdir/ds-icons/svg/outline/Bookmark.svg'
-import MapPinIcon from '@digdir/ds-icons/svg/outline/MapPin.svg'
-import WatchIcon from '@digdir/ds-icons/svg/outline/Clock.svg'
 import { createIconLinkSpan } from '../utils.js'
 
 const createCourseCard = ({ backgroundColor = true }) => {
