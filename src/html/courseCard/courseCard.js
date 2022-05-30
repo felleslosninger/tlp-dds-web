@@ -42,22 +42,22 @@ const createCourseCard = ({ backgroundColor = true }) => {
           </h3>
     
           <div class="${classPrefix}__list">
-            <div class="${classPrefix}__item">
-              ${WatchIcon}
+            <div class="${classPrefix}__item ${classPrefix}__item-time">
+    
               <span class="${classPrefix}__value">
                 ${timeText}
               </span>
             </div>
     
-            <div class="${classPrefix}__item">
-              ${MapPinIcon}
+            <div class="${classPrefix}__item ${classPrefix}__item-place">
+    
               <span class="${classPrefix}__value">
                 ${placeText}
               </span>
             </div>
     
-            <div class="${classPrefix}__item">
-              ${BookmarkIcon}
+            <div class="${classPrefix}__item ${classPrefix}__item-theme">
+    
               <span class="${classPrefix}__value">
                 ${taxonomyText}
               </span>

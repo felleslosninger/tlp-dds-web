@@ -20,6 +20,7 @@ $icon-size: tokens.$spacing-base-5;
       }
       &:hover {
         background-color: tokens.$color-brand-first-100;
+
         .#{$classname}__banner {
           background-color: tokens.$color-brand-first-500;
         }
@@ -55,11 +56,9 @@ $icon-size: tokens.$spacing-base-5;
     display: flex;
     box-sizing: border-box;
     position: relative;
-
     min-width: 900px;
     max-width: $max-width;
     height: 100%;
-
     text-decoration: none;
     background-color: tokens.$color-neutral-white;
     color: tokens.$color-text-background-light;
@@ -70,6 +69,7 @@ $icon-size: tokens.$spacing-base-5;
     &:hover {
       box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
       border-color: tokens.$color-neutral-grey-800;
+      color: tokens.$color-text-background-light;
 
       .#{$classname}__banner {
         background-color: tokens.$color-brand-second-500;
@@ -194,6 +194,27 @@ $icon-size: tokens.$spacing-base-5;
 
     &:last-child {
       margin-right: 0;
+    }
+    &-time {
+      &:before {
+        font-family: Material Symbols Outlined, sans-serif;
+        content: '\e8b5';
+        font-size: tokens.$font-size-500;
+      }
+    }
+    &-place {
+      &:before {
+        font-family: Material Symbols Outlined, sans-serif;
+        content: '\e55e';
+        font-size: tokens.$font-size-500;
+      }
+    }
+    &-theme {
+      &:before {
+        font-family: Material Symbols Outlined, sans-serif;
+        content: '\e866';
+        font-size: tokens.$font-size-500;
+      }
     }
   }
   &__item svg {
