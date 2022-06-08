@@ -56,8 +56,6 @@ $icon-size: tokens.$spacing-base-5;
     display: flex;
     box-sizing: border-box;
     position: relative;
-    min-width: 900px;
-    max-width: $max-width;
     height: 100%;
     text-decoration: none;
     background-color: tokens.$color-neutral-white;
@@ -88,7 +86,7 @@ $icon-size: tokens.$spacing-base-5;
       }
     }
 
-    @include utils.mobile() {
+    @include utils.tablet() {
       min-width: Min(#{$min-width}, 100%);
       flex-direction: column;
     }
@@ -101,7 +99,7 @@ $icon-size: tokens.$spacing-base-5;
     justify-content: center;
     flex-direction: column;
 
-    @include utils.mobile() {
+    @include utils.tablet() {
       padding: $padding-mobile;
     }
   }
@@ -114,18 +112,20 @@ $icon-size: tokens.$spacing-base-5;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 0 0 150px;
 
     width: 150px;
     min-height: 150px;
     border-radius: tokens.$border-radius-small 0 0 tokens.$border-radius-small;
 
-    @include utils.mobile() {
+    @include utils.tablet() {
       padding: tokens.$spacing-3;
       border-radius: tokens.$border-radius-small tokens.$border-radius-small 0 0;
       width: 100%;
       flex-direction: row;
       min-height: auto;
       justify-content: start;
+      flex: 0 0 auto;
     }
 
     transition: all tokens.$duration-normal;
@@ -135,7 +135,7 @@ $icon-size: tokens.$spacing-base-5;
     font-size: tokens.$font-size-800;
     font-weight: 500;
 
-    @include utils.mobile() {
+    @include utils.tablet() {
       font-size: tokens.$font-size-500;
     }
   }
@@ -145,7 +145,7 @@ $icon-size: tokens.$spacing-base-5;
     margin-top: -5px;
     margin-bottom: 2px;
 
-    @include utils.mobile() {
+    @include utils.tablet() {
       padding-left: 4px;
       padding-right: 4px;
       margin: 0;
@@ -170,12 +170,12 @@ $icon-size: tokens.$spacing-base-5;
       }
     }
     &:after {
-      font-family: Material Symbols Outlined, sans-serif;
+      font-family: Material Symbols Rounded, sans-serif;
       content: '\e5c8';
       font-size: tokens.$font-size-500;
       margin-left: 5px;
     }
-    @include utils.mobile() {
+    @include utils.tablet() {
       font-size: 20px;
     }
   }
@@ -183,35 +183,35 @@ $icon-size: tokens.$spacing-base-5;
     display: flex;
     row-gap: tokens.$spacing-base-4;
 
-    @include utils.mobile() {
+    @include utils.tablet() {
       flex-direction: column;
     }
   }
   &__item {
     display: flex;
     align-items: center;
-    margin-right: 24px;
+    margin-right: 22px;
 
     &:last-child {
       margin-right: 0;
     }
     &-time {
       &:before {
-        font-family: Material Symbols Outlined, sans-serif;
+        font-family: Material Symbols Rounded, sans-serif;
         content: '\e8b5';
         font-size: tokens.$font-size-500;
       }
     }
     &-place {
       &:before {
-        font-family: Material Symbols Outlined, sans-serif;
+        font-family: Material Symbols Rounded, sans-serif;
         content: '\e55e';
         font-size: tokens.$font-size-500;
       }
     }
     &-theme {
       &:before {
-        font-family: Material Symbols Outlined, sans-serif;
+        font-family: Material Symbols Rounded, sans-serif;
         content: '\e866';
         font-size: tokens.$font-size-500;
       }

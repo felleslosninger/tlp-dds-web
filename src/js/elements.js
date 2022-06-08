@@ -1,14 +1,14 @@
 export function elements() {
   ;(function (window, document, undefined) {
     window.ddsElements = function ({
-      parentContainerID,
+      parentContainerClass,
       selectors,
       tenColSelectors,
       colorRedSelectors,
       colorYellowSelectors,
       colorBlueSelectors,
     }) {
-      const parentContainer = $('#' + parentContainerID)
+      const parentContainer = $('.' + parentContainerClass)
 
       // Stop running script if parent selector does not exist
       if (!parentContainer.length) {

@@ -1,4 +1,4 @@
-import { createTeaserCard } from '../teaserCard.js'
+import { createTeaserCard, createTeaserCardVideo } from '../teaserCard.js'
 import { withDesign } from 'storybook-addon-designs'
 import imageSource from '/assets/wallpapersden.png'
 
@@ -27,23 +27,47 @@ export default {
   },
 }
 
-const image = {
-  src: imageSource,
-  alt: 'Sunset in the woods showing a river in the foreground and mountains in the background',
+const Template = (args) => {
+  return createTeaserCard({ ...args })
 }
 
-const Template = (args) => {
-  return createTeaserCard({ image, ...args })
+const VideoTemplate = (args) => {
+  return createTeaserCardVideo({ ...args })
 }
 
 export const Default = Template.bind({})
 Default.args = {
   backgroundColor: 'white',
   variant: 'one-columns',
-  picture: true,
 }
 
 export const TwoColumns = Template.bind({})
 TwoColumns.args = {
   variant: 'two-columns',
+}
+
+export const Video = VideoTemplate.bind({})
+Video.args = {
+  backgroundColor: 'white',
+  variant: 'one-columns',
+}
+
+export const VideoTwoColumns = VideoTemplate.bind({})
+VideoTwoColumns.args = {
+  backgroundColor: 'white',
+  variant: 'two-columns',
+}
+
+export const Text = Template.bind({})
+Text.args = {
+  backgroundColor: 'white',
+  variant: 'one-columns',
+  text: 'Dette er ein kort teasertekst',
+}
+
+export const TextTwoColumns = Template.bind({})
+TextTwoColumns.args = {
+  backgroundColor: 'white',
+  variant: 'two-columns',
+  text: 'Dette er ein kort teasertekst',
 }

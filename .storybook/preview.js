@@ -3,6 +3,7 @@ import tokens from '../node_modules/@digdir/ds-tokens/build/tokens.js'
 // Import assets available to all stories
 import '../src/css/index.scss'
 import './customStyling.scss'
+import '../src/css/bootstrap-storybook.scss'
 import '@digdir/ds-core-css/build/index.css'
 import '../src/js/index'
 import '../src/css/bootstrap-storybook.scss'

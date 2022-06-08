@@ -2,7 +2,7 @@ export function elementsInit() {
   $(document).ready(function () {
     setTimeout(function () {
       ddsElements({
-        parentContainerID: 'modules',
+        parentContainerClass: 'modules',
         selectors: '.ddsweb-section',
         tenColSelectors: '.dds-reports,.dds-courses',
         colorRedSelectors: '.dds-reports',

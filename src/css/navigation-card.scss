@@ -159,7 +159,8 @@ $horizontal-padding: tokens.$spacing-base-10;
 
     // Mobile
     @include utils.mobile() {
-      padding: tokens.$spacing-3;
+      padding: tokens.$spacing-3 tokens.$spacing-3 tokens.$spacing-8
+        tokens.$spacing-3;
     }
   }
 

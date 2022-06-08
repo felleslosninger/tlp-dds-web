@@ -41,11 +41,13 @@ $icon-size: tokens.$spacing-base-5;
     height: 75px;
     width: 100%;
     background-color: tokens.$color-neutral-grey-300;
-    margin-bottom: tokens.$spacing-3;
+  }
+
+  &__header {
+    margin-bottom: tokens.$spacing-6;
   }
 
   &__content {
-    margin-top: tokens.$spacing-6;
     position: relative;
     z-index: 5;
   }
