@@ -15,33 +15,122 @@ $max-width: core-utils.$component-max-width;
   position: relative;
   overflow: hidden;
   background-color: tokens.$color-neutral-white;
+  border-bottom: 1px solid tokens.$color-neutral-grey-200;
 
   &__content {
+    min-height: 280px;
+    padding-top: 32px;
     display: flex;
-    justify-content: center;
-    padding: tokens.$spacing-8;
-    align-items: center;
+    flex-direction: column;
+
+    @include utils.laptop {
+      padding-bottom: 60px;
+      min-height: auto;
+    }
+
     &:before {
       content: '';
       height: 400px;
       width: 400px;
       position: absolute;
       background-color: tokens.$color-brand-first-600;
-      top: 50%;
-      left: 0%;
+      bottom: -240px;
+      left: 3%;
       border-radius: 50%;
     }
+
     &:after {
       content: '';
-      height: 350px;
-      width: 350px;
+      height: 300px;
+      width: 300px;
       position: absolute;
       background-color: tokens.$color-neutral-grey-800;
-      bottom: 50%;
-      right: 5%;
-      transform: rotate(20deg);
+      top: -160px;
+      right: 4%;
+      transform: rotate(22deg);
     }
+
+    @media (max-width: 1530px) {
+      &:before {
+        height: 300px;
+        width: 300px;
+        left: -5%;
+        bottom: -180px;
+      }
+      &:after {
+        width: 200px;
+        height: 200px;
+        top: -100px;
+        right: 2%;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      &:before {;
+        left: -15%;
+      }
+      &:after {
+      }
+    }
+
+    @media (max-width: 900px) {
+      &:before {
+        height: 250px;
+        width: 250px;
+        left: -15%;
+      }
+      &:after {
+        top: -100px;
+        width: 175px;
+        height: 175px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      &:before {
+        left: calc(50% - 125px);
+        bottom: -190px;
+      }
+      &:after {
+        top: -100px;
+        right: 1%;
+        display: none;
+      }
+    }
+
   }
+
+  &__sub-title {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1;
+    padding: 78px 0;
+    position: relative;
+    margin-bottom: 0;
+
+    @media (max-width: 900px) {
+      padding: 48px 0 48px 0;
+    }
+
+  }
+
+  &--bg-grey  {
+    background-color: tokens.$color-neutral-grey-100;
+  }
+
   &--red {
     &:before {
       background-color: tokens.$color-brand-first-600;

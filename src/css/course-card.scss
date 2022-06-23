@@ -62,12 +62,13 @@ $icon-size: tokens.$spacing-base-5;
     color: tokens.$color-text-background-light;
     transition: all tokens.$duration-normal;
     border-radius: tokens.$border-radius-small;
-    border: 1px solid tokens.$color-neutral-grey-300;
+    border: 1px solid tokens.$color-neutral-grey-400;
 
     &:hover {
       box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
       border-color: tokens.$color-neutral-grey-800;
       color: tokens.$color-text-background-light;
+      background-color: tokens.$color-brand-second-200;
 
       .#{$classname}__banner {
         background-color: tokens.$color-brand-second-500;
@@ -79,7 +80,7 @@ $icon-size: tokens.$spacing-base-5;
     }
 
     &:active {
-      background-color: tokens.$color-brand-second-200;
+      background-color: tokens.$color-brand-second-300;
 
       .#{$classname}__banner {
         background-color: tokens.$color-brand-second-600;
@@ -160,20 +161,14 @@ $icon-size: tokens.$spacing-base-5;
     @include typography.text-heading-600();
     color: tokens.$color-neutral-grey-800;
     margin: 0 0 16px 0;
-    display: flex;
-    align-items: center;
-    .dds-icon-link {
-      display: inline;
+    display: block;
 
-      svg {
-        margin-bottom: -1px;
-      }
-    }
     &:after {
       font-family: Material Symbols Rounded, sans-serif;
       content: '\e5c8';
-      font-size: tokens.$font-size-500;
+      font-size: 26px;
       margin-left: 5px;
+      vertical-align: middle;
     }
     @include utils.tablet() {
       font-size: 20px;

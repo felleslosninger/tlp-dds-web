@@ -6,11 +6,9 @@
 
 $classname: '#{utils.$prefix}-navigation-card';
 $min-width: utils.pxToRem(416px);
-$max-width: core-utils.$component-max-width;
 $horizontal-padding: tokens.$spacing-base-10;
 
 .#{$classname} {
-  max-width: $max-width;
   border-radius: tokens.$border-radius-small;
 
   &--no-icon {
@@ -66,7 +64,7 @@ $horizontal-padding: tokens.$spacing-base-10;
     align-items: center;
     padding: $horizontal-padding;
     text-align: center;
-    border: 1px solid tokens.$color-neutral-grey-300;
+    border: 1px solid tokens.$color-neutral-grey-400;
     border-radius: tokens.$border-radius-small;
     transition: 0.2s all;
     position: relative;
@@ -80,6 +78,14 @@ $horizontal-padding: tokens.$spacing-base-10;
       bottom: 32px;
     }
 
+    &:hover {
+      background-color: tokens.$color-brand-third-200;
+    }
+
+    &:active {
+      background-color: tokens.$color-brand-third-300;
+    }
+
     &-blue,
     &-red,
     &-yellow {
@@ -90,30 +96,39 @@ $horizontal-padding: tokens.$spacing-base-10;
     }
 
     &-red {
-      background-color: tokens.$color-brand-first-200;
+      background-color: tokens.$color-brand-first-300;
+      &:hover {
+        background-color: tokens.$color-brand-first-400;
+      }
       &:active {
-        background-color: tokens.$color-brand-first-300;
+        background-color: tokens.$color-brand-first-500;
       }
     }
 
     &-blue {
-      background-color: tokens.$color-brand-third-200;
+      background-color: tokens.$color-brand-third-300;
+      &:hover {
+        background-color: tokens.$color-brand-third-400;
+      }
       &:active {
-        background-color: tokens.$color-brand-third-300;
+        background-color: tokens.$color-brand-third-500;
       }
     }
 
     &-yellow {
-      background-color: tokens.$color-brand-second-200;
+      background-color: tokens.$color-brand-second-300;
+      &:hover {
+        background-color: tokens.$color-brand-second-400;
+      }
       &:active {
-        background-color: tokens.$color-brand-second-300;
+        background-color: tokens.$color-brand-second-500;
       }
     }
 
     &-grey {
-      background-color: tokens.$color-neutral-grey-200;
+      background-color: tokens.$color-neutral-grey-300;
       &:active {
-        background-color: tokens.$color-neutral-grey-300;
+        background-color: tokens.$color-neutral-grey-400;
       }
     }
 
@@ -135,14 +150,11 @@ $horizontal-padding: tokens.$spacing-base-10;
     &:active {
       border-color: tokens.$color-neutral-grey-800;
       box-shadow: 0 0 0 1px tokens.$color-neutral-grey-800;
-      &-red {
-        background-color: tokens.$color-brand-first-300;
+
+      & .#{$classname}-yellow {
+        background-color: tokens.$color-neutral-grey-500;
       }
-      &-yellow {
-        .#{$classname}__link-yellow {
-          background-color: tokens.$color-brand-second-300;
-        }
-      }
+
       .#{$classname}__icon-red {
         background-color: tokens.$color-brand-first-600;
       }

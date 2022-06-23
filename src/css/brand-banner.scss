@@ -7,7 +7,7 @@
 $classname: '#{utils.$prefix}-brand-banner';
 $min-height: utils.pxToRem(432px);
 $container-max-width: utils.pxToRem(1260px);
-$image-max-height: utils.pxToRem(246px);
+$image-max-height: utils.pxToRem(260px);
 $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 
@@ -19,17 +19,28 @@ $padding-mobile: utils.$padding-mobile;
 
   &__breadcrumbs {
     padding-top: tokens.$spacing-4;
+    margin-bottom: -16px;
   }
 
   &__text-container {
     box-sizing: border-box;
     color: tokens.$color-text-background-light;
-    margin-top: $padding-default;
+    padding: 56px 0;
   }
 
   &__title {
-    @include typography.text-heading-900();
     margin: 0 0 tokens.$spacing-3 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__sub-title {
+    @include typography.text-heading-500();
+    margin-bottom: tokens.$spacing-base-3;
+  }
+
+  &__main-title {
+    @include typography.text-heading-900();
   }
 
   &__paragraph {
@@ -39,28 +50,37 @@ $padding-mobile: utils.$padding-mobile;
 
   &__image {
     display: grid;
-    padding: $padding-default;
+    padding: 72px 0;
 
     & img {
       display: block;
       align-self: center;
       justify-self: center;
-      width: 100%;
+      width: auto;
       max-height: $image-max-height;
+      height: auto;
+      max-width: 100%;
+      border-radius: 4px;
     }
   }
 
   // Media queries
   @include utils.mobile() {
-    padding: $padding-mobile;
 
     &__text-container {
-      margin-top: $padding-mobile;
+      padding: 48px 0 40px 0;
     }
 
     &__title {
-      @include typography.text-heading-600();
       margin: 0 0 $padding-mobile 0;
+    }
+
+    &__sub-title {
+      @include typography.text-heading-500();
+    }
+
+    &__main-title {
+      @include typography.text-heading-600();
     }
 
     &__paragraph {
@@ -68,7 +88,7 @@ $padding-mobile: utils.$padding-mobile;
     }
 
     &__image {
-      padding: $padding-mobile;
+      padding: 8px 0 40px 0;
     }
   }
   @media (max-width: tokens.$breakpoint-large) {

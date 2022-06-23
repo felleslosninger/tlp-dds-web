@@ -8,6 +8,7 @@ const createBrandBanner = ({
 
   // Element content
   const titleText = 'Informasjonssikkerhet'
+  const descText = 'Bloggen'
   const paragraphText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
   Donec id libero at dolor aliquet vehicula. Etiam hendrerit, sapien ut vehicula semper, 
   turpis odio elementum orci, in luctus risus elit et lectus. Morbi vitae mattis urna. 
@@ -48,16 +49,18 @@ const createBrandBanner = ({
                         <div class="col-md-6">
                             <div class="${classPrefix}__text-container">
                                 <h1 class="${classPrefix}__title">
-                                    ${titleText}
+                                    <span class="${classPrefix}__sub-title">${descText}</span>
+                                    <span class="${classPrefix}__main-title">${titleText}</span>
                                 </h1>
                                 <p class="${classPrefix}__paragraph">
                                     ${paragraphText}
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                      <div class="col-md-1"></div>
+                        <div class="col-md-5">
                             <div class="${classPrefix}__image">
-                                ${imageElement}
+                                <img src="${image.src}" alt="">
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,5 @@
 import { createBrandBanner } from '../brandBanner.js'
 import { withDesign } from 'storybook-addon-designs'
-import imageSource from '/assets/person_lifting_ball.img.svg'
 
 export default {
   title: 'Komponenter/Brand-banner',
@@ -15,7 +14,10 @@ export default {
 }
 
 const image = {
-  src: imageSource,
+  // src: 'img/tall.jpg',
+  src: 'img/person-bokser.svg',
+  // src: 'img/tilsyn-person.png',
+  // src: 'img/placeholder-16-9-four.jpg',
   alt: 'Person lifting a ball',
 }
 

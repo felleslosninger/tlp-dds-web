@@ -11,26 +11,17 @@ $padding-default: utils.$padding-default;
 $padding-mobile: utils.$padding-mobile;
 $padding-two-columns: tokens.$spacing-base-10;
 $min-width: utils.pxToRem(369px);
-$max-width: core-utils.$component-max-width;
 $banner-icon-container-width: utils.pxToRem(64px);
 $banner-icon-width: utils.pxToRem(54px);
-
-@mixin test() {
-  .dds-icon-link {
-    display: inline;
-  }
-  background-color: red;
-}
 
 .#{$classname} {
   &__link {
     @include card.container-link(
-      $background-color: tokens.$color-neutral-white
+            $background-color: tokens.$color-neutral-white
     );
     min-width: Min(#{$min-width}, 100%);
-    max-width: $max-width;
     border-radius: tokens.$border-radius-small;
-    box-shadow: 0 0 0 1px tokens.$color-neutral-grey-300;
+    box-shadow: 0 0 0 1px tokens.$color-neutral-grey-400;
 
     & .#{core-icon-link.$classname} {
       text-decoration: none;
@@ -38,6 +29,7 @@ $banner-icon-width: utils.pxToRem(54px);
 
     &:hover {
       box-shadow: 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-third-200;
     }
 
     &:active {
@@ -64,10 +56,11 @@ $banner-icon-width: utils.pxToRem(54px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 0 0 60%;
+    flex: 1 1;
     padding: $padding-default;
     text-decoration: none;
     border-radius: 0 0 8px 8px;
+    transition: tokens.$duration-normal all;
 
     & .#{core-icon-link.$classname} {
       text-decoration: none;
@@ -75,6 +68,11 @@ $banner-icon-width: utils.pxToRem(54px);
 
     &:hover {
       box-shadow: inset 0 0 0 2px tokens.$color-neutral-grey-800;
+      background-color: tokens.$color-brand-third-200;
+    }
+
+    &:active {
+      background-color: tokens.$color-brand-third-300;
     }
 
     @include utils.mobile() {
@@ -99,11 +97,13 @@ $banner-icon-width: utils.pxToRem(54px);
   }
 
   &__banner {
-    flex: 0 0 40%;
+    flex: 0 1 40%;
   }
 
   &__image {
     border-bottom: 1px solid tokens.$color-neutral-grey-300;
+    background-color: tokens.$color-brand-third-300;
+    border-radius: 8px 8px 0 0;
   }
 
   // Elements
@@ -123,6 +123,9 @@ $banner-icon-width: utils.pxToRem(54px);
     justify-content: center;
     flex: 0 0 60%;
     padding: $padding-default;
+    border-radius: 0 0 8px 8px;
+    transition: tokens.$duration-normal all;
+
     @include utils.mobile() {
       padding: $padding-mobile;
     }
@@ -130,21 +133,23 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__video-wrapper {
     min-width: Min(#{$min-width}, 100%);
-    max-width: $max-width;
     border-radius: tokens.$border-radius-small;
     overflow: hidden;
-    box-shadow: 0 0 0 1px tokens.$color-neutral-grey-300;
+    box-shadow: 0 0 0 1px tokens.$color-neutral-grey-400;
     background-color: white;
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
     @include card.title();
-    margin-bottom: tokens.$spacing-base-2;
+    margin-bottom: 0;
   }
 
   &__meta {
     display: flex;
+    margin-top: tokens.$spacing-1;
   }
 
   &__meta-item {
@@ -159,7 +164,6 @@ $banner-icon-width: utils.pxToRem(54px);
 
   &__paragraph {
     @include card.paragraph();
-    @include card.line-clamp($max-lines: 5);
     margin-top: tokens.$spacing-base-4;
   }
 
@@ -168,7 +172,7 @@ $banner-icon-width: utils.pxToRem(54px);
     display: block;
 
     svg {
-      margin-top: -2px;
+      margin-top: -3px;
     }
   }
 
@@ -203,6 +207,14 @@ $banner-icon-width: utils.pxToRem(54px);
         grid-template-columns: 50% 50%;
       }
 
+      & .#{$classname}__link {
+        &:hover {
+          & .#{$classname}__container {
+            border-radius: 0 8px 8px 0;
+          }
+        }
+      }
+
       & .#{$classname}__container,
       & .#{$classname}__video-link {
         padding: $padding-two-columns;
@@ -215,13 +227,24 @@ $banner-icon-width: utils.pxToRem(54px);
       }
 
       & .#{$classname}__image img,
+      & .#{$classname}__image,
       & .#{$classname}__text-container {
         border-radius: 8px 0 0 8px;
       }
 
       & .#{$classname}__video-link {
         border-radius: 0 8px 8px 0;
+        flex: 0 0 60%;
       }
+
+      & .#{$classname}__title {
+        @include typography.text-heading-600();
+      }
+
+      & .#{$classname}__paragraph {
+        @include typography.text-body-400();
+      }
+
     }
   }
 }

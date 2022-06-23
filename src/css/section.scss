@@ -7,7 +7,7 @@
 
 $classname: '#{utils.$prefix}-section';
 $padding-default: tokens.$spacing-9;
-$padding-mobile: utils.$padding-mobile;
+$padding-mobile: tokens.$spacing-6;
 $min-width: utils.pxToRem(383px);
 $max-width: core-utils.$component-max-width;
 $icon-size: tokens.$spacing-base-5;
@@ -84,10 +84,9 @@ $icon-size: tokens.$spacing-base-5;
 
   // Mobile
   @include utils.mobile() {
-    padding: $padding-mobile;
+    padding: $padding-mobile 0;
 
     &__title {
-      padding-top: $padding-mobile;
       margin-top: 0;
     }
   }

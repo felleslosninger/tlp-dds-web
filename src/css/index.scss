@@ -1,9 +1,8 @@
-@use 'bootstrap-custom';
 @use 'typogrophy' as *;
+@use 'bootstrap-custom';
 @use 'banner.scss' as *;
 @use 'blog-card.scss' as *;
 @use 'brand-banner.scss' as *;
-@use 'campaign-card.scss' as *;
 @use 'course-card.scss' as *;
 @use 'files.scss' as *;
 @use 'footer.scss' as *;
@@ -18,7 +17,4 @@
 @use 'teaser-card.scss' as *;
 @use 'image-section' as *;
 @use 'element' as *;
-
-.test-header {
-  height: 88px;
-}
+@use '@digdir/ds-core-css/build/src/baseline/baseline.scss' as *;
